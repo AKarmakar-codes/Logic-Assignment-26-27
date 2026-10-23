@@ -1,0 +1,27 @@
+var task3_8c =
+[
+    [ "Node", "struct_node.html", "struct_node" ],
+    [ "Frame", "struct_frame.html", "struct_frame" ],
+    [ "Stack", "struct_stack.html", "struct_stack" ],
+    [ "MAX_LEN", "task3_8c.html#aabf4f709c8199e41cf279c77112345fe", null ],
+    [ "Node", "task3_8c.html#a3b09f37e675bcd48a01bf22155996872", null ],
+    [ "build_parse_tree", "task3_8c.html#aafe00a7e3db94707236dd0f2dd7bf8a5", null ],
+    [ "free_tree", "task3_8c.html#a52e5c0a68f0122d8995d9a91b7fd81f2", null ],
+    [ "inorder_iter", "task3_8c.html#a45d4d39edaeb13930266c44e3fe09239", null ],
+    [ "inorder_rec", "task3_8c.html#adbc8ba45a0002d3cfb03e7c0eaf2afe7", null ],
+    [ "is_atom", "task3_8c.html#aa03a3dc8c631a940f560eb87a419bae9", null ],
+    [ "is_negation", "task3_8c.html#a97680bc099c1100092e6088e7a2f2698", null ],
+    [ "main", "task3_8c.html#a840291bc02cba5474a4cb46a9b9566fe", null ],
+    [ "new_node", "task3_8c.html#a189aec0504a63eaa6b314ddaac5b621e", null ],
+    [ "parse_formula", "task3_8c.html#aacef900b7c5e4a6b0717e3d0e47170a7", null ],
+    [ "postorder_iter", "task3_8c.html#abb7f6f3feb1158752dd3394260f7dee2", null ],
+    [ "postorder_rec", "task3_8c.html#a121664cdf0721fc0156f8f226a6518ad", null ],
+    [ "preorder_iter", "task3_8c.html#ab46d534979adb1d964053ae8b4c199e3", null ],
+    [ "preorder_rec", "task3_8c.html#aa2bb9d889b91dca90a359abb41b85b86", null ],
+    [ "skip_spaces", "task3_8c.html#add47a0b713814c04f19b0c61f48bbd99", null ],
+    [ "stack_empty", "task3_8c.html#a9a1574646e07d9309a19489ee909bfcf", null ],
+    [ "stack_free", "task3_8c.html#af0537180bbc930dee22aaf1c0811ec32", null ],
+    [ "stack_init", "task3_8c.html#aa2f56d57f555081b657926fceb7bf7ee", null ],
+    [ "stack_push", "task3_8c.html#aa0fac1890ef5830a658fef4b4779cc4b", null ],
+    [ "p", "task3_8c.html#a6bc6b007533335efe02bafff799ec64c", null ]
+];
