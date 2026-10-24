@@ -1,0 +1,51 @@
+<map id="main" name="main">
+<area shape="rect" id="Node000001" title="Program entry point: read an infix formula (or CNF file), build its parse tree and print its height c..." alt="" coords="5,291,55,317"/>
+<area shape="rect" id="Node000002" href="$task1_8c.html#aafe00a7e3db94707236dd0f2dd7bf8a5" title="Build the parse tree of an infix formula." alt="" coords="103,67,219,93"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="30,290,35,253,47,204,68,151,83,126,101,104,107,100,104,105,105,107,87,129,73,154,52,206,41,255,35,290"/>
+<area shape="rect" id="Node000006" href="$task1_8c.html#a52e5c0a68f0122d8995d9a91b7fd81f2" title="Free a parse tree and all of its nodes (post&#45;order)." alt="" coords="125,141,197,168"/>
+<area shape="poly" id="edge9_Node000001_Node000006" title=" " alt="" coords="33,289,57,236,77,206,101,178,113,171,110,176,104,182,81,209,62,239,39,291"/>
+<area shape="rect" id="Node000007" href="$task4_8c.html#ab5241c9f8688ff5cdc02f9e308eb3263" title="Compute the height of a parse tree, iteratively (level&#45;order / BFS)." alt="" coords="120,216,202,243"/>
+<area shape="poly" id="edge11_Node000001_Node000007" title=" " alt="" coords="47,288,101,252,113,248,110,252,104,257,51,292"/>
+<area shape="rect" id="Node000008" href="$task4_8c.html#a3633ca1f048313b6a21798cefdfc95d4" title="Compute the height of a parse tree, recursively." alt="" coords="120,291,202,317"/>
+<area shape="poly" id="edge13_Node000001_Node000008" title=" " alt="" coords="54,302,106,302,103,306,56,306"/>
+<area shape="rect" id="Node000009" href="$task1_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="Program entry point for Task 1." alt="" coords="136,416,186,443"/>
+<area shape="poly" id="edge15_Node000001_Node000009" title=" " alt="" coords="46,315,137,404,132,406,45,320"/>
+<area shape="rect" id="Node000015" href="$task1_8c.html#a705cdca379dc35ea45fc832ad138bf2f" title="Input Method 2: Read a DIMACS CNF file and convert it into fully parenthesized infix notation." alt="" coords="270,341,376,368"/>
+<area shape="poly" id="edge32_Node000001_Node000015" title=" " alt="" coords="54,311,103,327,181,341,257,350,252,352,181,346,102,332,55,316"/>
+<area shape="rect" id="Node000016" href="$task1_8c.html#ac48ae1c62f66aa965c996f39aba608c9" title="Input Method 1: Read a propositional logic formula in infix notation from stdin." alt="" coords="267,491,379,517"/>
+<area shape="poly" id="edge33_Node000001_Node000016" title=" " alt="" coords="34,315,43,346,56,383,76,421,104,453,138,474,176,488,215,496,254,504,249,504,214,502,174,493,136,478,101,457,72,424,51,385,38,347,34,320"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="137,66,134,58,136,49,146,42,161,40,177,43,187,51,181,52,175,48,161,45,148,47,141,52,139,58,143,66"/>
+<area shape="rect" id="Node000003" href="$task1_8c.html#aacef900b7c5e4a6b0717e3d0e47170a7" title="Recursively parse a fully parenthesized infix formula into an AST." alt="" coords="272,67,375,93"/>
+<area shape="poly" id="edge3_Node000002_Node000003" title=" " alt="" coords="218,78,258,79,254,81,221,82"/>
+<area shape="poly" id="edge6_Node000003_Node000003" title=" " alt="" coords="295,66,290,58,294,48,305,42,323,40,343,43,354,51,349,52,341,48,323,45,306,47,298,52,295,57,300,66"/>
+<area shape="rect" id="Node000004" href="$task1_8c.html#a189aec0504a63eaa6b314ddaac5b621e" title="Allocate and initialise a new parse tree node." alt="" coords="458,104,538,131"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="375,88,445,105,440,107,376,94"/>
+<area shape="rect" id="Node000005" href="$task1_8c.html#add47a0b713814c04f19b0c61f48bbd99" title="Advance the global input pointer past any whitespace." alt="" coords="451,29,545,56"/>
+<area shape="poly" id="edge7_Node000003_Node000005" title=" " alt="" coords="374,67,438,54,434,57,376,71"/>
+<area shape="poly" id="edge5_Node000004_Node000004" title=" " alt="" coords="468,103,463,95,466,86,478,80,498,77,519,80,532,88,526,89,517,85,498,83,480,85,470,89,468,95,473,104"/>
+<area shape="poly" id="edge8_Node000005_Node000005" title=" " alt="" coords="468,29,463,21,466,11,478,5,498,3,519,5,532,14,526,14,517,10,498,8,480,10,470,15,468,20,473,29"/>
+<area shape="poly" id="edge10_Node000006_Node000006" title=" " alt="" coords="137,141,134,133,136,123,146,117,161,115,177,117,187,125,181,127,175,122,161,120,148,122,141,126,139,132,143,141"/>
+<area shape="poly" id="edge12_Node000007_Node000007" title=" " alt="" coords="137,216,134,207,136,198,146,192,161,189,177,192,187,200,181,201,175,197,161,195,148,197,141,201,139,207,143,216"/>
+<area shape="poly" id="edge14_Node000008_Node000008" title=" " alt="" coords="137,290,134,282,136,273,146,266,161,264,177,267,187,275,181,276,175,272,161,269,148,271,141,276,139,282,143,290"/>
+<area shape="poly" id="edge27_Node000009_Node000009" title=" " alt="" coords="137,415,134,407,136,398,146,392,161,389,177,392,187,401,181,401,175,397,161,395,148,397,141,401,139,407,143,416"/>
+<area shape="rect" id="Node000010" href="$task1_8c.html#ac33dbb1c3e4ca70b3474ae9f5a1f4001" title="Task 1 Interface: Convert infix propositional logic to prefix." alt="" coords="272,416,374,443"/>
+<area shape="poly" id="edge16_Node000009_Node000010" title=" " alt="" coords="186,427,259,428,254,430,186,432"/>
+<area shape="poly" id="edge28_Node000009_Node000015" title=" " alt="" coords="185,416,266,378,280,374,275,376,268,382,187,421"/>
+<area shape="poly" id="edge30_Node000009_Node000016" title=" " alt="" coords="187,438,281,483,276,484,185,443"/>
+<area shape="poly" id="edge17_Node000010_Node000010" title=" " alt="" coords="295,415,290,407,294,398,305,392,323,389,343,392,355,401,349,400,341,397,323,395,306,397,298,401,295,407,300,416"/>
+<area shape="rect" id="Node000011" href="$task1_8c.html#a377bff0aefb6365ddda7a8d689e28c7c" title="Convert an infix formula into prefix notation using an operator stack." alt="" coords="427,416,569,443"/>
+<area shape="poly" id="edge18_Node000010_Node000011" title=" " alt="" coords="374,427,414,429,409,430,375,432"/>
+<area shape="poly" id="edge21_Node000011_Node000011" title=" " alt="" coords="468,415,463,407,466,398,478,392,498,389,519,392,532,401,526,400,517,397,498,395,480,397,470,401,468,407,473,417"/>
+<area shape="rect" id="Node000012" href="$task1_8c.html#aa014db7b051e4fce353db9ad9f0ef846" title="Return operator precedence for connectives." alt="" coords="617,341,775,368"/>
+<area shape="poly" id="edge19_Node000011_Node000012" title=" " alt="" coords="530,413,616,378,632,374,638,373,618,382,531,418"/>
+<area shape="rect" id="Node000013" href="$task1_8c.html#a0295642b55077739b6da13fa67407506" title="Check whether a character is a supported logical connective." alt="" coords="823,441,924,468"/>
+<area shape="poly" id="edge22_Node000011_Node000013" title=" " alt="" coords="552,441,617,452,717,457,810,458,805,459,717,463,616,457,552,446"/>
+<area shape="rect" id="Node000014" href="$task1_8c.html#af06a82a72805e2d80932cd3db938fcfd" title="Tokenize a propositional logic formula into discrete tokens." alt="" coords="636,416,756,443"/>
+<area shape="poly" id="edge24_Node000011_Node000014" title=" " alt="" coords="569,427,623,429,618,430,569,432"/>
+<area shape="poly" id="edge20_Node000012_Node000012" title=" " alt="" coords="665,340,660,333,664,323,676,317,696,315,717,317,730,326,725,326,716,322,696,320,677,322,668,327,665,332,670,342"/>
+<area shape="poly" id="edge23_Node000013_Node000013" title=" " alt="" coords="843,440,838,433,841,423,854,417,874,415,895,417,908,427,902,426,893,422,874,420,855,422,845,427,843,432,848,442"/>
+<area shape="poly" id="edge25_Node000014_Node000013" title=" " alt="" coords="757,435,810,445,805,445,756,441"/>
+<area shape="poly" id="edge26_Node000014_Node000014" title=" " alt="" coords="665,414,660,407,664,398,676,391,696,389,717,392,730,401,725,400,716,397,696,395,677,397,668,401,665,407,670,417"/>
+<area shape="poly" id="edge29_Node000015_Node000015" title=" " alt="" coords="295,340,290,333,294,323,305,317,323,315,343,317,355,326,349,326,341,322,323,320,306,322,298,327,295,332,300,342"/>
+<area shape="poly" id="edge31_Node000016_Node000016" title=" " alt="" coords="295,489,290,482,294,472,305,466,323,464,343,467,354,476,349,475,341,472,323,469,306,471,298,476,295,481,300,491"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="collect_atoms" name="collect_atoms">
+<area shape="rect" id="Node000001" title="Collect the distinct atoms of the tree (pre&#45;order walk)." alt="" coords="5,29,108,56"/>
+<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="33,29,29,21,32,11,41,5,57,3,73,5,83,14,77,14,71,10,56,8,43,10,36,14,34,20,38,29"/>
+<area shape="rect" id="Node000002" href="$task3_8c.html#aa03a3dc8c631a940f560eb87a419bae9" title="Test whether a node is an atom (a leaf)." alt="" coords="156,29,223,56"/>
+<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="108,40,143,42,137,43,108,45"/>
+<area shape="poly" id="edge3_Node000002_Node000002" title=" " alt="" coords="166,28,162,21,165,11,174,5,189,3,206,5,215,15,210,14,204,10,189,8,176,10,169,14,167,20,171,30"/>
+</map>

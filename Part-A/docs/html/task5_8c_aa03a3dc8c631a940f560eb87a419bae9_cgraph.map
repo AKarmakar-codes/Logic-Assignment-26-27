@@ -1,0 +1,6 @@
+<map id="is_atom" name="is_atom">
+<area shape="rect" id="Node000001" title="Test whether a node is an atom (a leaf)." alt="" coords="5,29,73,56"/>
+<area shape="rect" id="Node000002" href="$task3_8c.html#aa03a3dc8c631a940f560eb87a419bae9" title="Test whether a node is an atom (a leaf)." alt="" coords="121,29,188,56"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="73,40,107,42,102,43,73,45"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="134,28,130,20,133,11,141,5,154,3,168,5,177,14,172,13,166,10,154,8,143,10,137,14,135,20,138,30"/>
+</map>

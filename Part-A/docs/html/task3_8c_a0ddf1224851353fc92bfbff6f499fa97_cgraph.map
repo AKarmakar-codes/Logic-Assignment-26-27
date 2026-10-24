@@ -1,0 +1,91 @@
+<map id="main" name="main">
+<area shape="rect" id="Node000001" title="Program entry point: read an infix formula (or CNF file), build its parse tree and print all six trav..." alt="" coords="5,452,55,479"/>
+<area shape="rect" id="Node000002" href="$task1_8c.html#aafe00a7e3db94707236dd0f2dd7bf8a5" title="Build the parse tree of an infix formula." alt="" coords="103,71,219,97"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="30,451,37,381,51,280,72,179,85,139,100,110,108,105,106,109,105,114,90,141,77,181,56,281,42,382,35,452"/>
+<area shape="rect" id="Node000006" href="$task1_8c.html#a52e5c0a68f0122d8995d9a91b7fd81f2" title="Free a parse tree and all of its nodes (post&#45;order)." alt="" coords="125,148,197,175"/>
+<area shape="poly" id="edge9_Node000001_Node000006" title=" " alt="" coords="28,452,29,403,38,333,47,294,60,255,77,218,101,185,112,176,110,181,105,188,82,221,65,257,52,296,43,334,35,404,34,452"/>
+<area shape="rect" id="Node000007" href="$task3_8c.html#a45d4d39edaeb13930266c44e3fe09239" title="In&#45;order (infix, brackets omitted) traversal, iterative." alt="" coords="118,303,204,329"/>
+<area shape="poly" id="edge11_Node000001_Node000007" title=" " alt="" coords="33,451,57,398,77,367,101,339,108,335,106,340,105,343,81,370,62,400,39,452"/>
+<area shape="rect" id="Node000014" href="$task3_8c.html#adbc8ba45a0002d3cfb03e7c0eaf2afe7" title="In&#45;order (infix, brackets omitted) traversal, recursive." alt="" coords="118,223,204,249"/>
+<area shape="poly" id="edge25_Node000001_Node000014" title=" " alt="" coords="30,451,36,415,49,367,69,313,101,265,113,256,110,261,105,268,74,316,54,368,41,417,36,452"/>
+<area shape="rect" id="Node000015" href="$task1_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="Program entry point for Task 1." alt="" coords="136,585,186,612"/>
+<area shape="poly" id="edge29_Node000001_Node000015" title=" " alt="" coords="44,476,105,538,138,573,133,575,101,542,45,482"/>
+<area shape="rect" id="Node000021" href="$task1_8c.html#a705cdca379dc35ea45fc832ad138bf2f" title="Input Method 2: Read a DIMACS CNF file and convert it into fully parenthesized infix notation." alt="" coords="270,589,376,616"/>
+<area shape="poly" id="edge62_Node000001_Node000021" title=" " alt="" coords="55,473,220,547,286,581,281,583,218,552,55,478"/>
+<area shape="rect" id="Node000022" href="$task1_8c.html#ac48ae1c62f66aa965c996f39aba608c9" title="Input Method 1: Read a propositional logic formula in infix notation from stdin." alt="" coords="267,739,379,765"/>
+<area shape="poly" id="edge63_Node000001_Node000022" title=" " alt="" coords="34,476,57,546,77,586,105,622,132,642,158,651,187,658,220,672,261,699,297,729,292,729,258,704,218,677,185,663,157,656,130,647,101,626,73,589,52,548,34,482"/>
+<area shape="rect" id="Node000023" href="$task3_8c.html#abb7f6f3feb1158752dd3394260f7dee2" title="Post&#45;order traversal, iterative (two&#45;stack method)." alt="" coords="111,452,211,479"/>
+<area shape="poly" id="edge46_Node000001_Node000023" title=" " alt="" coords="53,463,97,463,93,467,56,468"/>
+<area shape="rect" id="Node000024" href="$task3_8c.html#a121664cdf0721fc0156f8f226a6518ad" title="Post&#45;order (postfix) traversal, recursive: left, right, node." alt="" coords="111,711,211,737"/>
+<area shape="poly" id="edge52_Node000001_Node000024" title=" " alt="" coords="34,476,58,561,78,615,105,667,133,700,128,701,100,669,73,617,53,563,34,482"/>
+<area shape="rect" id="Node000025" href="$task3_8c.html#ab46d534979adb1d964053ae8b4c199e3" title="Pre&#45;order traversal, iterative: pop, visit, push right then left." alt="" coords="114,377,208,404"/>
+<area shape="poly" id="edge54_Node000001_Node000025" title=" " alt="" coords="47,450,101,414,113,409,110,413,104,418,52,453"/>
+<area shape="rect" id="Node000026" href="$task3_8c.html#aa2bb9d889b91dca90a359abb41b85b86" title="Pre&#45;order (prefix) traversal, recursive: node, left, right." alt="" coords="114,785,208,812"/>
+<area shape="poly" id="edge60_Node000001_Node000026" title=" " alt="" coords="32,476,39,526,50,595,71,673,86,712,105,748,129,775,123,776,100,751,81,714,65,675,44,596,33,527,32,482"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="137,71,134,62,136,53,146,46,161,44,177,47,186,55,181,56,175,52,161,49,148,51,141,56,139,62,143,70"/>
+<area shape="rect" id="Node000003" href="$task1_8c.html#aacef900b7c5e4a6b0717e3d0e47170a7" title="Recursively parse a fully parenthesized infix formula into an AST." alt="" coords="272,67,375,93"/>
+<area shape="poly" id="edge3_Node000002_Node000003" title=" " alt="" coords="218,80,258,80,254,83,221,85"/>
+<area shape="poly" id="edge6_Node000003_Node000003" title=" " alt="" coords="295,66,290,58,294,48,305,42,323,40,343,43,354,51,349,52,341,48,323,45,306,47,298,52,295,57,300,66"/>
+<area shape="rect" id="Node000004" href="$task1_8c.html#a189aec0504a63eaa6b314ddaac5b621e" title="Allocate and initialise a new parse tree node." alt="" coords="458,104,538,131"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="374,89,445,104,440,107,376,93"/>
+<area shape="rect" id="Node000005" href="$task1_8c.html#add47a0b713814c04f19b0c61f48bbd99" title="Advance the global input pointer past any whitespace." alt="" coords="451,29,545,56"/>
+<area shape="poly" id="edge7_Node000003_Node000005" title=" " alt="" coords="374,67,438,54,434,58,377,71"/>
+<area shape="poly" id="edge5_Node000004_Node000004" title=" " alt="" coords="468,104,463,95,466,86,478,80,498,77,519,80,532,88,526,89,517,85,498,83,480,85,470,89,468,95,473,104"/>
+<area shape="poly" id="edge8_Node000005_Node000005" title=" " alt="" coords="468,29,463,21,466,11,478,5,498,3,519,5,531,13,526,15,517,10,498,8,480,10,470,15,468,20,473,29"/>
+<area shape="poly" id="edge10_Node000006_Node000006" title=" " alt="" coords="137,148,134,139,136,130,146,124,161,121,177,124,186,132,181,134,175,129,161,127,148,129,141,133,139,139,143,147"/>
+<area shape="poly" id="edge12_Node000007_Node000007" title=" " alt="" coords="137,302,134,294,136,285,146,278,161,276,177,279,187,287,181,288,175,284,161,281,148,283,141,288,139,294,143,302"/>
+<area shape="rect" id="Node000008" href="$task3_8c.html#aa03a3dc8c631a940f560eb87a419bae9" title="Test whether a node is an atom (a leaf)." alt="" coords="290,141,357,168"/>
+<area shape="poly" id="edge13_Node000007_Node000008" title=" " alt="" coords="177,301,217,260,231,237,239,218,248,199,265,178,277,171,274,175,269,182,252,201,244,220,235,240,221,263,181,304"/>
+<area shape="rect" id="Node000009" href="$task3_8c.html#a97680bc099c1100092e6088e7a2f2698" title="Test whether a node is a negation (exactly one child)." alt="" coords="280,216,367,243"/>
+<area shape="poly" id="edge15_Node000007_Node000009" title=" " alt="" coords="182,300,266,252,279,248,275,252,268,257,186,304"/>
+<area shape="rect" id="Node000010" href="$task3_8c.html#a9a1574646e07d9309a19489ee909bfcf" title="Test whether a stack is empty." alt="" coords="275,291,371,317"/>
+<area shape="poly" id="edge17_Node000007_Node000010" title=" " alt="" coords="203,311,261,307,257,310,206,315"/>
+<area shape="rect" id="Node000011" href="$task3_8c.html#af0537180bbc930dee22aaf1c0811ec32" title="Release the memory held by a stack." alt="" coords="282,365,364,392"/>
+<area shape="poly" id="edge19_Node000007_Node000011" title=" " alt="" coords="197,327,275,358,270,361,198,332"/>
+<area shape="rect" id="Node000012" href="$task3_8c.html#aa2f56d57f555081b657926fceb7bf7ee" title="Initialise an empty stack with an initial capacity of 64 frames." alt="" coords="284,440,362,467"/>
+<area shape="poly" id="edge21_Node000007_Node000012" title=" " alt="" coords="200,327,221,339,237,355,247,370,269,402,296,429,291,430,265,406,242,373,233,358,217,343,201,332"/>
+<area shape="rect" id="Node000013" href="$task3_8c.html#aa0fac1890ef5830a658fef4b4779cc4b" title="Push a frame onto the stack, doubling the capacity when it is full." alt="" coords="279,515,367,541"/>
+<area shape="poly" id="edge23_Node000007_Node000013" title=" " alt="" coords="203,327,221,339,234,357,242,374,249,407,253,441,259,458,269,477,293,505,288,505,265,480,254,460,248,442,243,408,237,376,230,360,217,343,205,332"/>
+<area shape="poly" id="edge14_Node000008_Node000008" title=" " alt="" coords="295,141,290,133,294,123,305,117,323,115,343,117,354,125,349,127,341,122,323,120,306,122,298,127,295,132,300,141"/>
+<area shape="poly" id="edge16_Node000009_Node000009" title=" " alt="" coords="295,216,290,207,294,198,305,192,323,189,343,192,354,200,349,201,341,197,323,195,306,197,298,201,295,207,300,215"/>
+<area shape="poly" id="edge18_Node000010_Node000010" title=" " alt="" coords="295,290,290,282,294,272,305,266,323,264,343,267,354,275,349,276,341,272,323,269,306,271,298,276,295,281,300,290"/>
+<area shape="poly" id="edge20_Node000011_Node000011" title=" " alt="" coords="295,365,290,357,294,347,305,341,323,339,343,341,354,350,349,351,341,346,323,344,306,346,298,351,295,356,300,365"/>
+<area shape="poly" id="edge22_Node000012_Node000012" title=" " alt="" coords="295,439,290,431,294,422,305,416,323,413,343,416,354,424,349,425,341,421,323,419,306,421,298,425,295,431,300,440"/>
+<area shape="poly" id="edge24_Node000013_Node000013" title=" " alt="" coords="295,514,290,506,294,496,305,490,323,488,343,491,355,499,349,500,341,496,323,493,306,495,298,500,295,505,300,515"/>
+<area shape="poly" id="edge27_Node000014_Node000008" title=" " alt="" coords="185,220,266,178,279,173,276,177,268,182,189,224"/>
+<area shape="poly" id="edge28_Node000014_Node000009" title=" " alt="" coords="203,232,266,230,262,233,206,237"/>
+<area shape="poly" id="edge26_Node000014_Node000014" title=" " alt="" coords="137,222,134,214,136,205,146,198,161,196,177,199,186,207,181,208,175,204,161,201,148,203,141,208,139,214,143,222"/>
+<area shape="poly" id="edge41_Node000015_Node000015" title=" " alt="" coords="137,585,134,577,136,567,146,561,161,559,177,561,187,570,181,571,175,566,161,564,148,566,141,570,139,576,143,585"/>
+<area shape="rect" id="Node000016" href="$task1_8c.html#ac33dbb1c3e4ca70b3474ae9f5a1f4001" title="Task 1 Interface: Convert infix propositional logic to prefix." alt="" coords="272,664,374,691"/>
+<area shape="poly" id="edge30_Node000015_Node000016" title=" " alt="" coords="186,608,282,656,278,658,186,613"/>
+<area shape="poly" id="edge42_Node000015_Node000021" title=" " alt="" coords="185,597,257,600,252,602,187,602"/>
+<area shape="poly" id="edge44_Node000015_Node000022" title=" " alt="" coords="186,606,221,629,237,647,246,664,255,681,269,701,296,729,290,728,265,704,251,684,242,667,233,650,217,633,186,612"/>
+<area shape="poly" id="edge31_Node000016_Node000016" title=" " alt="" coords="295,663,290,655,294,646,305,640,323,637,343,640,355,649,349,649,341,645,323,643,306,645,298,649,295,655,300,664"/>
+<area shape="rect" id="Node000017" href="$task1_8c.html#a377bff0aefb6365ddda7a8d689e28c7c" title="Convert an infix formula into prefix notation using an operator stack." alt="" coords="427,664,569,691"/>
+<area shape="poly" id="edge32_Node000016_Node000017" title=" " alt="" coords="374,675,414,677,409,678,375,680"/>
+<area shape="poly" id="edge35_Node000017_Node000017" title=" " alt="" coords="468,663,463,655,466,646,478,640,498,637,519,640,532,649,526,648,517,645,498,643,480,645,470,649,468,655,473,664"/>
+<area shape="rect" id="Node000018" href="$task1_8c.html#aa014db7b051e4fce353db9ad9f0ef846" title="Return operator precedence for connectives." alt="" coords="617,589,775,616"/>
+<area shape="poly" id="edge33_Node000017_Node000018" title=" " alt="" coords="530,661,616,626,632,622,638,621,618,630,531,666"/>
+<area shape="rect" id="Node000019" href="$task1_8c.html#a0295642b55077739b6da13fa67407506" title="Check whether a character is a supported logical connective." alt="" coords="823,689,924,716"/>
+<area shape="poly" id="edge36_Node000017_Node000019" title=" " alt="" coords="552,689,617,700,717,705,810,706,805,707,717,711,616,705,552,694"/>
+<area shape="rect" id="Node000020" href="$task1_8c.html#af06a82a72805e2d80932cd3db938fcfd" title="Tokenize a propositional logic formula into discrete tokens." alt="" coords="636,664,756,691"/>
+<area shape="poly" id="edge38_Node000017_Node000020" title=" " alt="" coords="569,675,623,677,618,678,570,680"/>
+<area shape="poly" id="edge34_Node000018_Node000018" title=" " alt="" coords="665,588,660,581,664,571,676,565,696,563,717,565,730,574,725,574,716,570,696,568,677,570,668,575,665,580,670,590"/>
+<area shape="poly" id="edge37_Node000019_Node000019" title=" " alt="" coords="843,688,838,681,841,671,854,665,874,663,895,665,908,675,902,674,893,670,874,668,855,670,845,675,843,680,848,690"/>
+<area shape="poly" id="edge39_Node000020_Node000019" title=" " alt="" coords="756,683,810,693,805,693,756,689"/>
+<area shape="poly" id="edge40_Node000020_Node000020" title=" " alt="" coords="665,663,660,655,664,646,676,639,696,637,717,640,730,649,725,648,716,645,696,643,677,645,668,649,665,655,670,665"/>
+<area shape="poly" id="edge43_Node000021_Node000021" title=" " alt="" coords="295,588,290,581,294,571,305,565,323,563,343,565,355,574,349,574,341,570,323,568,306,570,298,575,295,580,300,589"/>
+<area shape="poly" id="edge45_Node000022_Node000022" title=" " alt="" coords="295,737,290,730,294,720,305,714,323,712,343,715,355,724,349,723,341,720,323,717,306,719,298,724,295,729,300,739"/>
+<area shape="poly" id="edge48_Node000023_Node000010" title=" " alt="" coords="179,450,217,414,231,391,239,370,247,349,265,327,272,324,269,328,269,331,252,352,244,372,236,393,221,418,183,453"/>
+<area shape="poly" id="edge49_Node000023_Node000011" title=" " alt="" coords="183,450,266,402,279,397,275,401,268,406,186,454"/>
+<area shape="poly" id="edge50_Node000023_Node000012" title=" " alt="" coords="210,459,271,456,267,459,213,464"/>
+<area shape="poly" id="edge51_Node000023_Node000013" title=" " alt="" coords="197,477,275,507,270,510,198,482"/>
+<area shape="poly" id="edge47_Node000023_Node000023" title=" " alt="" coords="137,452,134,443,136,434,146,428,161,425,177,428,187,436,181,437,175,433,161,431,148,433,141,437,139,443,143,451"/>
+<area shape="poly" id="edge53_Node000024_Node000024" title=" " alt="" coords="137,710,134,702,136,693,146,686,161,684,177,687,187,695,181,695,175,692,161,689,148,691,141,696,139,702,143,711"/>
+<area shape="poly" id="edge56_Node000025_Node000010" title=" " alt="" coords="182,375,266,327,279,323,275,326,268,332,186,379"/>
+<area shape="poly" id="edge57_Node000025_Node000011" title=" " alt="" coords="207,385,269,381,265,384,209,390"/>
+<area shape="poly" id="edge58_Node000025_Node000012" title=" " alt="" coords="197,402,275,433,270,435,198,407"/>
+<area shape="poly" id="edge59_Node000025_Node000013" title=" " alt="" coords="200,402,221,414,237,430,247,444,269,477,296,504,291,505,265,480,242,447,233,433,217,418,201,407"/>
+<area shape="poly" id="edge55_Node000025_Node000025" title=" " alt="" coords="137,377,134,369,136,359,146,353,161,351,177,353,187,361,181,363,175,358,161,356,148,358,141,362,139,368,143,377"/>
+<area shape="poly" id="edge61_Node000026_Node000026" title=" " alt="" coords="138,784,134,777,136,767,146,761,161,759,177,761,187,771,181,770,175,766,161,764,148,766,141,770,139,776,142,786"/>
+</map>

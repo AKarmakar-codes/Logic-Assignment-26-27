@@ -1,0 +1,17 @@
+<map id="read_input_cnf_as_prefix" name="read_input_cnf_as_prefix">
+<area shape="rect" id="Node000001" title="Input Method 2: Read DIMACS CNF file and convert to prefix notation." alt="" coords="5,80,172,107"/>
+<area shape="poly" id="edge10_Node000001_Node000001" title=" " alt="" coords="54,80,48,71,52,62,66,55,89,53,113,56,127,64,122,65,111,61,88,59,67,61,56,65,53,71,59,79"/>
+<area shape="rect" id="Node000002" href="$task2_8c.html#a86964be67428aa1d3eb7ad1543cdede0" title=" " alt="" coords="220,80,364,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="172,91,206,93,201,94,173,96"/>
+<area shape="poly" id="edge4_Node000002_Node000002" title=" " alt="" coords="258,79,252,71,256,62,270,55,292,53,316,56,330,65,324,65,314,61,292,59,271,61,260,65,257,71,263,80"/>
+<area shape="rect" id="Node000003" href="$task1_8c.html#aa014db7b051e4fce353db9ad9f0ef846" title="Return operator precedence for connectives." alt="" coords="412,29,570,56"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="347,77,424,60,419,61,348,82"/>
+<area shape="rect" id="Node000004" href="$task1_8c.html#a0295642b55077739b6da13fa67407506" title="Check whether a character is a supported logical connective." alt="" coords="618,117,720,144"/>
+<area shape="poly" id="edge5_Node000002_Node000004" title=" " alt="" coords="364,97,571,116,605,122,600,122,570,121,364,102"/>
+<area shape="rect" id="Node000005" href="$task1_8c.html#af06a82a72805e2d80932cd3db938fcfd" title="Tokenize a propositional logic formula into discrete tokens." alt="" coords="431,155,551,181"/>
+<area shape="poly" id="edge7_Node000002_Node000005" title=" " alt="" coords="330,105,442,149,437,149,329,110"/>
+<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="460,28,455,21,459,11,471,5,491,3,513,5,525,14,520,14,511,10,491,8,473,10,463,15,461,20,465,30"/>
+<area shape="poly" id="edge6_Node000004_Node000004" title=" " alt="" coords="638,116,633,109,637,99,649,93,669,91,690,93,703,103,698,102,689,98,669,96,651,98,641,103,638,108,643,118"/>
+<area shape="poly" id="edge8_Node000005_Node000004" title=" " alt="" coords="551,153,600,145,605,144,552,158"/>
+<area shape="poly" id="edge9_Node000005_Node000005" title=" " alt="" coords="461,153,455,146,459,136,471,130,491,128,513,131,525,140,520,139,511,136,491,133,473,135,463,140,461,145,465,155"/>
+</map>

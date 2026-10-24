@@ -1,0 +1,6 @@
+<map id="read_input_cnf" name="read_input_cnf">
+<area shape="rect" id="Node000001" title="Input Method 2: Read DIMACS CNF file and convert to fully parenthesized infix notation." alt="" coords="5,29,112,56"/>
+<area shape="rect" id="Node000002" href="$task1_8c.html#a705cdca379dc35ea45fc832ad138bf2f" title="Input Method 2: Read a DIMACS CNF file and convert it into fully parenthesized infix notation." alt="" coords="160,29,266,56"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="112,40,147,42,142,43,112,45"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="186,28,181,21,185,11,195,5,213,3,232,5,243,15,237,14,230,10,213,8,197,10,189,15,187,20,191,30"/>
+</map>

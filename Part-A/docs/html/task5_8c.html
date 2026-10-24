@@ -119,6 +119,22 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('task5_8c.html'
 <code>#include &lt;stdlib.h&gt;</code><br />
 <code>#include &lt;ctype.h&gt;</code><br />
 <code>#include &lt;string.h&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Include dependency graph for task5.c:</div>
+<div class="dyncontent">
+<div class="center"><img src="task5_8c__incl.png" border="0" usemap="#atask5_8c" loading="lazy" alt=""/></div>
+<map name="atask5_8c" id="atask5_8c">
+<area shape="rect" title="Task 5 &#45; Evaluate a propositional&#45;logic formula bottom&#45;up on its parse tree and produce the complete ..." alt="" coords="133,5,197,32"/>
+<area shape="rect" title=" " alt="" coords="5,80,66,107"/>
+<area shape="poly" title=" " alt="" coords="144,35,73,74,70,70,141,30"/>
+<area shape="rect" title=" " alt="" coords="89,80,152,107"/>
+<area shape="poly" title=" " alt="" coords="159,31,138,69,134,65,155,34"/>
+<area shape="rect" title=" " alt="" coords="177,80,241,107"/>
+<area shape="poly" title=" " alt="" coords="174,30,196,67,191,66,171,35"/>
+<area shape="rect" title=" " alt="" coords="265,80,329,107"/>
+<area shape="poly" title=" " alt="" coords="189,30,263,72,258,73,187,35"/>
+</map>
+</div>
 </div>
 <p><a href="task5_8c_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -131,7 +147,7 @@ Data Structures</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-define-members" class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:aabf4f709c8199e41cf279c77112345fe" id="r_aabf4f709c8199e41cf279c77112345fe"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#aabf4f709c8199e41cf279c77112345fe">MAX_LEN</a>&#160;&#160;&#160;1024</td></tr>
+<tr class="memitem:aabf4f709c8199e41cf279c77112345fe" id="r_aabf4f709c8199e41cf279c77112345fe"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#aabf4f709c8199e41cf279c77112345fe">MAX_LEN</a>&#160;&#160;&#160;65536</td></tr>
 <tr class="memdesc:aabf4f709c8199e41cf279c77112345fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum length of the input formula buffer.  <br /></td></tr>
 <tr class="memitem:ac968f677c6a839e3e440a82a810a4c65" id="r_ac968f677c6a839e3e440a82a810a4c65"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#ac968f677c6a839e3e440a82a810a4c65">MAX_ATOMS</a>&#160;&#160;&#160;20</td></tr>
 <tr class="memdesc:ac968f677c6a839e3e440a82a810a4c65"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum number of distinct atoms allowed (the table has 2^k rows).  <br /></td></tr>
@@ -165,8 +181,12 @@ Functions</h2></td></tr>
 <tr class="memdesc:a88c057ff68df132821a8751a6d04632b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluate the formula bottom-up (post-order).  <br /></td></tr>
 <tr class="memitem:a4f72d4c1868137d4731b4ce6ac126c43" id="r_a4f72d4c1868137d4731b4ce6ac126c43"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a4f72d4c1868137d4731b4ce6ac126c43">print_truth_table</a> (const <a class="el" href="struct_node.html">Node</a> *root, const <a class="el" href="struct_atom_table.html">AtomTable</a> *t, const char *formula)</td></tr>
 <tr class="memdesc:a4f72d4c1868137d4731b4ce6ac126c43"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print the complete truth table of a formula.  <br /></td></tr>
-<tr class="memitem:a840291bc02cba5474a4cb46a9b9566fe" id="r_a840291bc02cba5474a4cb46a9b9566fe"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a840291bc02cba5474a4cb46a9b9566fe">main</a> (void)</td></tr>
-<tr class="memdesc:a840291bc02cba5474a4cb46a9b9566fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Program entry point: read an infix formula, build its parse tree and print its truth table.  <br /></td></tr>
+<tr class="memitem:ac48ae1c62f66aa965c996f39aba608c9" id="r_ac48ae1c62f66aa965c996f39aba608c9"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ac48ae1c62f66aa965c996f39aba608c9">read_input_infix</a> (char *buffer, size_t max_len)</td></tr>
+<tr class="memdesc:ac48ae1c62f66aa965c996f39aba608c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Input Method 1: Read a propositional logic formula in infix notation from stdin.  <br /></td></tr>
+<tr class="memitem:a705cdca379dc35ea45fc832ad138bf2f" id="r_a705cdca379dc35ea45fc832ad138bf2f"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a705cdca379dc35ea45fc832ad138bf2f">read_input_cnf</a> (const char *filename, char *buffer, size_t max_len)</td></tr>
+<tr class="memdesc:a705cdca379dc35ea45fc832ad138bf2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Input Method 2: Read DIMACS CNF file and convert to fully parenthesized infix notation.  <br /></td></tr>
+<tr class="memitem:a0ddf1224851353fc92bfbff6f499fa97" id="r_a0ddf1224851353fc92bfbff6f499fa97"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a0ddf1224851353fc92bfbff6f499fa97">main</a> (int argc, char *argv[])</td></tr>
+<tr class="memdesc:a0ddf1224851353fc92bfbff6f499fa97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Program entry point: read an infix formula (or CNF file), build its parse tree and print its truth table.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
@@ -176,7 +196,7 @@ Variables</h2></td></tr>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Task 5 - Evaluate a propositional-logic formula bottom-up on its parse tree and produce the complete truth table. </p>
 <p>Input : a fully parenthesized INFIX formula (~ negation, + OR, * AND, &gt; implication) Output: the truth table of the formula, plus whether it is a tautology, a contradiction, or merely satisfiable.</p>
-<p>The <a class="el" href="struct_node.html" title="A node of the propositional-logic parse tree.">Node</a> structure and the infix -&gt; parse tree parser are the same as in <a class="el" href="task1_8c.html" title="Task 1 - Convert a fully parenthesized infix propositional-logic formula into a prefix formula.">task1.c</a>, so they are reused here unchanged.</p>
+<p>The <a class="el" href="struct_node.html" title="A node of the propositional-logic parse tree.">Node</a> structure and the infix -&gt; parse tree parser are the same as in <a class="el" href="task1_8c.html" title="Task 1 - Convert a fully parenthesized infix propositional-logic formula into a prefix formula using ...">task1.c</a>, so they are reused here unchanged.</p>
 <p>Complexity: for a formula with n nodes and k distinct atoms, the table has 2^k rows and each row is evaluated in O(n) time, so the total time is O(2^k * n). The evaluation uses O(h) call-stack space, where h is the tree height, plus O(k) for the atom table. </p>
 
 <p class="definition">Definition in file <a class="el" href="task5_8c_source.html">task5.c</a>.</p>
@@ -206,7 +226,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define MAX_LEN&#160;&#160;&#160;1024</td>
+          <td class="memname">#define MAX_LEN&#160;&#160;&#160;65536</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -274,6 +294,15 @@ Variables</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>Index of the atom in <code class="param">t</code>, or -1 if it is absent. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="task5_8c_source.html#l00201">201</a> of file <a class="el" href="task5_8c_source.html">task5.c</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="task5_8c_a17fee48d2fe865040c68e8a2112ea085_cgraph.png" border="0" usemap="#atask5_8c_a17fee48d2fe865040c68e8a2112ea085_cgraph" loading="lazy" alt=""/></div>
+<map name="atask5_8c_a17fee48d2fe865040c68e8a2112ea085_cgraph" id="atask5_8c_a17fee48d2fe865040c68e8a2112ea085_cgraph">
+<area shape="rect" title="Find the index of an atom in the atom table." alt="" coords="5,29,94,56"/>
+<area shape="poly" title=" " alt="" coords="33,28,32,12,39,5,50,3,61,5,68,14,62,14,58,10,49,8,41,10,37,14,38,29"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -302,6 +331,27 @@ Variables</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>Root of the parse tree. The caller must release it with <a class="el" href="#a52e5c0a68f0122d8995d9a91b7fd81f2" title="Free a parse tree and all of its nodes (post-order).">free_tree()</a>. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="task5_8c_source.html#l00137">137</a> of file <a class="el" href="task5_8c_source.html">task5.c</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="task5_8c_aafe00a7e3db94707236dd0f2dd7bf8a5_cgraph.png" border="0" usemap="#atask5_8c_aafe00a7e3db94707236dd0f2dd7bf8a5_cgraph" loading="lazy" alt=""/></div>
+<map name="atask5_8c_aafe00a7e3db94707236dd0f2dd7bf8a5_cgraph" id="atask5_8c_aafe00a7e3db94707236dd0f2dd7bf8a5_cgraph">
+<area shape="rect" title="Build the parse tree of an infix formula." alt="" coords="5,67,122,93"/>
+<area shape="rect" href="task1_8c.html#aafe00a7e3db94707236dd0f2dd7bf8a5" title="Build the parse tree of an infix formula." alt="" coords="170,41,286,68"/>
+<area shape="poly" title=" " alt="" coords="122,68,157,65,152,67,123,74"/>
+<area shape="rect" href="task1_8c.html#aacef900b7c5e4a6b0717e3d0e47170a7" title="Recursively parse a fully parenthesized infix formula into an AST." alt="" coords="334,67,437,93"/>
+<area shape="poly" title=" " alt="" coords="122,77,319,77,318,83,122,83"/>
+<area shape="poly" title=" " alt="" coords="200,40,196,33,199,23,210,17,228,15,247,17,258,26,253,26,245,22,228,20,212,22,203,27,201,32,205,42"/>
+<area shape="poly" title=" " alt="" coords="287,61,321,69,316,69,287,67"/>
+<area shape="poly" title=" " alt="" coords="360,65,356,58,359,48,369,42,386,40,404,43,414,52,409,51,402,48,386,45,371,47,363,52,361,58,365,67"/>
+<area shape="rect" href="task1_8c.html#a189aec0504a63eaa6b314ddaac5b621e" title="Allocate and initialise a new parse tree node." alt="" coords="492,29,573,56"/>
+<area shape="poly" title=" " alt="" coords="437,64,475,57,480,56,438,69"/>
+<area shape="rect" href="task1_8c.html#add47a0b713814c04f19b0c61f48bbd99" title="Advance the global input pointer past any whitespace." alt="" coords="485,104,580,131"/>
+<area shape="poly" title=" " alt="" coords="438,91,473,102,468,101,438,96"/>
+<area shape="poly" title=" " alt="" coords="507,28,502,21,505,11,516,5,533,3,550,5,561,15,556,14,548,10,532,8,518,10,510,14,508,20,512,30"/>
+<area shape="poly" title=" " alt="" coords="507,102,502,95,505,86,516,80,533,77,550,80,561,89,556,88,548,85,532,83,518,85,510,89,508,95,511,105"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -336,6 +386,18 @@ Variables</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>0 on success, -1 if there are more than MAX_ATOMS distinct atoms. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="task5_8c_source.html#l00181">181</a> of file <a class="el" href="task5_8c_source.html">task5.c</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="task5_8c_a31e8aea1837ced449237b07327a896b3_cgraph.png" border="0" usemap="#atask5_8c_a31e8aea1837ced449237b07327a896b3_cgraph" loading="lazy" alt=""/></div>
+<map name="atask5_8c_a31e8aea1837ced449237b07327a896b3_cgraph" id="atask5_8c_a31e8aea1837ced449237b07327a896b3_cgraph">
+<area shape="rect" title="Collect the distinct atoms of the tree (pre&#45;order walk)." alt="" coords="5,29,108,56"/>
+<area shape="poly" title=" " alt="" coords="33,29,29,21,32,11,41,5,57,3,73,5,83,14,77,14,71,10,56,8,43,10,36,14,34,20,38,29"/>
+<area shape="rect" href="task3_8c.html#aa03a3dc8c631a940f560eb87a419bae9" title="Test whether a node is an atom (a leaf)." alt="" coords="156,29,223,56"/>
+<area shape="poly" title=" " alt="" coords="108,40,143,42,137,43,108,45"/>
+<area shape="poly" title=" " alt="" coords="166,28,162,21,165,11,174,5,189,3,206,5,215,15,210,14,204,10,189,8,176,10,169,14,167,20,171,30"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -377,6 +439,24 @@ Variables</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>Truth value (0 or 1) of the subtree. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="task5_8c_source.html#l00221">221</a> of file <a class="el" href="task5_8c_source.html">task5.c</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="task5_8c_a88c057ff68df132821a8751a6d04632b_cgraph.png" border="0" usemap="#atask5_8c_a88c057ff68df132821a8751a6d04632b_cgraph" loading="lazy" alt=""/></div>
+<map name="atask5_8c_a88c057ff68df132821a8751a6d04632b_cgraph" id="atask5_8c_a88c057ff68df132821a8751a6d04632b_cgraph">
+<area shape="rect" title="Evaluate the formula bottom&#45;up (post&#45;order)." alt="" coords="5,104,76,131"/>
+<area shape="poly" title=" " alt="" coords="18,104,14,95,17,86,26,80,41,77,56,80,66,88,60,90,54,85,40,83,28,85,21,89,19,95,23,103"/>
+<area shape="rect" href="task5_8c.html#a17fee48d2fe865040c68e8a2112ea085" title="Find the index of an atom in the atom table." alt="" coords="124,29,212,56"/>
+<area shape="poly" title=" " alt="" coords="63,101,122,66,132,62,128,66,125,70,66,106"/>
+<area shape="rect" href="task3_8c.html#aa03a3dc8c631a940f560eb87a419bae9" title="Test whether a node is an atom (a leaf)." alt="" coords="134,104,202,131"/>
+<area shape="poly" title=" " alt="" coords="75,115,121,116,117,119,77,120"/>
+<area shape="rect" href="task3_8c.html#a97680bc099c1100092e6088e7a2f2698" title="Test whether a node is a negation (exactly one child)." alt="" coords="124,179,212,205"/>
+<area shape="poly" title=" " alt="" coords="65,128,133,169,128,172,64,134"/>
+<area shape="poly" title=" " alt="" coords="145,29,141,21,144,11,153,5,168,3,184,5,193,14,188,14,181,10,168,8,155,10,148,14,147,20,150,29"/>
+<area shape="poly" title=" " alt="" coords="145,103,141,95,144,86,153,80,168,77,184,80,193,89,188,89,181,85,168,83,155,85,148,89,147,95,150,104"/>
+<area shape="poly" title=" " alt="" coords="145,177,141,170,144,161,153,154,168,152,184,155,193,164,188,163,181,160,168,157,155,159,148,164,147,170,150,179"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -404,6 +484,17 @@ Variables</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="task5_8c_source.html#l00079">79</a> of file <a class="el" href="task5_8c_source.html">task5.c</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="task5_8c_a52e5c0a68f0122d8995d9a91b7fd81f2_cgraph.png" border="0" usemap="#atask5_8c_a52e5c0a68f0122d8995d9a91b7fd81f2_cgraph" loading="lazy" alt=""/></div>
+<map name="atask5_8c_a52e5c0a68f0122d8995d9a91b7fd81f2_cgraph" id="atask5_8c_a52e5c0a68f0122d8995d9a91b7fd81f2_cgraph">
+<area shape="rect" title="Free a parse tree and all of its nodes (post&#45;order)." alt="" coords="5,29,78,56"/>
+<area shape="rect" href="task1_8c.html#a52e5c0a68f0122d8995d9a91b7fd81f2" title="Free a parse tree and all of its nodes (post&#45;order)." alt="" coords="126,29,198,56"/>
+<area shape="poly" title=" " alt="" coords="78,40,113,42,107,43,78,45"/>
+<area shape="poly" title=" " alt="" coords="140,28,137,20,139,11,148,5,162,3,177,5,186,15,180,14,175,10,162,8,150,10,144,14,142,20,145,30"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -440,6 +531,17 @@ Variables</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>Non-zero if <code class="param">n</code> has no children, otherwise 0. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="task5_8c_source.html#l00150">150</a> of file <a class="el" href="task5_8c_source.html">task5.c</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="task5_8c_aa03a3dc8c631a940f560eb87a419bae9_cgraph.png" border="0" usemap="#atask5_8c_aa03a3dc8c631a940f560eb87a419bae9_cgraph" loading="lazy" alt=""/></div>
+<map name="atask5_8c_aa03a3dc8c631a940f560eb87a419bae9_cgraph" id="atask5_8c_aa03a3dc8c631a940f560eb87a419bae9_cgraph">
+<area shape="rect" title="Test whether a node is an atom (a leaf)." alt="" coords="5,29,73,56"/>
+<area shape="rect" href="task3_8c.html#aa03a3dc8c631a940f560eb87a419bae9" title="Test whether a node is an atom (a leaf)." alt="" coords="121,29,188,56"/>
+<area shape="poly" title=" " alt="" coords="73,40,107,42,102,43,73,45"/>
+<area shape="poly" title=" " alt="" coords="134,28,130,20,133,11,141,5,154,3,168,5,177,14,172,13,166,10,154,8,143,10,137,14,135,20,138,30"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -476,11 +578,22 @@ Variables</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>Non-zero if <code class="param">n</code> has only a left child, otherwise 0. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="task5_8c_source.html#l00158">158</a> of file <a class="el" href="task5_8c_source.html">task5.c</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="task5_8c_a97680bc099c1100092e6088e7a2f2698_cgraph.png" border="0" usemap="#atask5_8c_a97680bc099c1100092e6088e7a2f2698_cgraph" loading="lazy" alt=""/></div>
+<map name="atask5_8c_a97680bc099c1100092e6088e7a2f2698_cgraph" id="atask5_8c_a97680bc099c1100092e6088e7a2f2698_cgraph">
+<area shape="rect" title="Test whether a node is a negation (exactly one child)." alt="" coords="5,29,93,56"/>
+<area shape="rect" href="task3_8c.html#a97680bc099c1100092e6088e7a2f2698" title="Test whether a node is a negation (exactly one child)." alt="" coords="141,29,228,56"/>
+<area shape="poly" title=" " alt="" coords="93,40,128,42,123,43,93,45"/>
+<area shape="poly" title=" " alt="" coords="160,28,156,21,159,11,169,5,184,3,201,5,211,15,206,14,199,10,184,8,171,10,163,14,162,20,165,30"/>
+</map>
+</div>
 
 </div>
 </div>
-<a id="a840291bc02cba5474a4cb46a9b9566fe" name="a840291bc02cba5474a4cb46a9b9566fe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a840291bc02cba5474a4cb46a9b9566fe">&#9670;&#160;</a></span>main()</h2>
+<a id="a0ddf1224851353fc92bfbff6f499fa97" name="a0ddf1224851353fc92bfbff6f499fa97"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ddf1224851353fc92bfbff6f499fa97">&#9670;&#160;</a></span>main()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -488,16 +601,96 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">int main </td>
           <td>(</td>
-          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>argc</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">char *</td>          <td class="paramname"><span class="paramname"><em>argv</em></span>[]&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Program entry point: read an infix formula, build its parse tree and print its truth table. </p>
+<p>Program entry point: read an infix formula (or CNF file), build its parse tree and print its truth table. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">argc</td><td>Argument count. </td></tr>
+    <tr><td class="paramname">argv</td><td>Argument vector (argv[1] can optionally specify a .cnf file). </td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="section return"><dt>Returns</dt><dd>0 on success, 1 if no input could be read or the formula has more than MAX_ATOMS distinct atoms. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="task5_8c_source.html#l00290">290</a> of file <a class="el" href="task5_8c_source.html">task5.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="task5_8c_source.html#l00395">395</a> of file <a class="el" href="task5_8c_source.html">task5.c</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="task5_8c_a0ddf1224851353fc92bfbff6f499fa97_cgraph.png" border="0" usemap="#atask5_8c_a0ddf1224851353fc92bfbff6f499fa97_cgraph" loading="lazy" alt=""/></div>
+<map name="atask5_8c_a0ddf1224851353fc92bfbff6f499fa97_cgraph" id="atask5_8c_a0ddf1224851353fc92bfbff6f499fa97_cgraph">
+<area shape="rect" title="Program entry point: read an infix formula (or CNF file), build its parse tree and print its truth ta..." alt="" coords="5,328,55,355"/>
+<area shape="rect" href="task1_8c.html#aafe00a7e3db94707236dd0f2dd7bf8a5" title="Build the parse tree of an infix formula." alt="" coords="103,104,219,131"/>
+<area shape="poly" title=" " alt="" coords="30,327,35,291,47,242,68,189,83,163,101,141,107,137,104,142,105,144,87,166,73,191,52,243,41,292,35,328"/>
+<area shape="rect" href="task5_8c.html#a31e8aea1837ced449237b07327a896b3" title="Collect the distinct atoms of the tree (pre&#45;order walk)." alt="" coords="110,179,212,205"/>
+<area shape="poly" title=" " alt="" coords="33,327,57,274,77,243,101,215,109,211,106,216,105,219,81,246,62,276,39,328"/>
+<area shape="rect" href="task1_8c.html#a52e5c0a68f0122d8995d9a91b7fd81f2" title="Free a parse tree and all of its nodes (post&#45;order)." alt="" coords="125,328,197,355"/>
+<area shape="poly" title=" " alt="" coords="54,339,111,339,107,343,56,344"/>
+<area shape="rect" href="task1_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="Program entry point for Task 1." alt="" coords="136,453,186,480"/>
+<area shape="poly" title=" " alt="" coords="46,353,137,441,132,443,45,358"/>
+<area shape="rect" href="task1_8c.html#a705cdca379dc35ea45fc832ad138bf2f" title="Input Method 2: Read a DIMACS CNF file and convert it into fully parenthesized infix notation." alt="" coords="270,379,376,405"/>
+<area shape="poly" title=" " alt="" coords="54,349,103,364,181,378,257,387,252,389,181,383,102,369,55,354"/>
+<area shape="rect" href="task1_8c.html#ac48ae1c62f66aa965c996f39aba608c9" title="Input Method 1: Read a propositional logic formula in infix notation from stdin." alt="" coords="267,528,379,555"/>
+<area shape="poly" title=" " alt="" coords="34,352,43,383,56,420,76,458,104,490,138,511,176,525,215,534,254,541,249,541,214,539,174,530,136,516,101,494,72,461,51,422,38,385,34,358"/>
+<area shape="rect" href="task5_8c.html#a4f72d4c1868137d4731b4ce6ac126c43" title="Print the complete truth table of a formula." alt="" coords="104,253,218,280"/>
+<area shape="poly" title=" " alt="" coords="47,326,101,290,113,285,110,289,104,294,51,329"/>
+<area shape="poly" title=" " alt="" coords="137,104,134,95,136,86,146,80,161,77,177,80,187,88,181,90,175,85,161,83,148,85,141,89,139,95,143,103"/>
+<area shape="rect" href="task1_8c.html#aacef900b7c5e4a6b0717e3d0e47170a7" title="Recursively parse a fully parenthesized infix formula into an AST." alt="" coords="272,104,375,131"/>
+<area shape="poly" title=" " alt="" coords="218,115,258,116,254,119,221,120"/>
+<area shape="poly" title=" " alt="" coords="295,103,290,95,294,86,305,80,323,77,343,80,354,88,349,89,341,85,323,83,306,85,298,89,295,95,300,104"/>
+<area shape="rect" href="task1_8c.html#a189aec0504a63eaa6b314ddaac5b621e" title="Allocate and initialise a new parse tree node." alt="" coords="458,29,538,56"/>
+<area shape="poly" title=" " alt="" coords="350,101,426,66,445,60,441,63,428,70,353,106"/>
+<area shape="rect" href="task1_8c.html#add47a0b713814c04f19b0c61f48bbd99" title="Advance the global input pointer past any whitespace." alt="" coords="451,104,545,131"/>
+<area shape="poly" title=" " alt="" coords="374,115,438,116,433,119,376,120"/>
+<area shape="poly" title=" " alt="" coords="468,29,463,21,466,11,478,5,498,3,519,5,532,14,526,14,517,10,498,8,480,10,470,15,468,20,473,29"/>
+<area shape="poly" title=" " alt="" coords="468,103,463,95,466,86,478,80,498,77,519,80,532,88,526,89,517,85,498,83,480,85,470,89,468,95,473,104"/>
+<area shape="poly" title=" " alt="" coords="137,178,134,170,136,161,146,154,161,152,177,155,187,163,181,164,175,160,161,157,148,159,141,164,139,170,143,178"/>
+<area shape="rect" href="task3_8c.html#aa03a3dc8c631a940f560eb87a419bae9" title="Test whether a node is an atom (a leaf)." alt="" coords="464,179,532,205"/>
+<area shape="poly" title=" " alt="" coords="212,189,451,190,447,194,213,195"/>
+<area shape="poly" title=" " alt="" coords="468,178,463,170,466,160,478,154,498,152,519,155,532,163,526,164,517,160,498,157,480,159,470,164,468,169,473,179"/>
+<area shape="poly" title=" " alt="" coords="137,327,134,319,136,310,146,304,161,301,177,304,187,312,181,313,175,309,161,307,148,309,141,313,139,319,143,328"/>
+<area shape="poly" title=" " alt="" coords="137,452,134,445,136,435,146,429,161,427,177,429,187,438,181,438,175,434,161,432,148,434,141,438,139,444,143,453"/>
+<area shape="rect" href="task1_8c.html#ac33dbb1c3e4ca70b3474ae9f5a1f4001" title="Task 1 Interface: Convert infix propositional logic to prefix." alt="" coords="272,453,374,480"/>
+<area shape="poly" title=" " alt="" coords="186,464,259,466,254,468,186,469"/>
+<area shape="poly" title=" " alt="" coords="185,453,266,415,280,411,275,414,268,420,187,458"/>
+<area shape="poly" title=" " alt="" coords="187,475,281,520,276,522,185,480"/>
+<area shape="poly" title=" " alt="" coords="295,452,290,445,294,435,305,429,323,427,343,429,355,438,349,438,341,434,323,432,306,434,298,439,295,444,300,454"/>
+<area shape="rect" href="task1_8c.html#a377bff0aefb6365ddda7a8d689e28c7c" title="Convert an infix formula into prefix notation using an operator stack." alt="" coords="427,453,569,480"/>
+<area shape="poly" title=" " alt="" coords="374,464,414,466,409,467,375,469"/>
+<area shape="poly" title=" " alt="" coords="468,452,463,445,466,435,478,429,498,427,519,429,532,438,526,438,517,434,498,432,480,434,470,439,468,444,473,454"/>
+<area shape="rect" href="task1_8c.html#aa014db7b051e4fce353db9ad9f0ef846" title="Return operator precedence for connectives." alt="" coords="617,379,775,405"/>
+<area shape="poly" title=" " alt="" coords="530,450,616,415,632,412,638,410,618,420,531,455"/>
+<area shape="rect" href="task1_8c.html#a0295642b55077739b6da13fa67407506" title="Check whether a character is a supported logical connective." alt="" coords="823,479,924,505"/>
+<area shape="poly" title=" " alt="" coords="552,478,617,489,717,495,810,496,805,496,717,500,616,495,552,483"/>
+<area shape="rect" href="task1_8c.html#af06a82a72805e2d80932cd3db938fcfd" title="Tokenize a propositional logic formula into discrete tokens." alt="" coords="636,453,756,480"/>
+<area shape="poly" title=" " alt="" coords="569,464,623,466,618,467,569,469"/>
+<area shape="poly" title=" " alt="" coords="665,377,660,370,664,360,676,354,696,352,717,355,730,364,725,363,716,360,696,357,677,359,668,364,665,369,670,379"/>
+<area shape="poly" title=" " alt="" coords="843,477,838,470,841,460,854,454,874,452,895,455,908,464,902,463,893,460,874,457,855,459,845,464,843,469,848,479"/>
+<area shape="poly" title=" " alt="" coords="757,473,810,483,805,483,756,478"/>
+<area shape="poly" title=" " alt="" coords="665,452,660,445,664,435,676,429,696,427,717,429,730,439,725,438,716,434,696,432,677,434,668,439,665,444,670,454"/>
+<area shape="poly" title=" " alt="" coords="295,378,290,370,294,360,305,354,323,352,343,355,355,363,349,363,341,360,323,357,306,359,298,364,295,369,300,379"/>
+<area shape="poly" title=" " alt="" coords="295,526,290,519,294,510,305,504,323,501,343,504,354,513,349,512,341,509,323,507,306,509,298,513,295,519,300,529"/>
+<area shape="poly" title=" " alt="" coords="137,253,134,245,136,235,146,229,161,227,177,229,187,237,181,239,175,234,161,232,148,234,141,238,139,244,143,253"/>
+<area shape="rect" href="task5_8c.html#a88c057ff68df132821a8751a6d04632b" title="Evaluate the formula bottom&#45;up (post&#45;order)." alt="" coords="288,253,358,280"/>
+<area shape="poly" title=" " alt="" coords="218,264,275,265,270,268,219,269"/>
+<area shape="poly" title=" " alt="" coords="350,250,426,215,452,207,447,210,428,220,353,255"/>
+<area shape="poly" title=" " alt="" coords="295,253,290,245,294,235,305,229,323,227,343,229,355,238,349,238,341,234,323,232,306,234,298,239,295,244,300,253"/>
+<area shape="rect" href="task5_8c.html#a17fee48d2fe865040c68e8a2112ea085" title="Find the index of an atom in the atom table." alt="" coords="454,253,542,280"/>
+<area shape="poly" title=" " alt="" coords="358,264,441,266,436,268,360,269"/>
+<area shape="rect" href="task3_8c.html#a97680bc099c1100092e6088e7a2f2698" title="Test whether a node is a negation (exactly one child)." alt="" coords="454,328,542,355"/>
+<area shape="poly" title=" " alt="" coords="357,278,454,321,448,322,356,283"/>
+<area shape="poly" title=" " alt="" coords="468,252,463,245,466,235,478,229,498,227,519,229,532,238,526,238,517,234,498,232,480,234,470,239,468,244,473,253"/>
+<area shape="poly" title=" " alt="" coords="468,327,463,319,466,310,478,304,498,301,519,304,532,313,526,313,517,309,498,307,480,309,470,313,468,319,473,328"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -546,6 +739,17 @@ Variables</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>Pointer to the newly created node. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="task5_8c_source.html#l00064">64</a> of file <a class="el" href="task5_8c_source.html">task5.c</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="task5_8c_a189aec0504a63eaa6b314ddaac5b621e_cgraph.png" border="0" usemap="#atask5_8c_a189aec0504a63eaa6b314ddaac5b621e_cgraph" loading="lazy" alt=""/></div>
+<map name="atask5_8c_a189aec0504a63eaa6b314ddaac5b621e_cgraph" id="atask5_8c_a189aec0504a63eaa6b314ddaac5b621e_cgraph">
+<area shape="rect" title="Allocate and initialise a new parse tree node." alt="" coords="5,29,86,56"/>
+<area shape="rect" href="task1_8c.html#a189aec0504a63eaa6b314ddaac5b621e" title="Allocate and initialise a new parse tree node." alt="" coords="134,29,214,56"/>
+<area shape="poly" title=" " alt="" coords="86,40,121,42,115,43,86,45"/>
+<area shape="poly" title=" " alt="" coords="151,28,147,21,150,11,159,5,174,3,190,5,199,15,194,14,188,10,174,8,161,10,154,14,152,20,156,30"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -570,6 +774,25 @@ Variables</h2></td></tr>
 </div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>Root of the parse tree built for the formula that was read. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="task5_8c_source.html#l00099">99</a> of file <a class="el" href="task5_8c_source.html">task5.c</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="task5_8c_aacef900b7c5e4a6b0717e3d0e47170a7_cgraph.png" border="0" usemap="#atask5_8c_aacef900b7c5e4a6b0717e3d0e47170a7_cgraph" loading="lazy" alt=""/></div>
+<map name="atask5_8c_aacef900b7c5e4a6b0717e3d0e47170a7_cgraph" id="atask5_8c_aacef900b7c5e4a6b0717e3d0e47170a7_cgraph">
+<area shape="rect" title="Recursively parse a fully parenthesized infix formula." alt="" coords="5,91,109,117"/>
+<area shape="rect" href="task1_8c.html#a189aec0504a63eaa6b314ddaac5b621e" title="Allocate and initialise a new parse tree node." alt="" coords="315,29,395,56"/>
+<area shape="poly" title=" " alt="" coords="78,88,114,68,156,52,230,40,302,39,297,41,231,45,157,57,116,73,81,92"/>
+<area shape="rect" href="task1_8c.html#aacef900b7c5e4a6b0717e3d0e47170a7" title="Recursively parse a fully parenthesized infix formula into an AST." alt="" coords="157,91,260,117"/>
+<area shape="poly" title=" " alt="" coords="109,101,144,103,139,105,109,107"/>
+<area shape="rect" href="task1_8c.html#add47a0b713814c04f19b0c61f48bbd99" title="Advance the global input pointer past any whitespace." alt="" coords="308,116,402,143"/>
+<area shape="poly" title=" " alt="" coords="103,115,157,127,227,131,295,133,290,133,227,137,156,132,102,121"/>
+<area shape="poly" title=" " alt="" coords="329,28,325,21,328,11,338,5,355,3,373,5,384,14,378,14,371,10,355,8,340,10,332,14,330,20,334,30"/>
+<area shape="poly" title=" " alt="" coords="241,88,305,63,310,62,243,93"/>
+<area shape="poly" title=" " alt="" coords="183,89,178,82,181,72,192,66,208,64,226,67,237,76,232,75,224,72,208,69,193,71,185,76,184,82,187,91"/>
+<area shape="poly" title=" " alt="" coords="261,110,296,119,290,119,260,116"/>
+<area shape="poly" title=" " alt="" coords="329,114,325,107,328,98,338,92,355,89,373,92,384,101,379,100,371,97,355,95,340,97,332,101,330,107,334,117"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -609,6 +832,121 @@ Variables</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="task5_8c_source.html#l00252">252</a> of file <a class="el" href="task5_8c_source.html">task5.c</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="task5_8c_a4f72d4c1868137d4731b4ce6ac126c43_cgraph.png" border="0" usemap="#atask5_8c_a4f72d4c1868137d4731b4ce6ac126c43_cgraph" loading="lazy" alt=""/></div>
+<map name="atask5_8c_a4f72d4c1868137d4731b4ce6ac126c43_cgraph" id="atask5_8c_a4f72d4c1868137d4731b4ce6ac126c43_cgraph">
+<area shape="rect" title="Print the complete truth table of a formula." alt="" coords="5,104,120,131"/>
+<area shape="poly" title=" " alt="" coords="38,104,34,95,37,86,46,80,63,77,80,80,90,88,85,89,78,85,62,83,48,85,41,89,39,95,43,103"/>
+<area shape="rect" href="task5_8c.html#a88c057ff68df132821a8751a6d04632b" title="Evaluate the formula bottom&#45;up (post&#45;order)." alt="" coords="168,104,238,131"/>
+<area shape="poly" title=" " alt="" coords="120,115,155,116,150,118,121,120"/>
+<area shape="poly" title=" " alt="" coords="180,103,176,95,179,86,188,80,203,77,219,80,228,89,223,89,216,85,203,83,190,85,183,89,182,95,185,104"/>
+<area shape="rect" href="task5_8c.html#a17fee48d2fe865040c68e8a2112ea085" title="Find the index of an atom in the atom table." alt="" coords="286,29,374,56"/>
+<area shape="poly" title=" " alt="" coords="226,101,285,66,290,65,295,63,287,70,228,106"/>
+<area shape="rect" href="task3_8c.html#aa03a3dc8c631a940f560eb87a419bae9" title="Test whether a node is an atom (a leaf)." alt="" coords="296,104,364,131"/>
+<area shape="poly" title=" " alt="" coords="238,115,284,117,279,118,239,120"/>
+<area shape="rect" href="task3_8c.html#a97680bc099c1100092e6088e7a2f2698" title="Test whether a node is a negation (exactly one child)." alt="" coords="286,179,374,205"/>
+<area shape="poly" title=" " alt="" coords="228,128,295,170,290,170,226,134"/>
+<area shape="poly" title=" " alt="" coords="307,28,304,21,306,11,315,5,330,3,346,5,355,14,350,14,344,10,330,8,317,10,311,14,309,20,312,30"/>
+<area shape="poly" title=" " alt="" coords="307,103,304,95,306,86,315,80,330,77,346,80,355,89,350,88,344,85,330,83,317,85,311,89,309,95,312,105"/>
+<area shape="poly" title=" " alt="" coords="308,177,304,170,306,161,315,154,330,152,346,155,355,164,350,163,344,160,330,157,317,159,311,164,309,170,312,180"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a705cdca379dc35ea45fc832ad138bf2f" name="a705cdca379dc35ea45fc832ad138bf2f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a705cdca379dc35ea45fc832ad138bf2f">&#9670;&#160;</a></span>read_input_cnf()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int read_input_cnf </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>filename</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *</td>          <td class="paramname"><span class="paramname"><em>buffer</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>max_len</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Input Method 2: Read DIMACS CNF file and convert to fully parenthesized infix notation. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filename</td><td>File path to .cnf file. </td></tr>
+    <tr><td class="paramname">buffer</td><td>Output buffer receiving the infix formula. </td></tr>
+    <tr><td class="paramname">max_len</td><td>Capacity of output buffer. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 on success, -1 on failure. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="task5_8c_source.html#l00308">308</a> of file <a class="el" href="task5_8c_source.html">task5.c</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="task5_8c_a705cdca379dc35ea45fc832ad138bf2f_cgraph.png" border="0" usemap="#atask5_8c_a705cdca379dc35ea45fc832ad138bf2f_cgraph" loading="lazy" alt=""/></div>
+<map name="atask5_8c_a705cdca379dc35ea45fc832ad138bf2f_cgraph" id="atask5_8c_a705cdca379dc35ea45fc832ad138bf2f_cgraph">
+<area shape="rect" title="Input Method 2: Read DIMACS CNF file and convert to fully parenthesized infix notation." alt="" coords="5,29,112,56"/>
+<area shape="rect" href="task1_8c.html#a705cdca379dc35ea45fc832ad138bf2f" title="Input Method 2: Read a DIMACS CNF file and convert it into fully parenthesized infix notation." alt="" coords="160,29,266,56"/>
+<area shape="poly" title=" " alt="" coords="112,40,147,42,142,43,112,45"/>
+<area shape="poly" title=" " alt="" coords="186,28,181,21,185,11,195,5,213,3,232,5,243,15,237,14,230,10,213,8,197,10,189,15,187,20,191,30"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ac48ae1c62f66aa965c996f39aba608c9" name="ac48ae1c62f66aa965c996f39aba608c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac48ae1c62f66aa965c996f39aba608c9">&#9670;&#160;</a></span>read_input_infix()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int read_input_infix </td>
+          <td>(</td>
+          <td class="paramtype">char *</td>          <td class="paramname"><span class="paramname"><em>buffer</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>max_len</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Input Method 1: Read a propositional logic formula in infix notation from stdin. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">buffer</td><td>Output buffer. </td></tr>
+    <tr><td class="paramname">max_len</td><td>Maximum length of buffer. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 on success, -1 on EOF or error. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="task5_8c_source.html#l00294">294</a> of file <a class="el" href="task5_8c_source.html">task5.c</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="task5_8c_ac48ae1c62f66aa965c996f39aba608c9_cgraph.png" border="0" usemap="#atask5_8c_ac48ae1c62f66aa965c996f39aba608c9_cgraph" loading="lazy" alt=""/></div>
+<map name="atask5_8c_ac48ae1c62f66aa965c996f39aba608c9_cgraph" id="atask5_8c_ac48ae1c62f66aa965c996f39aba608c9_cgraph">
+<area shape="rect" title="Input Method 1: Read a propositional logic formula in infix notation from stdin." alt="" coords="5,29,118,56"/>
+<area shape="rect" href="task1_8c.html#ac48ae1c62f66aa965c996f39aba608c9" title="Input Method 1: Read a propositional logic formula in infix notation from stdin." alt="" coords="166,29,278,56"/>
+<area shape="poly" title=" " alt="" coords="118,40,153,42,147,43,118,45"/>
+<area shape="poly" title=" " alt="" coords="194,28,189,21,193,11,204,5,222,3,241,5,253,15,248,14,239,10,222,8,205,10,197,15,194,20,199,30"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -638,6 +976,17 @@ Variables</h2></td></tr>
 <p>Advance the global input pointer past any whitespace. </p>
 
 <p class="definition">Definition at line <a class="el" href="task5_8c_source.html#l00050">50</a> of file <a class="el" href="task5_8c_source.html">task5.c</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="task5_8c_add47a0b713814c04f19b0c61f48bbd99_cgraph.png" border="0" usemap="#atask5_8c_add47a0b713814c04f19b0c61f48bbd99_cgraph" loading="lazy" alt=""/></div>
+<map name="atask5_8c_add47a0b713814c04f19b0c61f48bbd99_cgraph" id="atask5_8c_add47a0b713814c04f19b0c61f48bbd99_cgraph">
+<area shape="rect" title="Advance the global input pointer past any whitespace." alt="" coords="5,29,100,56"/>
+<area shape="rect" href="task1_8c.html#add47a0b713814c04f19b0c61f48bbd99" title="Advance the global input pointer past any whitespace." alt="" coords="148,29,242,56"/>
+<area shape="poly" title=" " alt="" coords="100,40,135,42,130,43,100,45"/>
+<area shape="poly" title=" " alt="" coords="170,28,166,21,169,11,179,5,195,3,212,5,223,15,217,14,210,10,195,8,180,10,173,14,171,20,175,30"/>
+</map>
+</div>
 
 </div>
 </div>

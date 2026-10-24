@@ -113,12 +113,28 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('task1_8c.html'
 </div><!--header-->
 <div class="contents">
 
-<p>Task 1 - Convert a fully parenthesized infix propositional-logic formula into a prefix formula.  
+<p>Task 1 - Convert a fully parenthesized infix propositional-logic formula into a prefix formula using an operator stack.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
 <code>#include &lt;stdlib.h&gt;</code><br />
 <code>#include &lt;ctype.h&gt;</code><br />
 <code>#include &lt;string.h&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Include dependency graph for task1.c:</div>
+<div class="dyncontent">
+<div class="center"><img src="task1_8c__incl.png" border="0" usemap="#atask1_8c" loading="lazy" alt=""/></div>
+<map name="atask1_8c" id="atask1_8c">
+<area shape="rect" title="Task 1 &#45; Convert a fully parenthesized infix propositional&#45;logic formula into a prefix formula using ..." alt="" coords="133,5,197,32"/>
+<area shape="rect" title=" " alt="" coords="5,80,66,107"/>
+<area shape="poly" title=" " alt="" coords="144,35,73,74,70,70,141,30"/>
+<area shape="rect" title=" " alt="" coords="89,80,152,107"/>
+<area shape="poly" title=" " alt="" coords="159,31,138,69,134,65,155,34"/>
+<area shape="rect" title=" " alt="" coords="177,80,241,107"/>
+<area shape="poly" title=" " alt="" coords="174,30,196,67,191,66,171,35"/>
+<area shape="rect" title=" " alt="" coords="265,80,329,107"/>
+<area shape="poly" title=" " alt="" coords="189,30,263,72,258,73,187,35"/>
+</map>
+</div>
 </div>
 <p><a href="task1_8c_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -126,11 +142,15 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('task1_8c.html'
 Data Structures</h2></td></tr>
 <tr class="memitem:Node" id="r_Node"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="struct_node.html">Node</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A node of the propositional-logic parse tree.  <a href="struct_node.html#details">More...</a><br /></td></tr>
+<tr class="memitem:Token" id="r_Token"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="struct_token.html">Token</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="struct_token.html" title="Token container for propositional logic formulas.">Token</a> container for propositional logic formulas.  <a href="struct_token.html#details">More...</a><br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-define-members" class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:aabf4f709c8199e41cf279c77112345fe" id="r_aabf4f709c8199e41cf279c77112345fe"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#aabf4f709c8199e41cf279c77112345fe">MAX_LEN</a>&#160;&#160;&#160;1024</td></tr>
+<tr class="memitem:aabf4f709c8199e41cf279c77112345fe" id="r_aabf4f709c8199e41cf279c77112345fe"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#aabf4f709c8199e41cf279c77112345fe">MAX_LEN</a>&#160;&#160;&#160;65536</td></tr>
 <tr class="memdesc:aabf4f709c8199e41cf279c77112345fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum length of the input formula buffer.  <br /></td></tr>
+<tr class="memitem:a09886d6ba96e67553bf3c49ed8ade975" id="r_a09886d6ba96e67553bf3c49ed8ade975"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a09886d6ba96e67553bf3c49ed8ade975">MAX_TOKENS</a>&#160;&#160;&#160;16384</td></tr>
+<tr class="memdesc:a09886d6ba96e67553bf3c49ed8ade975"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum number of tokens in a formula for stack processing.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-typedef-members" class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
@@ -144,17 +164,29 @@ Functions</h2></td></tr>
 <tr class="memitem:a189aec0504a63eaa6b314ddaac5b621e" id="r_a189aec0504a63eaa6b314ddaac5b621e"><td class="memItemLeft">static <a class="el" href="struct_node.html">Node</a> *&#160;</td><td class="memItemRight"><a class="el" href="#a189aec0504a63eaa6b314ddaac5b621e">new_node</a> (const char *label, <a class="el" href="struct_node.html">Node</a> *l, <a class="el" href="struct_node.html">Node</a> *r)</td></tr>
 <tr class="memdesc:a189aec0504a63eaa6b314ddaac5b621e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocate and initialise a new parse tree node.  <br /></td></tr>
 <tr class="memitem:aacef900b7c5e4a6b0717e3d0e47170a7" id="r_aacef900b7c5e4a6b0717e3d0e47170a7"><td class="memItemLeft"><a class="el" href="struct_node.html">Node</a> *&#160;</td><td class="memItemRight"><a class="el" href="#aacef900b7c5e4a6b0717e3d0e47170a7">parse_formula</a> (void)</td></tr>
-<tr class="memdesc:aacef900b7c5e4a6b0717e3d0e47170a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recursively parse a fully parenthesized infix formula.  <br /></td></tr>
+<tr class="memdesc:aacef900b7c5e4a6b0717e3d0e47170a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recursively parse a fully parenthesized infix formula into an AST.  <br /></td></tr>
 <tr class="memitem:aafe00a7e3db94707236dd0f2dd7bf8a5" id="r_aafe00a7e3db94707236dd0f2dd7bf8a5"><td class="memItemLeft"><a class="el" href="struct_node.html">Node</a> *&#160;</td><td class="memItemRight"><a class="el" href="#aafe00a7e3db94707236dd0f2dd7bf8a5">build_parse_tree</a> (const char *infix)</td></tr>
 <tr class="memdesc:aafe00a7e3db94707236dd0f2dd7bf8a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build the parse tree of an infix formula.  <br /></td></tr>
 <tr class="memitem:a1e2deacd230a590bb03fa85719ebb620" id="r_a1e2deacd230a590bb03fa85719ebb620"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a1e2deacd230a590bb03fa85719ebb620">tree_to_prefix</a> (const <a class="el" href="struct_node.html">Node</a> *n, char *out)</td></tr>
 <tr class="memdesc:a1e2deacd230a590bb03fa85719ebb620"><td class="mdescLeft">&#160;</td><td class="mdescRight">Append the prefix form of a tree to a string (pre-order traversal).  <br /></td></tr>
-<tr class="memitem:ac33dbb1c3e4ca70b3474ae9f5a1f4001" id="r_ac33dbb1c3e4ca70b3474ae9f5a1f4001"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ac33dbb1c3e4ca70b3474ae9f5a1f4001">infix_to_prefix</a> (const char *infix, char *prefix_out)</td></tr>
-<tr class="memdesc:ac33dbb1c3e4ca70b3474ae9f5a1f4001"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert an infix formula into the equivalent prefix formula.  <br /></td></tr>
 <tr class="memitem:a52e5c0a68f0122d8995d9a91b7fd81f2" id="r_a52e5c0a68f0122d8995d9a91b7fd81f2"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a52e5c0a68f0122d8995d9a91b7fd81f2">free_tree</a> (<a class="el" href="struct_node.html">Node</a> *n)</td></tr>
 <tr class="memdesc:a52e5c0a68f0122d8995d9a91b7fd81f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Free a parse tree and all of its nodes (post-order).  <br /></td></tr>
-<tr class="memitem:a840291bc02cba5474a4cb46a9b9566fe" id="r_a840291bc02cba5474a4cb46a9b9566fe"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a840291bc02cba5474a4cb46a9b9566fe">main</a> (void)</td></tr>
-<tr class="memdesc:a840291bc02cba5474a4cb46a9b9566fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Program entry point: read an infix formula and print its prefix form.  <br /></td></tr>
+<tr class="memitem:a0295642b55077739b6da13fa67407506" id="r_a0295642b55077739b6da13fa67407506"><td class="memItemLeft">static int&#160;</td><td class="memItemRight"><a class="el" href="#a0295642b55077739b6da13fa67407506">is_connective</a> (char c)</td></tr>
+<tr class="memdesc:a0295642b55077739b6da13fa67407506"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether a character is a supported logical connective.  <br /></td></tr>
+<tr class="memitem:aa014db7b051e4fce353db9ad9f0ef846" id="r_aa014db7b051e4fce353db9ad9f0ef846"><td class="memItemLeft">static int&#160;</td><td class="memItemRight"><a class="el" href="#aa014db7b051e4fce353db9ad9f0ef846">connective_precedence</a> (char c)</td></tr>
+<tr class="memdesc:aa014db7b051e4fce353db9ad9f0ef846"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return operator precedence for connectives.  <br /></td></tr>
+<tr class="memitem:af06a82a72805e2d80932cd3db938fcfd" id="r_af06a82a72805e2d80932cd3db938fcfd"><td class="memItemLeft">static int&#160;</td><td class="memItemRight"><a class="el" href="#af06a82a72805e2d80932cd3db938fcfd">tokenize_formula</a> (const char *str, <a class="el" href="struct_token.html">Token</a> *tokens, int max_tokens)</td></tr>
+<tr class="memdesc:af06a82a72805e2d80932cd3db938fcfd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tokenize a propositional logic formula into discrete tokens.  <br /></td></tr>
+<tr class="memitem:a377bff0aefb6365ddda7a8d689e28c7c" id="r_a377bff0aefb6365ddda7a8d689e28c7c"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a377bff0aefb6365ddda7a8d689e28c7c">infix_to_prefix_stack</a> (const char *infix, char *prefix_out)</td></tr>
+<tr class="memdesc:a377bff0aefb6365ddda7a8d689e28c7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert an infix formula into prefix notation using an operator stack.  <br /></td></tr>
+<tr class="memitem:ac33dbb1c3e4ca70b3474ae9f5a1f4001" id="r_ac33dbb1c3e4ca70b3474ae9f5a1f4001"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ac33dbb1c3e4ca70b3474ae9f5a1f4001">infix_to_prefix</a> (const char *infix, char *prefix_out)</td></tr>
+<tr class="memdesc:ac33dbb1c3e4ca70b3474ae9f5a1f4001"><td class="mdescLeft">&#160;</td><td class="mdescRight">Task 1 Interface: Convert infix propositional logic to prefix.  <br /></td></tr>
+<tr class="memitem:ac48ae1c62f66aa965c996f39aba608c9" id="r_ac48ae1c62f66aa965c996f39aba608c9"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ac48ae1c62f66aa965c996f39aba608c9">read_input_infix</a> (char *buffer, size_t max_len)</td></tr>
+<tr class="memdesc:ac48ae1c62f66aa965c996f39aba608c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Input Method 1: Read a propositional logic formula in infix notation from stdin.  <br /></td></tr>
+<tr class="memitem:a705cdca379dc35ea45fc832ad138bf2f" id="r_a705cdca379dc35ea45fc832ad138bf2f"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a705cdca379dc35ea45fc832ad138bf2f">read_input_cnf</a> (const char *filename, char *buffer, size_t max_len)</td></tr>
+<tr class="memdesc:a705cdca379dc35ea45fc832ad138bf2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Input Method 2: Read a DIMACS CNF file and convert it into fully parenthesized infix notation.  <br /></td></tr>
+<tr class="memitem:a0ddf1224851353fc92bfbff6f499fa97" id="r_a0ddf1224851353fc92bfbff6f499fa97"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a0ddf1224851353fc92bfbff6f499fa97">main</a> (int argc, char *argv[])</td></tr>
+<tr class="memdesc:a0ddf1224851353fc92bfbff6f499fa97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Program entry point for Task 1.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
@@ -162,13 +194,16 @@ Variables</h2></td></tr>
 <tr class="memdesc:a6bc6b007533335efe02bafff799ec64c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current read position in the input string while parsing.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Task 1 - Convert a fully parenthesized infix propositional-logic formula into a prefix formula. </p>
-<p>The infix formula is first parsed into a binary parse tree. A pre-order traversal (node, left subtree, right subtree) of that tree then yields the prefix expression.</p>
-<p>Connective symbols used: ~ for negation, + for OR, * for AND and </p><blockquote class="doxtable">
+<div class="textblock"><p>Task 1 - Convert a fully parenthesized infix propositional-logic formula into a prefix formula using an operator stack. </p>
+<p>Implements Task 1 of Assignment 1. Connective symbols used: ~ for negation, + for OR, * for AND and </p><blockquote class="doxtable">
 <p>for implication. </p>
 </blockquote>
-<p>Input : a well-formed, fully parenthesized infix formula, read from stdin. Output: the equivalent prefix formula, with tokens separated by spaces.</p>
-<p>Complexity: parsing, traversal and clean-up are each O(n) in the number of characters/nodes; the output string uses O(n) memory. </p>
+<p>Reference for infix-to-prefix using operator stack: <a href="http://scanftree.com/Data_Structure/infix-to-prefix">http://scanftree.com/Data_Structure/infix-to-prefix</a></p>
+<p>Input methods supported (as per course guidelines):</p><ol type="1">
+<li>Manual infix formula entered from stdin (hand testing).</li>
+<li>DIMACS CNF benchmark file (.cnf) converted into fully parenthesized infix.</li>
+</ol>
+<p>Complexity: O(n) time and O(n) auxiliary memory for operator stack conversion. </p>
 
 <p class="definition">Definition in file <a class="el" href="task1_8c_source.html">task1.c</a>.</p>
 </div><a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="groupheader">Macro Definition Documentation</h2>
@@ -179,7 +214,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define MAX_LEN&#160;&#160;&#160;1024</td>
+          <td class="memname">#define MAX_LEN&#160;&#160;&#160;65536</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -187,6 +222,24 @@ Variables</h2></td></tr>
 <p>Maximum length of the input formula buffer. </p>
 
 <p class="definition">Definition at line <a class="el" href="task1_8c_source.html#l00026">26</a> of file <a class="el" href="task1_8c_source.html">task1.c</a>.</p>
+
+</div>
+</div>
+<a id="a09886d6ba96e67553bf3c49ed8ade975" name="a09886d6ba96e67553bf3c49ed8ade975"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09886d6ba96e67553bf3c49ed8ade975">&#9670;&#160;</a></span>MAX_TOKENS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAX_TOKENS&#160;&#160;&#160;16384</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Maximum number of tokens in a formula for stack processing. </p>
+
+<p class="definition">Definition at line <a class="el" href="task1_8c_source.html#l00029">29</a> of file <a class="el" href="task1_8c_source.html">task1.c</a>.</p>
 
 </div>
 </div>
@@ -233,7 +286,76 @@ Variables</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Root of the parse tree. The caller must release it with <a class="el" href="#a52e5c0a68f0122d8995d9a91b7fd81f2" title="Free a parse tree and all of its nodes (post-order).">free_tree()</a>. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="task1_8c_source.html#l00130">130</a> of file <a class="el" href="task1_8c_source.html">task1.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="task1_8c_source.html#l00125">125</a> of file <a class="el" href="task1_8c_source.html">task1.c</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="task1_8c_aafe00a7e3db94707236dd0f2dd7bf8a5_cgraph.png" border="0" usemap="#atask1_8c_aafe00a7e3db94707236dd0f2dd7bf8a5_cgraph" loading="lazy" alt=""/></div>
+<map name="atask1_8c_aafe00a7e3db94707236dd0f2dd7bf8a5_cgraph" id="atask1_8c_aafe00a7e3db94707236dd0f2dd7bf8a5_cgraph">
+<area shape="rect" title="Build the parse tree of an infix formula." alt="" coords="5,67,122,93"/>
+<area shape="poly" title=" " alt="" coords="36,66,31,58,35,48,46,42,64,40,83,43,94,51,89,52,81,48,63,45,47,47,39,52,37,57,41,66"/>
+<area shape="rect" href="task1_8c.html#aacef900b7c5e4a6b0717e3d0e47170a7" title="Recursively parse a fully parenthesized infix formula into an AST." alt="" coords="170,67,273,93"/>
+<area shape="poly" title=" " alt="" coords="122,77,156,79,151,81,123,83"/>
+<area shape="poly" title=" " alt="" coords="195,65,191,58,194,48,205,42,221,40,239,43,250,52,245,51,237,48,221,45,206,47,198,52,197,58,201,67"/>
+<area shape="rect" href="task1_8c.html#a189aec0504a63eaa6b314ddaac5b621e" title="Allocate and initialise a new parse tree node." alt="" coords="328,29,408,56"/>
+<area shape="poly" title=" " alt="" coords="273,64,310,57,316,56,274,69"/>
+<area shape="rect" href="task1_8c.html#add47a0b713814c04f19b0c61f48bbd99" title="Advance the global input pointer past any whitespace." alt="" coords="321,104,415,131"/>
+<area shape="poly" title=" " alt="" coords="274,91,309,102,304,102,273,96"/>
+<area shape="poly" title=" " alt="" coords="342,28,338,21,341,11,351,5,368,3,386,5,397,14,391,14,384,10,368,8,353,10,345,14,343,20,347,30"/>
+<area shape="poly" title=" " alt="" coords="342,102,338,95,341,86,351,80,368,77,386,80,397,89,392,88,384,85,368,83,353,85,345,89,343,95,347,105"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aa014db7b051e4fce353db9ad9f0ef846" name="aa014db7b051e4fce353db9ad9f0ef846"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa014db7b051e4fce353db9ad9f0ef846">&#9670;&#160;</a></span>connective_precedence()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int connective_precedence </td>
+          <td>(</td>
+          <td class="paramtype">char</td>          <td class="paramname"><span class="paramname"><em>c</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return operator precedence for connectives. </p>
+<p>Precedence hierarchy:</p><ul>
+<li>'~' (unary negation) : 4 (highest)</li>
+<li>'*' (binary AND) : 3</li>
+<li>'+' (binary OR) : 2</li>
+<li>'&gt;' (implication) : 1 (lowest)</li>
+</ul>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td>Operator symbol. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Integer precedence value. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="task1_8c_source.html#l00190">190</a> of file <a class="el" href="task1_8c_source.html">task1.c</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="task1_8c_aa014db7b051e4fce353db9ad9f0ef846_cgraph.png" border="0" usemap="#atask1_8c_aa014db7b051e4fce353db9ad9f0ef846_cgraph" loading="lazy" alt=""/></div>
+<map name="atask1_8c_aa014db7b051e4fce353db9ad9f0ef846_cgraph" id="atask1_8c_aa014db7b051e4fce353db9ad9f0ef846_cgraph">
+<area shape="rect" title="Return operator precedence for connectives." alt="" coords="5,29,164,56"/>
+<area shape="poly" title=" " alt="" coords="57,28,52,21,56,11,67,5,85,3,104,5,115,14,110,14,102,10,84,8,68,10,60,15,58,20,62,29"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -260,7 +382,16 @@ Variables</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="task1_8c_source.html#l00182">182</a> of file <a class="el" href="task1_8c_source.html">task1.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="task1_8c_source.html#l00149">149</a> of file <a class="el" href="task1_8c_source.html">task1.c</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="task1_8c_a52e5c0a68f0122d8995d9a91b7fd81f2_cgraph.png" border="0" usemap="#atask1_8c_a52e5c0a68f0122d8995d9a91b7fd81f2_cgraph" loading="lazy" alt=""/></div>
+<map name="atask1_8c_a52e5c0a68f0122d8995d9a91b7fd81f2_cgraph" id="atask1_8c_a52e5c0a68f0122d8995d9a91b7fd81f2_cgraph">
+<area shape="rect" title="Free a parse tree and all of its nodes (post&#45;order)." alt="" coords="5,29,78,56"/>
+<area shape="poly" title=" " alt="" coords="27,28,27,12,32,5,42,3,51,5,57,14,51,14,48,10,41,8,35,10,32,14,33,29"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -283,22 +414,148 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Convert an infix formula into the equivalent prefix formula. </p>
-<p>Builds the parse tree, writes its pre-order traversal to <code class="param">prefix_out</code> and removes the trailing space.</p>
+<p>Task 1 Interface: Convert infix propositional logic to prefix. </p>
+<p>Uses the operator-stack method (ScanfTree reference) for primary conversion.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">infix</td><td>Null-terminated, fully parenthesized infix formula. </td></tr>
-    <tr><td class="paramname">prefix_out</td><td>Output buffer receiving the prefix formula (tokens separated by single spaces); it must be large enough. </td></tr>
+    <tr><td class="paramname">prefix_out</td><td>Output buffer receiving space-separated prefix tokens. </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="task1_8c_source.html#l00165">165</a> of file <a class="el" href="task1_8c_source.html">task1.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="task1_8c_source.html#l00325">325</a> of file <a class="el" href="task1_8c_source.html">task1.c</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="task1_8c_ac33dbb1c3e4ca70b3474ae9f5a1f4001_cgraph.png" border="0" usemap="#atask1_8c_ac33dbb1c3e4ca70b3474ae9f5a1f4001_cgraph" loading="lazy" alt=""/></div>
+<map name="atask1_8c_ac33dbb1c3e4ca70b3474ae9f5a1f4001_cgraph" id="atask1_8c_ac33dbb1c3e4ca70b3474ae9f5a1f4001_cgraph">
+<area shape="rect" title="Task 1 Interface: Convert infix propositional logic to prefix." alt="" coords="5,80,108,107"/>
+<area shape="poly" title=" " alt="" coords="27,80,22,71,26,62,37,56,57,53,77,56,89,64,84,66,75,61,56,59,39,61,30,65,27,71,32,79"/>
+<area shape="rect" href="task1_8c.html#a377bff0aefb6365ddda7a8d689e28c7c" title="Convert an infix formula into prefix notation using an operator stack." alt="" coords="156,80,297,107"/>
+<area shape="poly" title=" " alt="" coords="107,91,142,92,137,94,109,96"/>
+<area shape="poly" title=" " alt="" coords="197,79,192,71,195,62,207,56,226,53,247,56,259,65,254,65,245,61,226,59,209,61,199,65,197,71,202,80"/>
+<area shape="rect" href="task1_8c.html#aa014db7b051e4fce353db9ad9f0ef846" title="Return operator precedence for connectives." alt="" coords="345,29,503,56"/>
+<area shape="poly" title=" " alt="" coords="281,77,357,60,352,61,282,82"/>
+<area shape="rect" href="task1_8c.html#a0295642b55077739b6da13fa67407506" title="Check whether a character is a supported logical connective." alt="" coords="551,117,653,144"/>
+<area shape="poly" title=" " alt="" coords="297,96,504,116,538,122,533,122,503,121,297,102"/>
+<area shape="rect" href="task1_8c.html#af06a82a72805e2d80932cd3db938fcfd" title="Tokenize a propositional logic formula into discrete tokens." alt="" coords="364,155,484,181"/>
+<area shape="poly" title=" " alt="" coords="264,105,376,149,370,149,263,110"/>
+<area shape="poly" title=" " alt="" coords="393,28,388,21,392,11,404,5,424,3,446,5,458,14,453,14,444,10,424,8,406,10,396,15,394,20,398,30"/>
+<area shape="poly" title=" " alt="" coords="571,116,566,109,570,99,582,93,602,91,623,93,636,103,631,102,622,98,602,96,584,98,574,103,571,108,576,118"/>
+<area shape="poly" title=" " alt="" coords="484,153,533,145,538,144,485,158"/>
+<area shape="poly" title=" " alt="" coords="394,153,388,146,392,136,404,130,424,128,446,131,458,140,453,139,444,136,424,133,406,135,396,140,394,145,398,155"/>
+</map>
+</div>
 
 </div>
 </div>
-<a id="a840291bc02cba5474a4cb46a9b9566fe" name="a840291bc02cba5474a4cb46a9b9566fe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a840291bc02cba5474a4cb46a9b9566fe">&#9670;&#160;</a></span>main()</h2>
+<a id="a377bff0aefb6365ddda7a8d689e28c7c" name="a377bff0aefb6365ddda7a8d689e28c7c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a377bff0aefb6365ddda7a8d689e28c7c">&#9670;&#160;</a></span>infix_to_prefix_stack()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void infix_to_prefix_stack </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>infix</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *</td>          <td class="paramname"><span class="paramname"><em>prefix_out</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Convert an infix formula into prefix notation using an operator stack. </p>
+<p>Follows the standard ScanfTree infix-to-prefix algorithm:</p><ol type="1">
+<li>Tokenize formula and scan tokens from right to left.</li>
+<li>Operands (atoms) are appended directly to the output.</li>
+<li>Closing parentheses ')' are pushed to the operator stack.</li>
+<li>Opening parentheses '(' trigger popping operators until matching ')' is found.</li>
+<li>Operators are pushed according to precedence.</li>
+<li>Reversing the collected output tokens produces the final prefix expression.</li>
+</ol>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">infix</td><td>Null-terminated, fully parenthesized infix formula. </td></tr>
+    <tr><td class="paramname">prefix_out</td><td>Output buffer receiving space-separated prefix tokens. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="task1_8c_source.html#l00246">246</a> of file <a class="el" href="task1_8c_source.html">task1.c</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="task1_8c_a377bff0aefb6365ddda7a8d689e28c7c_cgraph.png" border="0" usemap="#atask1_8c_a377bff0aefb6365ddda7a8d689e28c7c_cgraph" loading="lazy" alt=""/></div>
+<map name="atask1_8c_a377bff0aefb6365ddda7a8d689e28c7c_cgraph" id="atask1_8c_a377bff0aefb6365ddda7a8d689e28c7c_cgraph">
+<area shape="rect" title="Convert an infix formula into prefix notation using an operator stack." alt="" coords="5,80,147,107"/>
+<area shape="poly" title=" " alt="" coords="42,80,36,71,40,62,54,55,76,53,100,56,114,64,108,65,98,61,76,59,55,61,44,65,42,71,47,79"/>
+<area shape="rect" href="task1_8c.html#aa014db7b051e4fce353db9ad9f0ef846" title="Return operator precedence for connectives." alt="" coords="195,29,353,56"/>
+<area shape="poly" title=" " alt="" coords="130,77,206,59,202,62,132,82"/>
+<area shape="rect" href="task1_8c.html#a0295642b55077739b6da13fa67407506" title="Check whether a character is a supported logical connective." alt="" coords="401,117,502,144"/>
+<area shape="poly" title=" " alt="" coords="147,96,353,116,388,122,383,122,353,121,147,102"/>
+<area shape="rect" href="task1_8c.html#af06a82a72805e2d80932cd3db938fcfd" title="Tokenize a propositional logic formula into discrete tokens." alt="" coords="214,155,334,181"/>
+<area shape="poly" title=" " alt="" coords="114,105,225,147,220,150,113,110"/>
+<area shape="poly" title=" " alt="" coords="243,28,238,21,242,11,254,5,274,3,295,5,308,14,303,14,294,10,274,8,255,10,246,15,243,20,248,29"/>
+<area shape="poly" title=" " alt="" coords="421,116,416,109,419,99,432,93,452,91,473,93,486,103,480,102,471,98,452,96,433,98,423,103,421,108,426,118"/>
+<area shape="poly" title=" " alt="" coords="334,153,383,145,388,144,335,158"/>
+<area shape="poly" title=" " alt="" coords="243,153,238,146,242,136,254,130,274,128,295,131,308,140,303,139,294,136,274,133,255,135,246,140,243,145,248,155"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a0295642b55077739b6da13fa67407506" name="a0295642b55077739b6da13fa67407506"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0295642b55077739b6da13fa67407506">&#9670;&#160;</a></span>is_connective()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int is_connective </td>
+          <td>(</td>
+          <td class="paramtype">char</td>          <td class="paramname"><span class="paramname"><em>c</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check whether a character is a supported logical connective. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td>Character to inspect. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>1 if connective (~, *, +, &gt;), 0 otherwise. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="task1_8c_source.html#l00174">174</a> of file <a class="el" href="task1_8c_source.html">task1.c</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="task1_8c_a0295642b55077739b6da13fa67407506_cgraph.png" border="0" usemap="#atask1_8c_a0295642b55077739b6da13fa67407506_cgraph" loading="lazy" alt=""/></div>
+<map name="atask1_8c_a0295642b55077739b6da13fa67407506_cgraph" id="atask1_8c_a0295642b55077739b6da13fa67407506_cgraph">
+<area shape="rect" title="Check whether a character is a supported logical connective." alt="" coords="5,29,107,56"/>
+<area shape="poly" title=" " alt="" coords="37,29,34,20,36,11,44,5,56,3,69,5,76,14,71,14,66,10,56,8,46,10,41,14,40,20,43,29"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a0ddf1224851353fc92bfbff6f499fa97" name="a0ddf1224851353fc92bfbff6f499fa97"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ddf1224851353fc92bfbff6f499fa97">&#9670;&#160;</a></span>main()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -306,16 +563,59 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">int main </td>
           <td>(</td>
-          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>argc</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">char *</td>          <td class="paramname"><span class="paramname"><em>argv</em></span>[]&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Program entry point: read an infix formula and print its prefix form. </p>
-<dl class="section return"><dt>Returns</dt><dd>0 on success, 1 if no input could be read. </dd></dl>
+<p>Program entry point for Task 1. </p>
+<p>Supports both manual stdin input and DIMACS CNF file reading, as well as direct command-line arguments and piped input.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">argc</td><td>Argument count. </td></tr>
+    <tr><td class="paramname">argv</td><td>Argument vector (argv[1] can optionally specify a .cnf file). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 on success, non-zero on error. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="task1_8c_source.html#l00196">196</a> of file <a class="el" href="task1_8c_source.html">task1.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="task1_8c_source.html#l00459">459</a> of file <a class="el" href="task1_8c_source.html">task1.c</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="task1_8c_a0ddf1224851353fc92bfbff6f499fa97_cgraph.png" border="0" usemap="#atask1_8c_a0ddf1224851353fc92bfbff6f499fa97_cgraph" loading="lazy" alt=""/></div>
+<map name="atask1_8c_a0ddf1224851353fc92bfbff6f499fa97_cgraph" id="atask1_8c_a0ddf1224851353fc92bfbff6f499fa97_cgraph">
+<area shape="rect" title="Program entry point for Task 1." alt="" coords="5,155,55,181"/>
+<area shape="poly" title=" " alt="" coords="7,155,3,146,6,137,15,130,30,128,46,131,55,139,50,140,44,136,30,133,17,135,10,140,9,146,12,154"/>
+<area shape="rect" href="task1_8c.html#ac33dbb1c3e4ca70b3474ae9f5a1f4001" title="Task 1 Interface: Convert infix propositional logic to prefix." alt="" coords="108,80,210,107"/>
+<area shape="poly" title=" " alt="" coords="48,152,101,116,114,112,110,116,104,121,51,156"/>
+<area shape="rect" href="task1_8c.html#a705cdca379dc35ea45fc832ad138bf2f" title="Input Method 2: Read a DIMACS CNF file and convert it into fully parenthesized infix notation." alt="" coords="106,155,212,181"/>
+<area shape="poly" title=" " alt="" coords="54,165,92,166,88,170,56,171"/>
+<area shape="rect" href="task1_8c.html#ac48ae1c62f66aa965c996f39aba608c9" title="Input Method 1: Read a propositional logic formula in infix notation from stdin." alt="" coords="103,229,215,256"/>
+<area shape="poly" title=" " alt="" coords="55,179,124,220,119,223,54,184"/>
+<area shape="poly" title=" " alt="" coords="136,79,132,71,135,62,144,56,159,53,175,56,184,64,179,65,173,61,159,59,146,61,139,65,137,71,141,80"/>
+<area shape="rect" href="task1_8c.html#a377bff0aefb6365ddda7a8d689e28c7c" title="Convert an infix formula into prefix notation using an operator stack." alt="" coords="263,80,404,107"/>
+<area shape="poly" title=" " alt="" coords="210,91,250,92,245,94,211,96"/>
+<area shape="poly" title=" " alt="" coords="303,79,298,71,302,62,314,56,334,53,355,56,367,65,362,65,353,61,334,59,316,61,306,65,304,71,308,80"/>
+<area shape="rect" href="task1_8c.html#aa014db7b051e4fce353db9ad9f0ef846" title="Return operator precedence for connectives." alt="" coords="452,29,611,56"/>
+<area shape="poly" title=" " alt="" coords="388,77,464,59,459,61,390,82"/>
+<area shape="rect" href="task1_8c.html#a0295642b55077739b6da13fa67407506" title="Check whether a character is a supported logical connective." alt="" coords="659,117,760,144"/>
+<area shape="poly" title=" " alt="" coords="405,96,611,116,646,122,640,123,610,121,405,102"/>
+<area shape="rect" href="task1_8c.html#af06a82a72805e2d80932cd3db938fcfd" title="Tokenize a propositional logic formula into discrete tokens." alt="" coords="471,155,592,181"/>
+<area shape="poly" title=" " alt="" coords="372,105,483,149,478,149,371,110"/>
+<area shape="poly" title=" " alt="" coords="501,28,496,21,499,11,512,5,532,3,553,5,566,14,560,14,551,10,531,8,513,10,503,15,501,20,506,30"/>
+<area shape="poly" title=" " alt="" coords="679,116,673,109,677,99,689,93,709,91,731,93,743,102,738,102,729,98,709,96,691,98,681,103,679,108,684,118"/>
+<area shape="poly" title=" " alt="" coords="592,153,641,145,646,144,593,158"/>
+<area shape="poly" title=" " alt="" coords="501,153,496,146,499,136,512,130,532,128,553,131,566,140,560,139,551,136,531,133,513,135,503,140,501,145,506,155"/>
+<area shape="poly" title=" " alt="" coords="136,154,132,146,135,137,144,130,159,128,175,131,184,139,179,139,173,136,159,133,146,135,139,140,137,146,141,155"/>
+<area shape="poly" title=" " alt="" coords="136,228,132,221,135,211,144,205,159,203,175,205,184,215,179,214,173,210,159,208,146,210,139,214,137,220,141,230"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -363,7 +663,16 @@ Variables</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Pointer to the newly created node. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="task1_8c_source.html#l00064">64</a> of file <a class="el" href="task1_8c_source.html">task1.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="task1_8c_source.html#l00067">67</a> of file <a class="el" href="task1_8c_source.html">task1.c</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="task1_8c_a189aec0504a63eaa6b314ddaac5b621e_cgraph.png" border="0" usemap="#atask1_8c_a189aec0504a63eaa6b314ddaac5b621e_cgraph" loading="lazy" alt=""/></div>
+<map name="atask1_8c_a189aec0504a63eaa6b314ddaac5b621e_cgraph" id="atask1_8c_a189aec0504a63eaa6b314ddaac5b621e_cgraph">
+<area shape="rect" title="Allocate and initialise a new parse tree node." alt="" coords="5,29,86,56"/>
+<area shape="poly" title=" " alt="" coords="30,28,29,12,36,5,46,3,56,5,62,14,57,14,53,10,45,8,38,10,34,14,35,29"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -382,12 +691,124 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Recursively parse a fully parenthesized infix formula. </p>
-<p>Reads from the global input pointer <code>p</code>. The grammar is: </p><div class="fragment"><div class="line">formula := atom | <span class="charliteral">&#39;~&#39;</span> formula | <span class="charliteral">&#39;(&#39;</span> formula [op formula] <span class="charliteral">&#39;)&#39;</span></div>
-<div class="line">op      := <span class="charliteral">&#39;+&#39;</span> | <span class="charliteral">&#39;*&#39;</span> | <span class="charliteral">&#39;&gt;&#39;</span></div>
-</div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>Root of the parse tree built for the formula that was read. </dd></dl>
+<p>Recursively parse a fully parenthesized infix formula into an AST. </p>
+<p>Grammar (fully parenthesized): formula := atom | '~' formula | '(' formula [op formula] ')' op := '+' | '*' | '&gt;'</p>
+<dl class="section return"><dt>Returns</dt><dd>Root of the parse tree built for the formula that was read. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="task1_8c_source.html#l00091">91</a> of file <a class="el" href="task1_8c_source.html">task1.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="task1_8c_source.html#l00086">86</a> of file <a class="el" href="task1_8c_source.html">task1.c</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="task1_8c_aacef900b7c5e4a6b0717e3d0e47170a7_cgraph.png" border="0" usemap="#atask1_8c_aacef900b7c5e4a6b0717e3d0e47170a7_cgraph" loading="lazy" alt=""/></div>
+<map name="atask1_8c_aacef900b7c5e4a6b0717e3d0e47170a7_cgraph" id="atask1_8c_aacef900b7c5e4a6b0717e3d0e47170a7_cgraph">
+<area shape="rect" title="Recursively parse a fully parenthesized infix formula into an AST." alt="" coords="5,67,109,93"/>
+<area shape="poly" title=" " alt="" coords="31,66,27,58,30,48,40,42,57,40,75,43,86,51,80,52,73,48,57,45,42,47,34,52,32,58,36,66"/>
+<area shape="rect" href="task1_8c.html#a189aec0504a63eaa6b314ddaac5b621e" title="Allocate and initialise a new parse tree node." alt="" coords="164,29,244,56"/>
+<area shape="poly" title=" " alt="" coords="108,64,151,55,146,58,110,69"/>
+<area shape="rect" href="task1_8c.html#add47a0b713814c04f19b0c61f48bbd99" title="Advance the global input pointer past any whitespace." alt="" coords="157,104,251,131"/>
+<area shape="poly" title=" " alt="" coords="109,91,145,101,139,102,109,96"/>
+<area shape="poly" title=" " alt="" coords="178,28,174,21,177,11,187,5,204,3,222,5,232,14,227,14,220,10,204,8,189,10,181,14,179,20,183,30"/>
+<area shape="poly" title=" " alt="" coords="178,102,174,95,177,86,187,80,204,77,222,80,232,89,227,88,220,85,204,83,189,85,181,89,179,95,183,105"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a705cdca379dc35ea45fc832ad138bf2f" name="a705cdca379dc35ea45fc832ad138bf2f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a705cdca379dc35ea45fc832ad138bf2f">&#9670;&#160;</a></span>read_input_cnf()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int read_input_cnf </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>filename</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *</td>          <td class="paramname"><span class="paramname"><em>buffer</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>max_len</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Input Method 2: Read a DIMACS CNF file and convert it into fully parenthesized infix notation. </p>
+<p>In accordance with DIMACS CNF specifications:</p><ul>
+<li>Lines starting with 'c' are comments.</li>
+<li>The problem line starts with 'p cnf &lt;variables&gt; &lt;clauses&gt;'.</li>
+<li>Literals within a clause are combined with OR ('+').</li>
+<li>Clauses are combined with AND ('*').</li>
+<li>Negative numbers represent negated literals (~xK).</li>
+</ul>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filename</td><td>File path to the DIMACS CNF benchmark file. </td></tr>
+    <tr><td class="paramname">buffer</td><td>Output buffer to receive the fully parenthesized infix formula. </td></tr>
+    <tr><td class="paramname">max_len</td><td>Maximum capacity of the output buffer. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 on success, -1 if the file could not be read or opened. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="task1_8c_source.html#l00366">366</a> of file <a class="el" href="task1_8c_source.html">task1.c</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="task1_8c_a705cdca379dc35ea45fc832ad138bf2f_cgraph.png" border="0" usemap="#atask1_8c_a705cdca379dc35ea45fc832ad138bf2f_cgraph" loading="lazy" alt=""/></div>
+<map name="atask1_8c_a705cdca379dc35ea45fc832ad138bf2f_cgraph" id="atask1_8c_a705cdca379dc35ea45fc832ad138bf2f_cgraph">
+<area shape="rect" title="Input Method 2: Read a DIMACS CNF file and convert it into fully parenthesized infix notation." alt="" coords="5,29,112,56"/>
+<area shape="poly" title=" " alt="" coords="39,29,36,20,38,11,46,5,59,3,72,5,80,14,74,14,69,10,58,8,48,10,43,14,41,20,44,29"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ac48ae1c62f66aa965c996f39aba608c9" name="ac48ae1c62f66aa965c996f39aba608c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac48ae1c62f66aa965c996f39aba608c9">&#9670;&#160;</a></span>read_input_infix()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int read_input_infix </td>
+          <td>(</td>
+          <td class="paramtype">char *</td>          <td class="paramname"><span class="paramname"><em>buffer</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>max_len</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Input Method 1: Read a propositional logic formula in infix notation from stdin. </p>
+<p>Allows hand-testing of smaller inputs entered by the user. Trims newlines.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">buffer</td><td>Output buffer to receive the formula string. </td></tr>
+    <tr><td class="paramname">max_len</td><td>Maximum capacity of the buffer. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 on success, -1 on EOF or read failure. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="task1_8c_source.html#l00344">344</a> of file <a class="el" href="task1_8c_source.html">task1.c</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="task1_8c_ac48ae1c62f66aa965c996f39aba608c9_cgraph.png" border="0" usemap="#atask1_8c_ac48ae1c62f66aa965c996f39aba608c9_cgraph" loading="lazy" alt=""/></div>
+<map name="atask1_8c_ac48ae1c62f66aa965c996f39aba608c9_cgraph" id="atask1_8c_ac48ae1c62f66aa965c996f39aba608c9_cgraph">
+<area shape="rect" title="Input Method 1: Read a propositional logic formula in infix notation from stdin." alt="" coords="5,29,118,56"/>
+<area shape="poly" title=" " alt="" coords="41,29,38,20,40,11,48,5,62,3,75,5,84,14,78,14,73,10,61,8,50,10,45,14,43,20,46,29"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -416,7 +837,75 @@ Variables</h2></td></tr>
 
 <p>Advance the global input pointer past any whitespace. </p>
 
-<p class="definition">Definition at line <a class="el" href="task1_8c_source.html#l00050">50</a> of file <a class="el" href="task1_8c_source.html">task1.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="task1_8c_source.html#l00053">53</a> of file <a class="el" href="task1_8c_source.html">task1.c</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="task1_8c_add47a0b713814c04f19b0c61f48bbd99_cgraph.png" border="0" usemap="#atask1_8c_add47a0b713814c04f19b0c61f48bbd99_cgraph" loading="lazy" alt=""/></div>
+<map name="atask1_8c_add47a0b713814c04f19b0c61f48bbd99_cgraph" id="atask1_8c_add47a0b713814c04f19b0c61f48bbd99_cgraph">
+<area shape="rect" title="Advance the global input pointer past any whitespace." alt="" coords="5,29,100,56"/>
+<area shape="poly" title=" " alt="" coords="35,29,32,20,34,11,41,5,53,3,64,5,72,14,66,14,62,10,52,8,44,10,39,14,38,20,40,29"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="af06a82a72805e2d80932cd3db938fcfd" name="af06a82a72805e2d80932cd3db938fcfd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af06a82a72805e2d80932cd3db938fcfd">&#9670;&#160;</a></span>tokenize_formula()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int tokenize_formula </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>str</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_token.html">Token</a> *</td>          <td class="paramname"><span class="paramname"><em>tokens</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>max_tokens</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Tokenize a propositional logic formula into discrete tokens. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>Input formula string. </td></tr>
+    <tr><td class="paramname">tokens</td><td>Array of <a class="el" href="struct_token.html" title="Token container for propositional logic formulas.">Token</a> structures to populate. </td></tr>
+    <tr><td class="paramname">max_tokens</td><td>Maximum token capacity of the array. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Total number of tokens extracted. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="task1_8c_source.html#l00208">208</a> of file <a class="el" href="task1_8c_source.html">task1.c</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="task1_8c_af06a82a72805e2d80932cd3db938fcfd_cgraph.png" border="0" usemap="#atask1_8c_af06a82a72805e2d80932cd3db938fcfd_cgraph" loading="lazy" alt=""/></div>
+<map name="atask1_8c_af06a82a72805e2d80932cd3db938fcfd_cgraph" id="atask1_8c_af06a82a72805e2d80932cd3db938fcfd_cgraph">
+<area shape="rect" title="Tokenize a propositional logic formula into discrete tokens." alt="" coords="5,29,126,56"/>
+<area shape="poly" title=" " alt="" coords="38,29,33,21,36,11,48,5,66,3,85,5,96,14,91,14,83,10,65,8,49,10,41,15,38,20,43,29"/>
+<area shape="rect" href="task1_8c.html#a0295642b55077739b6da13fa67407506" title="Check whether a character is a supported logical connective." alt="" coords="174,29,275,56"/>
+<area shape="poly" title=" " alt="" coords="126,40,161,42,156,43,126,45"/>
+<area shape="poly" title=" " alt="" coords="197,28,192,21,195,11,206,5,224,3,244,5,255,15,250,14,242,10,224,8,208,10,199,15,197,20,202,30"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -440,16 +929,24 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Append the prefix form of a tree to a string (pre-order traversal). </p>
-<p>Visits the node first, then its left subtree, then its right subtree. Every label is followed by a single space.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">n</td><td>Root of the (sub)tree to traverse; may be NULL. </td></tr>
-    <tr><td class="paramname">out</td><td>Output buffer to append to; it must be large enough and null-terminated before the first call. </td></tr>
+    <tr><td class="paramname">out</td><td>Output buffer to append to; it must be null-terminated beforehand. </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="task1_8c_source.html#l00147">147</a> of file <a class="el" href="task1_8c_source.html">task1.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="task1_8c_source.html#l00136">136</a> of file <a class="el" href="task1_8c_source.html">task1.c</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="task1_8c_a1e2deacd230a590bb03fa85719ebb620_cgraph.png" border="0" usemap="#atask1_8c_a1e2deacd230a590bb03fa85719ebb620_cgraph" loading="lazy" alt=""/></div>
+<map name="atask1_8c_a1e2deacd230a590bb03fa85719ebb620_cgraph" id="atask1_8c_a1e2deacd230a590bb03fa85719ebb620_cgraph">
+<area shape="rect" title="Append the prefix form of a tree to a string (pre&#45;order traversal)." alt="" coords="5,29,106,56"/>
+<area shape="poly" title=" " alt="" coords="37,29,34,20,36,11,44,5,56,3,68,5,76,14,70,14,66,10,55,8,46,10,41,14,39,20,42,29"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -476,7 +973,7 @@ Variables</h2></td></tr>
 
 <p>Current read position in the input string while parsing. </p>
 
-<p class="definition">Definition at line <a class="el" href="task1_8c_source.html#l00043">43</a> of file <a class="el" href="task1_8c_source.html">task1.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="task1_8c_source.html#l00048">48</a> of file <a class="el" href="task1_8c_source.html">task1.c</a>.</p>
 
 </div>
 </div>

@@ -1,0 +1,7 @@
+<map id="tokenize_formula" name="tokenize_formula">
+<area shape="rect" id="Node000001" title="Tokenize a propositional logic formula into discrete tokens." alt="" coords="5,29,126,56"/>
+<area shape="poly" id="edge3_Node000001_Node000001" title=" " alt="" coords="38,29,33,21,36,11,48,5,66,3,85,5,96,14,91,14,83,10,65,8,49,10,41,15,38,20,43,29"/>
+<area shape="rect" id="Node000002" href="$task1_8c.html#a0295642b55077739b6da13fa67407506" title="Check whether a character is a supported logical connective." alt="" coords="174,29,275,56"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="126,40,161,42,156,43,126,45"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="197,28,192,21,195,11,206,5,224,3,244,5,255,15,250,14,242,10,224,8,208,10,199,15,197,20,202,30"/>
+</map>

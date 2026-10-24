@@ -1,0 +1,6 @@
+<map id="connective_precedence" name="connective_precedence">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,29,164,56"/>
+<area shape="rect" id="Node000002" href="$task1_8c.html#aa014db7b051e4fce353db9ad9f0ef846" title="Return operator precedence for connectives." alt="" coords="212,29,370,56"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="164,40,199,43,193,43,164,45"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="256,28,250,21,254,11,268,5,291,3,315,5,330,14,325,14,314,10,291,8,269,10,258,15,255,20,261,30"/>
+</map>

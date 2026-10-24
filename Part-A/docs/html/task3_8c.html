@@ -119,6 +119,22 @@ document.addEventListener('DOMContentLoaded',() => { initNavTree('task3_8c.html'
 <code>#include &lt;stdlib.h&gt;</code><br />
 <code>#include &lt;ctype.h&gt;</code><br />
 <code>#include &lt;string.h&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Include dependency graph for task3.c:</div>
+<div class="dyncontent">
+<div class="center"><img src="task3_8c__incl.png" border="0" usemap="#atask3_8c" loading="lazy" alt=""/></div>
+<map name="atask3_8c" id="atask3_8c">
+<area shape="rect" title="Task 3 &#45; Recursive and iterative in&#45;order, pre&#45;order and post&#45;order traversals of a propositional&#45;log..." alt="" coords="133,5,197,32"/>
+<area shape="rect" title=" " alt="" coords="5,80,66,107"/>
+<area shape="poly" title=" " alt="" coords="144,35,73,74,70,70,141,30"/>
+<area shape="rect" title=" " alt="" coords="89,80,152,107"/>
+<area shape="poly" title=" " alt="" coords="159,31,138,69,134,65,155,34"/>
+<area shape="rect" title=" " alt="" coords="177,80,241,107"/>
+<area shape="poly" title=" " alt="" coords="174,30,196,67,191,66,171,35"/>
+<area shape="rect" title=" " alt="" coords="265,80,329,107"/>
+<area shape="poly" title=" " alt="" coords="189,30,263,72,258,73,187,35"/>
+</map>
+</div>
 </div>
 <p><a href="task3_8c_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -133,7 +149,7 @@ Data Structures</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-define-members" class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:aabf4f709c8199e41cf279c77112345fe" id="r_aabf4f709c8199e41cf279c77112345fe"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#aabf4f709c8199e41cf279c77112345fe">MAX_LEN</a>&#160;&#160;&#160;1024</td></tr>
+<tr class="memitem:aabf4f709c8199e41cf279c77112345fe" id="r_aabf4f709c8199e41cf279c77112345fe"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#aabf4f709c8199e41cf279c77112345fe">MAX_LEN</a>&#160;&#160;&#160;65536</td></tr>
 <tr class="memdesc:aabf4f709c8199e41cf279c77112345fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maximum length of the input formula buffer.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-typedef-members" class="groupheader"><a id="typedef-members" name="typedef-members"></a>
@@ -177,8 +193,12 @@ Functions</h2></td></tr>
 <tr class="memdesc:ab46d534979adb1d964053ae8b4c199e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pre-order traversal, iterative: pop, visit, push right then left.  <br /></td></tr>
 <tr class="memitem:abb7f6f3feb1158752dd3394260f7dee2" id="r_abb7f6f3feb1158752dd3394260f7dee2"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#abb7f6f3feb1158752dd3394260f7dee2">postorder_iter</a> (const <a class="el" href="struct_node.html">Node</a> *root)</td></tr>
 <tr class="memdesc:abb7f6f3feb1158752dd3394260f7dee2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Post-order traversal, iterative (two-stack method).  <br /></td></tr>
-<tr class="memitem:a840291bc02cba5474a4cb46a9b9566fe" id="r_a840291bc02cba5474a4cb46a9b9566fe"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a840291bc02cba5474a4cb46a9b9566fe">main</a> (void)</td></tr>
-<tr class="memdesc:a840291bc02cba5474a4cb46a9b9566fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Program entry point: read an infix formula, build its parse tree and print all six traversals (recursive and iterative).  <br /></td></tr>
+<tr class="memitem:ac48ae1c62f66aa965c996f39aba608c9" id="r_ac48ae1c62f66aa965c996f39aba608c9"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#ac48ae1c62f66aa965c996f39aba608c9">read_input_infix</a> (char *buffer, size_t max_len)</td></tr>
+<tr class="memdesc:ac48ae1c62f66aa965c996f39aba608c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Input Method 1: Read a propositional logic formula in infix notation from stdin.  <br /></td></tr>
+<tr class="memitem:a705cdca379dc35ea45fc832ad138bf2f" id="r_a705cdca379dc35ea45fc832ad138bf2f"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a705cdca379dc35ea45fc832ad138bf2f">read_input_cnf</a> (const char *filename, char *buffer, size_t max_len)</td></tr>
+<tr class="memdesc:a705cdca379dc35ea45fc832ad138bf2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Input Method 2: Read DIMACS CNF file and convert to fully parenthesized infix notation.  <br /></td></tr>
+<tr class="memitem:a0ddf1224851353fc92bfbff6f499fa97" id="r_a0ddf1224851353fc92bfbff6f499fa97"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a0ddf1224851353fc92bfbff6f499fa97">main</a> (int argc, char *argv[])</td></tr>
+<tr class="memdesc:a0ddf1224851353fc92bfbff6f499fa97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Program entry point: read an infix formula (or CNF file), build its parse tree and print all six traversals (recursive and iterative).  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
@@ -188,7 +208,7 @@ Variables</h2></td></tr>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Task 3 - Recursive and iterative in-order, pre-order and post-order traversals of a propositional-logic parse tree. </p>
 <p>Input : a fully parenthesized INFIX formula (~ negation, + OR, * AND, &gt; implication) Output: in-order (infix), pre-order (prefix) and post-order (postfix) of the parse tree, each produced recursively AND iteratively.</p>
-<p>The tree is built with the same parser used in <a class="el" href="task1_8c.html" title="Task 1 - Convert a fully parenthesized infix propositional-logic formula into a prefix formula.">task1.c</a>, so the <a class="el" href="struct_node.html" title="A node of the propositional-logic parse tree.">Node</a> structure is identical to the one used in <a class="el" href="task1_8c.html" title="Task 1 - Convert a fully parenthesized infix propositional-logic formula into a prefix formula.">task1.c</a> / <a class="el" href="task2_8c.html" title="Task 2 - Convert a prefix propositional-logic formula into a rooted binary parse tree.">task2.c</a>.</p>
+<p>The tree is built with the same parser used in <a class="el" href="task1_8c.html" title="Task 1 - Convert a fully parenthesized infix propositional-logic formula into a prefix formula using ...">task1.c</a>, so the <a class="el" href="struct_node.html" title="A node of the propositional-logic parse tree.">Node</a> structure is identical to the one used in <a class="el" href="task1_8c.html" title="Task 1 - Convert a fully parenthesized infix propositional-logic formula into a prefix formula using ...">task1.c</a> / <a class="el" href="task2_8c.html" title="Task 2 - Convert a prefix propositional-logic formula into a rooted binary parse tree.">task2.c</a>.</p>
 <p>Complexity: every traversal visits each node once, so all six run in O(n) time. The recursive versions use O(h) call-stack space, where h is the tree height. The iterative versions use an explicit stack of O(h) frames, except the two-stack post-order, which needs O(n) space. </p>
 
 <p class="definition">Definition in file <a class="el" href="task3_8c_source.html">task3.c</a>.</p>
@@ -200,7 +220,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define MAX_LEN&#160;&#160;&#160;1024</td>
+          <td class="memname">#define MAX_LEN&#160;&#160;&#160;65536</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -255,6 +275,27 @@ Variables</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>Root of the parse tree. The caller must release it with <a class="el" href="#a52e5c0a68f0122d8995d9a91b7fd81f2" title="Free a parse tree and all of its nodes (post-order).">free_tree()</a>. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="task3_8c_source.html#l00134">134</a> of file <a class="el" href="task3_8c_source.html">task3.c</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="task3_8c_aafe00a7e3db94707236dd0f2dd7bf8a5_cgraph.png" border="0" usemap="#atask3_8c_aafe00a7e3db94707236dd0f2dd7bf8a5_cgraph" loading="lazy" alt=""/></div>
+<map name="atask3_8c_aafe00a7e3db94707236dd0f2dd7bf8a5_cgraph" id="atask3_8c_aafe00a7e3db94707236dd0f2dd7bf8a5_cgraph">
+<area shape="rect" title="Build the parse tree of an infix formula." alt="" coords="5,67,122,93"/>
+<area shape="rect" href="task1_8c.html#aafe00a7e3db94707236dd0f2dd7bf8a5" title="Build the parse tree of an infix formula." alt="" coords="170,41,286,68"/>
+<area shape="poly" title=" " alt="" coords="122,68,157,65,152,67,123,74"/>
+<area shape="rect" href="task1_8c.html#aacef900b7c5e4a6b0717e3d0e47170a7" title="Recursively parse a fully parenthesized infix formula into an AST." alt="" coords="334,67,437,93"/>
+<area shape="poly" title=" " alt="" coords="122,77,319,77,318,83,122,83"/>
+<area shape="poly" title=" " alt="" coords="200,40,196,33,199,23,210,17,228,15,247,17,258,26,253,26,245,22,228,20,212,22,203,27,201,32,205,42"/>
+<area shape="poly" title=" " alt="" coords="287,61,321,69,316,69,287,67"/>
+<area shape="poly" title=" " alt="" coords="360,65,356,58,359,48,369,42,386,40,404,43,414,52,409,51,402,48,386,45,371,47,363,52,361,58,365,67"/>
+<area shape="rect" href="task1_8c.html#a189aec0504a63eaa6b314ddaac5b621e" title="Allocate and initialise a new parse tree node." alt="" coords="492,29,573,56"/>
+<area shape="poly" title=" " alt="" coords="437,64,475,57,480,56,438,69"/>
+<area shape="rect" href="task1_8c.html#add47a0b713814c04f19b0c61f48bbd99" title="Advance the global input pointer past any whitespace." alt="" coords="485,104,580,131"/>
+<area shape="poly" title=" " alt="" coords="438,91,473,102,468,101,438,96"/>
+<area shape="poly" title=" " alt="" coords="507,28,502,21,505,11,516,5,533,3,550,5,561,15,556,14,548,10,532,8,518,10,510,14,508,20,512,30"/>
+<area shape="poly" title=" " alt="" coords="507,102,502,95,505,86,516,80,533,77,550,80,561,89,556,88,548,85,532,83,518,85,510,89,508,95,511,105"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -282,6 +323,17 @@ Variables</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="task3_8c_source.html#l00076">76</a> of file <a class="el" href="task3_8c_source.html">task3.c</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="task3_8c_a52e5c0a68f0122d8995d9a91b7fd81f2_cgraph.png" border="0" usemap="#atask3_8c_a52e5c0a68f0122d8995d9a91b7fd81f2_cgraph" loading="lazy" alt=""/></div>
+<map name="atask3_8c_a52e5c0a68f0122d8995d9a91b7fd81f2_cgraph" id="atask3_8c_a52e5c0a68f0122d8995d9a91b7fd81f2_cgraph">
+<area shape="rect" title="Free a parse tree and all of its nodes (post&#45;order)." alt="" coords="5,29,78,56"/>
+<area shape="rect" href="task1_8c.html#a52e5c0a68f0122d8995d9a91b7fd81f2" title="Free a parse tree and all of its nodes (post&#45;order)." alt="" coords="126,29,198,56"/>
+<area shape="poly" title=" " alt="" coords="78,40,113,42,107,43,78,45"/>
+<area shape="poly" title=" " alt="" coords="140,28,137,20,139,11,148,5,162,3,177,5,186,15,180,14,175,10,162,8,150,10,144,14,142,20,145,30"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -315,6 +367,33 @@ Variables</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="task3_8c_source.html#l00294">294</a> of file <a class="el" href="task3_8c_source.html">task3.c</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="task3_8c_a45d4d39edaeb13930266c44e3fe09239_cgraph.png" border="0" usemap="#atask3_8c_a45d4d39edaeb13930266c44e3fe09239_cgraph" loading="lazy" alt=""/></div>
+<map name="atask3_8c_a45d4d39edaeb13930266c44e3fe09239_cgraph" id="atask3_8c_a45d4d39edaeb13930266c44e3fe09239_cgraph">
+<area shape="rect" title="In&#45;order (infix, brackets omitted) traversal, iterative." alt="" coords="5,216,91,243"/>
+<area shape="poly" title=" " alt="" coords="23,216,19,207,22,198,32,192,48,189,65,192,75,200,70,202,63,197,48,195,34,197,26,201,25,207,29,215"/>
+<area shape="rect" href="task3_8c.html#aa03a3dc8c631a940f560eb87a419bae9" title="Test whether a node is an atom (a leaf)." alt="" coords="153,29,220,56"/>
+<area shape="poly" title=" " alt="" coords="51,215,81,146,106,104,137,66,143,63,140,67,141,70,110,107,86,149,56,216"/>
+<area shape="rect" href="task3_8c.html#a97680bc099c1100092e6088e7a2f2698" title="Test whether a node is a negation (exactly one child)." alt="" coords="143,104,230,131"/>
+<area shape="poly" title=" " alt="" coords="59,214,93,179,137,141,146,137,142,141,140,145,96,183,63,217"/>
+<area shape="rect" href="task3_8c.html#a9a1574646e07d9309a19489ee909bfcf" title="Test whether a stack is empty." alt="" coords="139,179,235,205"/>
+<area shape="poly" title=" " alt="" coords="90,216,125,207,122,211,93,220"/>
+<area shape="rect" href="task3_8c.html#af0537180bbc930dee22aaf1c0811ec32" title="Release the memory held by a stack." alt="" coords="146,253,228,280"/>
+<area shape="poly" title=" " alt="" coords="91,238,133,250,129,253,92,243"/>
+<area shape="rect" href="task3_8c.html#aa2f56d57f555081b657926fceb7bf7ee" title="Initialise an empty stack with an initial capacity of 64 frames." alt="" coords="148,328,226,355"/>
+<area shape="poly" title=" " alt="" coords="67,240,159,317,155,319,65,246"/>
+<area shape="rect" href="task3_8c.html#aa0fac1890ef5830a658fef4b4779cc4b" title="Push a frame onto the stack, doubling the capacity when it is full." alt="" coords="143,403,231,429"/>
+<area shape="poly" title=" " alt="" coords="58,241,93,297,141,365,164,392,158,392,137,368,89,300,57,246"/>
+<area shape="poly" title=" " alt="" coords="162,29,158,21,161,11,171,5,187,3,204,5,214,13,209,15,202,10,187,8,173,10,165,14,164,20,167,29"/>
+<area shape="poly" title=" " alt="" coords="162,104,158,95,161,86,171,80,187,77,204,80,214,88,209,89,202,85,187,83,173,85,165,89,164,95,167,104"/>
+<area shape="poly" title=" " alt="" coords="162,178,158,170,161,160,171,154,187,152,204,155,214,163,209,164,202,160,187,157,173,159,165,164,164,170,167,178"/>
+<area shape="poly" title=" " alt="" coords="162,253,158,245,161,235,171,229,187,227,204,229,214,238,209,238,202,234,187,232,173,234,165,238,164,244,167,253"/>
+<area shape="poly" title=" " alt="" coords="162,327,158,319,161,310,171,304,187,301,204,304,214,313,209,313,202,309,187,307,173,309,165,313,164,319,167,328"/>
+<area shape="poly" title=" " alt="" coords="162,401,158,394,161,384,171,378,187,376,204,379,214,388,209,387,202,384,187,381,173,383,165,388,164,394,167,403"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -343,6 +422,21 @@ Variables</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="task3_8c_source.html#l00170">170</a> of file <a class="el" href="task3_8c_source.html">task3.c</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="task3_8c_adbc8ba45a0002d3cfb03e7c0eaf2afe7_cgraph.png" border="0" usemap="#atask3_8c_adbc8ba45a0002d3cfb03e7c0eaf2afe7_cgraph" loading="lazy" alt=""/></div>
+<map name="atask3_8c_adbc8ba45a0002d3cfb03e7c0eaf2afe7_cgraph" id="atask3_8c_adbc8ba45a0002d3cfb03e7c0eaf2afe7_cgraph">
+<area shape="rect" title="In&#45;order (infix, brackets omitted) traversal, recursive." alt="" coords="5,67,91,93"/>
+<area shape="poly" title=" " alt="" coords="24,67,20,58,23,49,33,42,48,40,65,43,74,51,69,52,62,48,48,45,34,47,27,52,26,58,29,66"/>
+<area shape="rect" href="task3_8c.html#aa03a3dc8c631a940f560eb87a419bae9" title="Test whether a node is an atom (a leaf)." alt="" coords="149,29,216,56"/>
+<area shape="poly" title=" " alt="" coords="90,66,136,55,132,57,92,71"/>
+<area shape="rect" href="task3_8c.html#a97680bc099c1100092e6088e7a2f2698" title="Test whether a node is a negation (exactly one child)." alt="" coords="139,104,226,131"/>
+<area shape="poly" title=" " alt="" coords="91,89,126,100,121,102,91,94"/>
+<area shape="poly" title=" " alt="" coords="158,28,155,21,157,11,167,5,182,3,199,5,209,14,203,14,197,10,182,8,169,10,162,14,160,20,164,30"/>
+<area shape="poly" title=" " alt="" coords="159,102,155,95,157,86,167,80,182,77,199,80,209,89,203,88,197,85,182,83,169,85,162,89,160,95,163,105"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -379,6 +473,15 @@ Variables</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>Non-zero if <code class="param">n</code> has no children, otherwise 0. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="task3_8c_source.html#l00147">147</a> of file <a class="el" href="task3_8c_source.html">task3.c</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="task3_8c_aa03a3dc8c631a940f560eb87a419bae9_cgraph.png" border="0" usemap="#atask3_8c_aa03a3dc8c631a940f560eb87a419bae9_cgraph" loading="lazy" alt=""/></div>
+<map name="atask3_8c_aa03a3dc8c631a940f560eb87a419bae9_cgraph" id="atask3_8c_aa03a3dc8c631a940f560eb87a419bae9_cgraph">
+<area shape="rect" title="Test whether a node is an atom (a leaf)." alt="" coords="5,29,73,56"/>
+<area shape="poly" title=" " alt="" coords="26,28,25,12,30,5,39,3,48,5,53,14,48,14,45,10,39,8,33,10,30,14,31,29"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -415,11 +518,20 @@ Variables</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>Non-zero if <code class="param">n</code> has only a left child, otherwise 0. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="task3_8c_source.html#l00155">155</a> of file <a class="el" href="task3_8c_source.html">task3.c</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="task3_8c_a97680bc099c1100092e6088e7a2f2698_cgraph.png" border="0" usemap="#atask3_8c_a97680bc099c1100092e6088e7a2f2698_cgraph" loading="lazy" alt=""/></div>
+<map name="atask3_8c_a97680bc099c1100092e6088e7a2f2698_cgraph" id="atask3_8c_a97680bc099c1100092e6088e7a2f2698_cgraph">
+<area shape="rect" title="Test whether a node is a negation (exactly one child)." alt="" coords="5,29,93,56"/>
+<area shape="poly" title=" " alt="" coords="33,28,32,12,38,5,49,3,60,5,67,14,62,14,58,10,49,8,41,10,37,14,38,29"/>
+</map>
+</div>
 
 </div>
 </div>
-<a id="a840291bc02cba5474a4cb46a9b9566fe" name="a840291bc02cba5474a4cb46a9b9566fe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a840291bc02cba5474a4cb46a9b9566fe">&#9670;&#160;</a></span>main()</h2>
+<a id="a0ddf1224851353fc92bfbff6f499fa97" name="a0ddf1224851353fc92bfbff6f499fa97"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ddf1224851353fc92bfbff6f499fa97">&#9670;&#160;</a></span>main()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -427,16 +539,123 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">int main </td>
           <td>(</td>
-          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>argc</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">char *</td>          <td class="paramname"><span class="paramname"><em>argv</em></span>[]&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Program entry point: read an infix formula, build its parse tree and print all six traversals (recursive and iterative). </p>
+<p>Program entry point: read an infix formula (or CNF file), build its parse tree and print all six traversals (recursive and iterative). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">argc</td><td>Argument count. </td></tr>
+    <tr><td class="paramname">argv</td><td>Argument vector (argv[1] can optionally specify a .cnf file). </td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="section return"><dt>Returns</dt><dd>0 on success, 1 if no input could be read. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="task3_8c_source.html#l00390">390</a> of file <a class="el" href="task3_8c_source.html">task3.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="task3_8c_source.html#l00495">495</a> of file <a class="el" href="task3_8c_source.html">task3.c</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="task3_8c_a0ddf1224851353fc92bfbff6f499fa97_cgraph.png" border="0" usemap="#atask3_8c_a0ddf1224851353fc92bfbff6f499fa97_cgraph" loading="lazy" alt=""/></div>
+<map name="atask3_8c_a0ddf1224851353fc92bfbff6f499fa97_cgraph" id="atask3_8c_a0ddf1224851353fc92bfbff6f499fa97_cgraph">
+<area shape="rect" title="Program entry point: read an infix formula (or CNF file), build its parse tree and print all six trav..." alt="" coords="5,452,55,479"/>
+<area shape="rect" href="task1_8c.html#aafe00a7e3db94707236dd0f2dd7bf8a5" title="Build the parse tree of an infix formula." alt="" coords="103,71,219,97"/>
+<area shape="poly" title=" " alt="" coords="30,451,37,381,51,280,72,179,85,139,100,110,108,105,106,109,105,114,90,141,77,181,56,281,42,382,35,452"/>
+<area shape="rect" href="task1_8c.html#a52e5c0a68f0122d8995d9a91b7fd81f2" title="Free a parse tree and all of its nodes (post&#45;order)." alt="" coords="125,148,197,175"/>
+<area shape="poly" title=" " alt="" coords="28,452,29,403,38,333,47,294,60,255,77,218,101,185,112,176,110,181,105,188,82,221,65,257,52,296,43,334,35,404,34,452"/>
+<area shape="rect" href="task3_8c.html#a45d4d39edaeb13930266c44e3fe09239" title="In&#45;order (infix, brackets omitted) traversal, iterative." alt="" coords="118,303,204,329"/>
+<area shape="poly" title=" " alt="" coords="33,451,57,398,77,367,101,339,108,335,106,340,105,343,81,370,62,400,39,452"/>
+<area shape="rect" href="task3_8c.html#adbc8ba45a0002d3cfb03e7c0eaf2afe7" title="In&#45;order (infix, brackets omitted) traversal, recursive." alt="" coords="118,223,204,249"/>
+<area shape="poly" title=" " alt="" coords="30,451,36,415,49,367,69,313,101,265,113,256,110,261,105,268,74,316,54,368,41,417,36,452"/>
+<area shape="rect" href="task1_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="Program entry point for Task 1." alt="" coords="136,585,186,612"/>
+<area shape="poly" title=" " alt="" coords="44,476,105,538,138,573,133,575,101,542,45,482"/>
+<area shape="rect" href="task1_8c.html#a705cdca379dc35ea45fc832ad138bf2f" title="Input Method 2: Read a DIMACS CNF file and convert it into fully parenthesized infix notation." alt="" coords="270,589,376,616"/>
+<area shape="poly" title=" " alt="" coords="55,473,220,547,286,581,281,583,218,552,55,478"/>
+<area shape="rect" href="task1_8c.html#ac48ae1c62f66aa965c996f39aba608c9" title="Input Method 1: Read a propositional logic formula in infix notation from stdin." alt="" coords="267,739,379,765"/>
+<area shape="poly" title=" " alt="" coords="34,476,57,546,77,586,105,622,132,642,158,651,187,658,220,672,261,699,297,729,292,729,258,704,218,677,185,663,157,656,130,647,101,626,73,589,52,548,34,482"/>
+<area shape="rect" href="task3_8c.html#abb7f6f3feb1158752dd3394260f7dee2" title="Post&#45;order traversal, iterative (two&#45;stack method)." alt="" coords="111,452,211,479"/>
+<area shape="poly" title=" " alt="" coords="53,463,97,463,93,467,56,468"/>
+<area shape="rect" href="task3_8c.html#a121664cdf0721fc0156f8f226a6518ad" title="Post&#45;order (postfix) traversal, recursive: left, right, node." alt="" coords="111,711,211,737"/>
+<area shape="poly" title=" " alt="" coords="34,476,58,561,78,615,105,667,133,700,128,701,100,669,73,617,53,563,34,482"/>
+<area shape="rect" href="task3_8c.html#ab46d534979adb1d964053ae8b4c199e3" title="Pre&#45;order traversal, iterative: pop, visit, push right then left." alt="" coords="114,377,208,404"/>
+<area shape="poly" title=" " alt="" coords="47,450,101,414,113,409,110,413,104,418,52,453"/>
+<area shape="rect" href="task3_8c.html#aa2bb9d889b91dca90a359abb41b85b86" title="Pre&#45;order (prefix) traversal, recursive: node, left, right." alt="" coords="114,785,208,812"/>
+<area shape="poly" title=" " alt="" coords="32,476,39,526,50,595,71,673,86,712,105,748,129,775,123,776,100,751,81,714,65,675,44,596,33,527,32,482"/>
+<area shape="poly" title=" " alt="" coords="137,71,134,62,136,53,146,46,161,44,177,47,186,55,181,56,175,52,161,49,148,51,141,56,139,62,143,70"/>
+<area shape="rect" href="task1_8c.html#aacef900b7c5e4a6b0717e3d0e47170a7" title="Recursively parse a fully parenthesized infix formula into an AST." alt="" coords="272,67,375,93"/>
+<area shape="poly" title=" " alt="" coords="218,80,258,80,254,83,221,85"/>
+<area shape="poly" title=" " alt="" coords="295,66,290,58,294,48,305,42,323,40,343,43,354,51,349,52,341,48,323,45,306,47,298,52,295,57,300,66"/>
+<area shape="rect" href="task1_8c.html#a189aec0504a63eaa6b314ddaac5b621e" title="Allocate and initialise a new parse tree node." alt="" coords="458,104,538,131"/>
+<area shape="poly" title=" " alt="" coords="374,89,445,104,440,107,376,93"/>
+<area shape="rect" href="task1_8c.html#add47a0b713814c04f19b0c61f48bbd99" title="Advance the global input pointer past any whitespace." alt="" coords="451,29,545,56"/>
+<area shape="poly" title=" " alt="" coords="374,67,438,54,434,58,377,71"/>
+<area shape="poly" title=" " alt="" coords="468,104,463,95,466,86,478,80,498,77,519,80,532,88,526,89,517,85,498,83,480,85,470,89,468,95,473,104"/>
+<area shape="poly" title=" " alt="" coords="468,29,463,21,466,11,478,5,498,3,519,5,531,13,526,15,517,10,498,8,480,10,470,15,468,20,473,29"/>
+<area shape="poly" title=" " alt="" coords="137,148,134,139,136,130,146,124,161,121,177,124,186,132,181,134,175,129,161,127,148,129,141,133,139,139,143,147"/>
+<area shape="poly" title=" " alt="" coords="137,302,134,294,136,285,146,278,161,276,177,279,187,287,181,288,175,284,161,281,148,283,141,288,139,294,143,302"/>
+<area shape="rect" href="task3_8c.html#aa03a3dc8c631a940f560eb87a419bae9" title="Test whether a node is an atom (a leaf)." alt="" coords="290,141,357,168"/>
+<area shape="poly" title=" " alt="" coords="177,301,217,260,231,237,239,218,248,199,265,178,277,171,274,175,269,182,252,201,244,220,235,240,221,263,181,304"/>
+<area shape="rect" href="task3_8c.html#a97680bc099c1100092e6088e7a2f2698" title="Test whether a node is a negation (exactly one child)." alt="" coords="280,216,367,243"/>
+<area shape="poly" title=" " alt="" coords="182,300,266,252,279,248,275,252,268,257,186,304"/>
+<area shape="rect" href="task3_8c.html#a9a1574646e07d9309a19489ee909bfcf" title="Test whether a stack is empty." alt="" coords="275,291,371,317"/>
+<area shape="poly" title=" " alt="" coords="203,311,261,307,257,310,206,315"/>
+<area shape="rect" href="task3_8c.html#af0537180bbc930dee22aaf1c0811ec32" title="Release the memory held by a stack." alt="" coords="282,365,364,392"/>
+<area shape="poly" title=" " alt="" coords="197,327,275,358,270,361,198,332"/>
+<area shape="rect" href="task3_8c.html#aa2f56d57f555081b657926fceb7bf7ee" title="Initialise an empty stack with an initial capacity of 64 frames." alt="" coords="284,440,362,467"/>
+<area shape="poly" title=" " alt="" coords="200,327,221,339,237,355,247,370,269,402,296,429,291,430,265,406,242,373,233,358,217,343,201,332"/>
+<area shape="rect" href="task3_8c.html#aa0fac1890ef5830a658fef4b4779cc4b" title="Push a frame onto the stack, doubling the capacity when it is full." alt="" coords="279,515,367,541"/>
+<area shape="poly" title=" " alt="" coords="203,327,221,339,234,357,242,374,249,407,253,441,259,458,269,477,293,505,288,505,265,480,254,460,248,442,243,408,237,376,230,360,217,343,205,332"/>
+<area shape="poly" title=" " alt="" coords="295,141,290,133,294,123,305,117,323,115,343,117,354,125,349,127,341,122,323,120,306,122,298,127,295,132,300,141"/>
+<area shape="poly" title=" " alt="" coords="295,216,290,207,294,198,305,192,323,189,343,192,354,200,349,201,341,197,323,195,306,197,298,201,295,207,300,215"/>
+<area shape="poly" title=" " alt="" coords="295,290,290,282,294,272,305,266,323,264,343,267,354,275,349,276,341,272,323,269,306,271,298,276,295,281,300,290"/>
+<area shape="poly" title=" " alt="" coords="295,365,290,357,294,347,305,341,323,339,343,341,354,350,349,351,341,346,323,344,306,346,298,351,295,356,300,365"/>
+<area shape="poly" title=" " alt="" coords="295,439,290,431,294,422,305,416,323,413,343,416,354,424,349,425,341,421,323,419,306,421,298,425,295,431,300,440"/>
+<area shape="poly" title=" " alt="" coords="295,514,290,506,294,496,305,490,323,488,343,491,355,499,349,500,341,496,323,493,306,495,298,500,295,505,300,515"/>
+<area shape="poly" title=" " alt="" coords="185,220,266,178,279,173,276,177,268,182,189,224"/>
+<area shape="poly" title=" " alt="" coords="203,232,266,230,262,233,206,237"/>
+<area shape="poly" title=" " alt="" coords="137,222,134,214,136,205,146,198,161,196,177,199,186,207,181,208,175,204,161,201,148,203,141,208,139,214,143,222"/>
+<area shape="poly" title=" " alt="" coords="137,585,134,577,136,567,146,561,161,559,177,561,187,570,181,571,175,566,161,564,148,566,141,570,139,576,143,585"/>
+<area shape="rect" href="task1_8c.html#ac33dbb1c3e4ca70b3474ae9f5a1f4001" title="Task 1 Interface: Convert infix propositional logic to prefix." alt="" coords="272,664,374,691"/>
+<area shape="poly" title=" " alt="" coords="186,608,282,656,278,658,186,613"/>
+<area shape="poly" title=" " alt="" coords="185,597,257,600,252,602,187,602"/>
+<area shape="poly" title=" " alt="" coords="186,606,221,629,237,647,246,664,255,681,269,701,296,729,290,728,265,704,251,684,242,667,233,650,217,633,186,612"/>
+<area shape="poly" title=" " alt="" coords="295,663,290,655,294,646,305,640,323,637,343,640,355,649,349,649,341,645,323,643,306,645,298,649,295,655,300,664"/>
+<area shape="rect" href="task1_8c.html#a377bff0aefb6365ddda7a8d689e28c7c" title="Convert an infix formula into prefix notation using an operator stack." alt="" coords="427,664,569,691"/>
+<area shape="poly" title=" " alt="" coords="374,675,414,677,409,678,375,680"/>
+<area shape="poly" title=" " alt="" coords="468,663,463,655,466,646,478,640,498,637,519,640,532,649,526,648,517,645,498,643,480,645,470,649,468,655,473,664"/>
+<area shape="rect" href="task1_8c.html#aa014db7b051e4fce353db9ad9f0ef846" title="Return operator precedence for connectives." alt="" coords="617,589,775,616"/>
+<area shape="poly" title=" " alt="" coords="530,661,616,626,632,622,638,621,618,630,531,666"/>
+<area shape="rect" href="task1_8c.html#a0295642b55077739b6da13fa67407506" title="Check whether a character is a supported logical connective." alt="" coords="823,689,924,716"/>
+<area shape="poly" title=" " alt="" coords="552,689,617,700,717,705,810,706,805,707,717,711,616,705,552,694"/>
+<area shape="rect" href="task1_8c.html#af06a82a72805e2d80932cd3db938fcfd" title="Tokenize a propositional logic formula into discrete tokens." alt="" coords="636,664,756,691"/>
+<area shape="poly" title=" " alt="" coords="569,675,623,677,618,678,570,680"/>
+<area shape="poly" title=" " alt="" coords="665,588,660,581,664,571,676,565,696,563,717,565,730,574,725,574,716,570,696,568,677,570,668,575,665,580,670,590"/>
+<area shape="poly" title=" " alt="" coords="843,688,838,681,841,671,854,665,874,663,895,665,908,675,902,674,893,670,874,668,855,670,845,675,843,680,848,690"/>
+<area shape="poly" title=" " alt="" coords="756,683,810,693,805,693,756,689"/>
+<area shape="poly" title=" " alt="" coords="665,663,660,655,664,646,676,639,696,637,717,640,730,649,725,648,716,645,696,643,677,645,668,649,665,655,670,665"/>
+<area shape="poly" title=" " alt="" coords="295,588,290,581,294,571,305,565,323,563,343,565,355,574,349,574,341,570,323,568,306,570,298,575,295,580,300,589"/>
+<area shape="poly" title=" " alt="" coords="295,737,290,730,294,720,305,714,323,712,343,715,355,724,349,723,341,720,323,717,306,719,298,724,295,729,300,739"/>
+<area shape="poly" title=" " alt="" coords="179,450,217,414,231,391,239,370,247,349,265,327,272,324,269,328,269,331,252,352,244,372,236,393,221,418,183,453"/>
+<area shape="poly" title=" " alt="" coords="183,450,266,402,279,397,275,401,268,406,186,454"/>
+<area shape="poly" title=" " alt="" coords="210,459,271,456,267,459,213,464"/>
+<area shape="poly" title=" " alt="" coords="197,477,275,507,270,510,198,482"/>
+<area shape="poly" title=" " alt="" coords="137,452,134,443,136,434,146,428,161,425,177,428,187,436,181,437,175,433,161,431,148,433,141,437,139,443,143,451"/>
+<area shape="poly" title=" " alt="" coords="137,710,134,702,136,693,146,686,161,684,177,687,187,695,181,695,175,692,161,689,148,691,141,696,139,702,143,711"/>
+<area shape="poly" title=" " alt="" coords="182,375,266,327,279,323,275,326,268,332,186,379"/>
+<area shape="poly" title=" " alt="" coords="207,385,269,381,265,384,209,390"/>
+<area shape="poly" title=" " alt="" coords="197,402,275,433,270,435,198,407"/>
+<area shape="poly" title=" " alt="" coords="200,402,221,414,237,430,247,444,269,477,296,504,291,505,265,480,242,447,233,433,217,418,201,407"/>
+<area shape="poly" title=" " alt="" coords="137,377,134,369,136,359,146,353,161,351,177,353,187,361,181,363,175,358,161,356,148,358,141,362,139,368,143,377"/>
+<area shape="poly" title=" " alt="" coords="138,784,134,777,136,767,146,761,161,759,177,761,187,771,181,770,175,766,161,764,148,766,141,770,139,776,142,786"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -485,6 +704,17 @@ Variables</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>Pointer to the newly created node. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="task3_8c_source.html#l00061">61</a> of file <a class="el" href="task3_8c_source.html">task3.c</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="task3_8c_a189aec0504a63eaa6b314ddaac5b621e_cgraph.png" border="0" usemap="#atask3_8c_a189aec0504a63eaa6b314ddaac5b621e_cgraph" loading="lazy" alt=""/></div>
+<map name="atask3_8c_a189aec0504a63eaa6b314ddaac5b621e_cgraph" id="atask3_8c_a189aec0504a63eaa6b314ddaac5b621e_cgraph">
+<area shape="rect" title="Allocate and initialise a new parse tree node." alt="" coords="5,29,86,56"/>
+<area shape="rect" href="task1_8c.html#a189aec0504a63eaa6b314ddaac5b621e" title="Allocate and initialise a new parse tree node." alt="" coords="134,29,214,56"/>
+<area shape="poly" title=" " alt="" coords="86,40,121,42,115,43,86,45"/>
+<area shape="poly" title=" " alt="" coords="151,28,147,21,150,11,159,5,174,3,190,5,199,15,194,14,188,10,174,8,161,10,154,14,152,20,156,30"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -509,6 +739,25 @@ Variables</h2></td></tr>
 </div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>Root of the parse tree built for the formula that was read. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="task3_8c_source.html#l00096">96</a> of file <a class="el" href="task3_8c_source.html">task3.c</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="task3_8c_aacef900b7c5e4a6b0717e3d0e47170a7_cgraph.png" border="0" usemap="#atask3_8c_aacef900b7c5e4a6b0717e3d0e47170a7_cgraph" loading="lazy" alt=""/></div>
+<map name="atask3_8c_aacef900b7c5e4a6b0717e3d0e47170a7_cgraph" id="atask3_8c_aacef900b7c5e4a6b0717e3d0e47170a7_cgraph">
+<area shape="rect" title="Recursively parse a fully parenthesized infix formula." alt="" coords="5,91,109,117"/>
+<area shape="rect" href="task1_8c.html#a189aec0504a63eaa6b314ddaac5b621e" title="Allocate and initialise a new parse tree node." alt="" coords="315,29,395,56"/>
+<area shape="poly" title=" " alt="" coords="78,88,114,68,156,52,230,40,302,39,297,41,231,45,157,57,116,73,81,92"/>
+<area shape="rect" href="task1_8c.html#aacef900b7c5e4a6b0717e3d0e47170a7" title="Recursively parse a fully parenthesized infix formula into an AST." alt="" coords="157,91,260,117"/>
+<area shape="poly" title=" " alt="" coords="109,101,144,103,139,105,109,107"/>
+<area shape="rect" href="task1_8c.html#add47a0b713814c04f19b0c61f48bbd99" title="Advance the global input pointer past any whitespace." alt="" coords="308,116,402,143"/>
+<area shape="poly" title=" " alt="" coords="103,115,157,127,227,131,295,133,290,133,227,137,156,132,102,121"/>
+<area shape="poly" title=" " alt="" coords="329,28,325,21,328,11,338,5,355,3,373,5,384,14,378,14,371,10,355,8,340,10,332,14,330,20,334,30"/>
+<area shape="poly" title=" " alt="" coords="241,88,305,63,310,62,243,93"/>
+<area shape="poly" title=" " alt="" coords="183,89,178,82,181,72,192,66,208,64,226,67,237,76,232,75,224,72,208,69,193,71,185,76,184,82,187,91"/>
+<area shape="poly" title=" " alt="" coords="261,110,296,119,290,119,260,116"/>
+<area shape="poly" title=" " alt="" coords="329,114,325,107,328,98,338,92,355,89,373,92,384,101,379,100,371,97,355,95,340,97,332,101,330,107,334,117"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -537,6 +786,27 @@ Variables</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="task3_8c_source.html#l00362">362</a> of file <a class="el" href="task3_8c_source.html">task3.c</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="task3_8c_abb7f6f3feb1158752dd3394260f7dee2_cgraph.png" border="0" usemap="#atask3_8c_abb7f6f3feb1158752dd3394260f7dee2_cgraph" loading="lazy" alt=""/></div>
+<map name="atask3_8c_abb7f6f3feb1158752dd3394260f7dee2_cgraph" id="atask3_8c_abb7f6f3feb1158752dd3394260f7dee2_cgraph">
+<area shape="rect" title="Post&#45;order traversal, iterative (two&#45;stack method)." alt="" coords="5,141,106,168"/>
+<area shape="poly" title=" " alt="" coords="30,141,25,133,29,123,39,117,56,115,73,117,84,125,79,127,71,122,55,120,41,122,33,126,31,132,35,140"/>
+<area shape="rect" href="task3_8c.html#a9a1574646e07d9309a19489ee909bfcf" title="Test whether a stack is empty." alt="" coords="154,29,250,56"/>
+<area shape="poly" title=" " alt="" coords="68,140,104,104,152,66,161,62,157,66,155,70,108,108,72,143"/>
+<area shape="rect" href="task3_8c.html#af0537180bbc930dee22aaf1c0811ec32" title="Release the memory held by a stack." alt="" coords="161,104,243,131"/>
+<area shape="poly" title=" " alt="" coords="105,139,147,130,143,133,108,144"/>
+<area shape="rect" href="task3_8c.html#aa2f56d57f555081b657926fceb7bf7ee" title="Initialise an empty stack with an initial capacity of 64 frames." alt="" coords="163,179,240,205"/>
+<area shape="poly" title=" " alt="" coords="106,165,150,177,146,179,107,170"/>
+<area shape="rect" href="task3_8c.html#aa0fac1890ef5830a658fef4b4779cc4b" title="Push a frame onto the stack, doubling the capacity when it is full." alt="" coords="158,253,246,280"/>
+<area shape="poly" title=" " alt="" coords="75,166,173,242,169,245,73,171"/>
+<area shape="poly" title=" " alt="" coords="176,29,172,21,175,11,185,5,202,3,220,5,230,14,225,15,218,10,202,8,187,10,179,14,177,20,181,29"/>
+<area shape="poly" title=" " alt="" coords="176,103,172,95,175,86,185,80,202,77,220,80,230,89,225,89,218,85,202,83,187,85,179,89,177,95,181,104"/>
+<area shape="poly" title=" " alt="" coords="176,178,172,170,175,160,185,154,202,152,220,155,230,163,225,163,218,160,202,157,187,159,179,164,177,170,181,179"/>
+<area shape="poly" title=" " alt="" coords="176,252,172,245,175,235,185,229,202,227,220,229,230,239,225,238,218,234,202,232,187,234,179,238,177,244,181,254"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -564,6 +834,15 @@ Variables</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="task3_8c_source.html#l00201">201</a> of file <a class="el" href="task3_8c_source.html">task3.c</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="task3_8c_a121664cdf0721fc0156f8f226a6518ad_cgraph.png" border="0" usemap="#atask3_8c_a121664cdf0721fc0156f8f226a6518ad_cgraph" loading="lazy" alt=""/></div>
+<map name="atask3_8c_a121664cdf0721fc0156f8f226a6518ad_cgraph" id="atask3_8c_a121664cdf0721fc0156f8f226a6518ad_cgraph">
+<area shape="rect" title="Post&#45;order (postfix) traversal, recursive: left, right, node." alt="" coords="5,29,106,56"/>
+<area shape="poly" title=" " alt="" coords="37,29,34,20,36,11,44,5,56,3,68,5,76,14,70,14,66,10,55,8,46,10,41,14,39,20,42,29"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -592,6 +871,27 @@ Variables</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="task3_8c_source.html#l00338">338</a> of file <a class="el" href="task3_8c_source.html">task3.c</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="task3_8c_ab46d534979adb1d964053ae8b4c199e3_cgraph.png" border="0" usemap="#atask3_8c_ab46d534979adb1d964053ae8b4c199e3_cgraph" loading="lazy" alt=""/></div>
+<map name="atask3_8c_ab46d534979adb1d964053ae8b4c199e3_cgraph" id="atask3_8c_ab46d534979adb1d964053ae8b4c199e3_cgraph">
+<area shape="rect" title="Pre&#45;order traversal, iterative: pop, visit, push right then left." alt="" coords="5,141,99,168"/>
+<area shape="poly" title=" " alt="" coords="27,141,23,133,26,123,36,117,52,115,69,117,80,125,75,127,67,122,52,120,38,122,30,126,28,132,32,140"/>
+<area shape="rect" href="task3_8c.html#a9a1574646e07d9309a19489ee909bfcf" title="Test whether a stack is empty." alt="" coords="147,29,243,56"/>
+<area shape="poly" title=" " alt="" coords="64,140,99,104,145,66,154,62,150,66,148,70,103,108,68,143"/>
+<area shape="rect" href="task3_8c.html#af0537180bbc930dee22aaf1c0811ec32" title="Release the memory held by a stack." alt="" coords="154,104,236,131"/>
+<area shape="poly" title=" " alt="" coords="98,140,140,130,136,134,101,145"/>
+<area shape="rect" href="task3_8c.html#aa2f56d57f555081b657926fceb7bf7ee" title="Initialise an empty stack with an initial capacity of 64 frames." alt="" coords="156,179,234,205"/>
+<area shape="poly" title=" " alt="" coords="99,164,144,177,139,179,100,170"/>
+<area shape="rect" href="task3_8c.html#aa0fac1890ef5830a658fef4b4779cc4b" title="Push a frame onto the stack, doubling the capacity when it is full." alt="" coords="151,253,239,280"/>
+<area shape="poly" title=" " alt="" coords="72,166,167,242,162,245,69,171"/>
+<area shape="poly" title=" " alt="" coords="169,29,165,21,168,11,179,5,195,3,212,5,223,14,217,15,210,10,195,8,180,10,173,14,171,20,175,29"/>
+<area shape="poly" title=" " alt="" coords="169,103,165,95,168,86,179,80,195,77,212,80,223,89,217,89,210,85,195,83,180,85,173,89,171,95,175,104"/>
+<area shape="poly" title=" " alt="" coords="170,178,165,170,168,160,179,154,195,152,212,155,223,163,217,163,210,160,195,157,180,159,173,164,171,170,175,179"/>
+<area shape="poly" title=" " alt="" coords="170,252,165,245,168,235,179,229,195,227,212,229,223,239,217,238,210,234,195,232,180,234,173,238,171,244,175,254"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -619,6 +919,109 @@ Variables</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="task3_8c_source.html#l00189">189</a> of file <a class="el" href="task3_8c_source.html">task3.c</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="task3_8c_aa2bb9d889b91dca90a359abb41b85b86_cgraph.png" border="0" usemap="#atask3_8c_aa2bb9d889b91dca90a359abb41b85b86_cgraph" loading="lazy" alt=""/></div>
+<map name="atask3_8c_aa2bb9d889b91dca90a359abb41b85b86_cgraph" id="atask3_8c_aa2bb9d889b91dca90a359abb41b85b86_cgraph">
+<area shape="rect" title="Pre&#45;order (prefix) traversal, recursive: node, left, right." alt="" coords="5,29,99,56"/>
+<area shape="poly" title=" " alt="" coords="35,29,32,20,34,11,41,5,52,3,64,5,71,14,66,14,61,10,52,8,43,10,38,14,37,20,40,29"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a705cdca379dc35ea45fc832ad138bf2f" name="a705cdca379dc35ea45fc832ad138bf2f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a705cdca379dc35ea45fc832ad138bf2f">&#9670;&#160;</a></span>read_input_cnf()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int read_input_cnf </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>filename</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *</td>          <td class="paramname"><span class="paramname"><em>buffer</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>max_len</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Input Method 2: Read DIMACS CNF file and convert to fully parenthesized infix notation. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filename</td><td>File path to .cnf file. </td></tr>
+    <tr><td class="paramname">buffer</td><td>Output buffer receiving the infix formula. </td></tr>
+    <tr><td class="paramname">max_len</td><td>Capacity of output buffer. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 on success, -1 on failure. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="task3_8c_source.html#l00409">409</a> of file <a class="el" href="task3_8c_source.html">task3.c</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="task3_8c_a705cdca379dc35ea45fc832ad138bf2f_cgraph.png" border="0" usemap="#atask3_8c_a705cdca379dc35ea45fc832ad138bf2f_cgraph" loading="lazy" alt=""/></div>
+<map name="atask3_8c_a705cdca379dc35ea45fc832ad138bf2f_cgraph" id="atask3_8c_a705cdca379dc35ea45fc832ad138bf2f_cgraph">
+<area shape="rect" title="Input Method 2: Read DIMACS CNF file and convert to fully parenthesized infix notation." alt="" coords="5,29,112,56"/>
+<area shape="rect" href="task1_8c.html#a705cdca379dc35ea45fc832ad138bf2f" title="Input Method 2: Read a DIMACS CNF file and convert it into fully parenthesized infix notation." alt="" coords="160,29,266,56"/>
+<area shape="poly" title=" " alt="" coords="112,40,147,42,142,43,112,45"/>
+<area shape="poly" title=" " alt="" coords="186,28,181,21,185,11,195,5,213,3,232,5,243,15,237,14,230,10,213,8,197,10,189,15,187,20,191,30"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ac48ae1c62f66aa965c996f39aba608c9" name="ac48ae1c62f66aa965c996f39aba608c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac48ae1c62f66aa965c996f39aba608c9">&#9670;&#160;</a></span>read_input_infix()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int read_input_infix </td>
+          <td>(</td>
+          <td class="paramtype">char *</td>          <td class="paramname"><span class="paramname"><em>buffer</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>max_len</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Input Method 1: Read a propositional logic formula in infix notation from stdin. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">buffer</td><td>Output buffer. </td></tr>
+    <tr><td class="paramname">max_len</td><td>Maximum length of buffer. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 on success, -1 on EOF or error. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="task3_8c_source.html#l00395">395</a> of file <a class="el" href="task3_8c_source.html">task3.c</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="task3_8c_ac48ae1c62f66aa965c996f39aba608c9_cgraph.png" border="0" usemap="#atask3_8c_ac48ae1c62f66aa965c996f39aba608c9_cgraph" loading="lazy" alt=""/></div>
+<map name="atask3_8c_ac48ae1c62f66aa965c996f39aba608c9_cgraph" id="atask3_8c_ac48ae1c62f66aa965c996f39aba608c9_cgraph">
+<area shape="rect" title="Input Method 1: Read a propositional logic formula in infix notation from stdin." alt="" coords="5,29,118,56"/>
+<area shape="rect" href="task1_8c.html#ac48ae1c62f66aa965c996f39aba608c9" title="Input Method 1: Read a propositional logic formula in infix notation from stdin." alt="" coords="166,29,278,56"/>
+<area shape="poly" title=" " alt="" coords="118,40,153,42,147,43,118,45"/>
+<area shape="poly" title=" " alt="" coords="194,28,189,21,193,11,204,5,222,3,241,5,253,15,248,14,239,10,222,8,205,10,197,15,194,20,199,30"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -648,6 +1051,17 @@ Variables</h2></td></tr>
 <p>Advance the global input pointer past any whitespace. </p>
 
 <p class="definition">Definition at line <a class="el" href="task3_8c_source.html#l00047">47</a> of file <a class="el" href="task3_8c_source.html">task3.c</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="task3_8c_add47a0b713814c04f19b0c61f48bbd99_cgraph.png" border="0" usemap="#atask3_8c_add47a0b713814c04f19b0c61f48bbd99_cgraph" loading="lazy" alt=""/></div>
+<map name="atask3_8c_add47a0b713814c04f19b0c61f48bbd99_cgraph" id="atask3_8c_add47a0b713814c04f19b0c61f48bbd99_cgraph">
+<area shape="rect" title="Advance the global input pointer past any whitespace." alt="" coords="5,29,100,56"/>
+<area shape="rect" href="task1_8c.html#add47a0b713814c04f19b0c61f48bbd99" title="Advance the global input pointer past any whitespace." alt="" coords="148,29,242,56"/>
+<area shape="poly" title=" " alt="" coords="100,40,135,42,130,43,100,45"/>
+<area shape="poly" title=" " alt="" coords="170,28,166,21,169,11,179,5,195,3,212,5,223,15,217,14,210,10,195,8,180,10,173,14,171,20,175,30"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -684,6 +1098,15 @@ Variables</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>Non-zero if the stack holds no frames, otherwise 0. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="task3_8c_source.html#l00269">269</a> of file <a class="el" href="task3_8c_source.html">task3.c</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="task3_8c_a9a1574646e07d9309a19489ee909bfcf_cgraph.png" border="0" usemap="#atask3_8c_a9a1574646e07d9309a19489ee909bfcf_cgraph" loading="lazy" alt=""/></div>
+<map name="atask3_8c_a9a1574646e07d9309a19489ee909bfcf_cgraph" id="atask3_8c_a9a1574646e07d9309a19489ee909bfcf_cgraph">
+<area shape="rect" title="Test whether a stack is empty." alt="" coords="5,29,102,56"/>
+<area shape="poly" title=" " alt="" coords="36,29,33,20,35,11,42,5,54,3,66,5,73,14,68,14,63,10,53,8,44,10,39,14,38,20,41,29"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -719,6 +1142,15 @@ Variables</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="task3_8c_source.html#l00276">276</a> of file <a class="el" href="task3_8c_source.html">task3.c</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="task3_8c_af0537180bbc930dee22aaf1c0811ec32_cgraph.png" border="0" usemap="#atask3_8c_af0537180bbc930dee22aaf1c0811ec32_cgraph" loading="lazy" alt=""/></div>
+<map name="atask3_8c_af0537180bbc930dee22aaf1c0811ec32_cgraph" id="atask3_8c_af0537180bbc930dee22aaf1c0811ec32_cgraph">
+<area shape="rect" title="Release the memory held by a stack." alt="" coords="5,29,88,56"/>
+<area shape="poly" title=" " alt="" coords="31,28,30,12,36,5,47,3,57,5,64,14,58,14,54,10,46,8,39,10,35,14,36,29"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -755,6 +1187,15 @@ Variables</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="task3_8c_source.html#l00235">235</a> of file <a class="el" href="task3_8c_source.html">task3.c</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="task3_8c_aa2f56d57f555081b657926fceb7bf7ee_cgraph.png" border="0" usemap="#atask3_8c_aa2f56d57f555081b657926fceb7bf7ee_cgraph" loading="lazy" alt=""/></div>
+<map name="atask3_8c_aa2f56d57f555081b657926fceb7bf7ee_cgraph" id="atask3_8c_aa2f56d57f555081b657926fceb7bf7ee_cgraph">
+<area shape="rect" title="Initialise an empty stack with an initial capacity of 64 frames." alt="" coords="5,29,83,56"/>
+<area shape="poly" title=" " alt="" coords="29,28,28,12,34,5,44,3,54,5,60,14,55,14,51,10,44,8,37,10,33,14,34,29"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -802,6 +1243,15 @@ Variables</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="task3_8c_source.html#l00252">252</a> of file <a class="el" href="task3_8c_source.html">task3.c</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="task3_8c_aa0fac1890ef5830a658fef4b4779cc4b_cgraph.png" border="0" usemap="#atask3_8c_aa0fac1890ef5830a658fef4b4779cc4b_cgraph" loading="lazy" alt=""/></div>
+<map name="atask3_8c_aa0fac1890ef5830a658fef4b4779cc4b_cgraph" id="atask3_8c_aa0fac1890ef5830a658fef4b4779cc4b_cgraph">
+<area shape="rect" title="Push a frame onto the stack, doubling the capacity when it is full." alt="" coords="5,29,94,56"/>
+<area shape="poly" title=" " alt="" coords="33,28,32,12,39,5,50,3,61,5,68,14,62,14,58,10,49,8,41,10,37,14,38,29"/>
+</map>
+</div>
 
 </div>
 </div>

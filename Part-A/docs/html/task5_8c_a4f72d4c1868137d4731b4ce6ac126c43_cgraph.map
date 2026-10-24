@@ -1,0 +1,16 @@
+<map id="print_truth_table" name="print_truth_table">
+<area shape="rect" id="Node000001" title="Print the complete truth table of a formula." alt="" coords="5,104,120,131"/>
+<area shape="poly" id="edge9_Node000001_Node000001" title=" " alt="" coords="38,104,34,95,37,86,46,80,63,77,80,80,90,88,85,89,78,85,62,83,48,85,41,89,39,95,43,103"/>
+<area shape="rect" id="Node000002" href="$task5_8c.html#a88c057ff68df132821a8751a6d04632b" title="Evaluate the formula bottom&#45;up (post&#45;order)." alt="" coords="168,104,238,131"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="120,115,155,116,150,118,121,120"/>
+<area shape="poly" id="edge4_Node000002_Node000002" title=" " alt="" coords="180,103,176,95,179,86,188,80,203,77,219,80,228,89,223,89,216,85,203,83,190,85,183,89,182,95,185,104"/>
+<area shape="rect" id="Node000003" href="$task5_8c.html#a17fee48d2fe865040c68e8a2112ea085" title="Find the index of an atom in the atom table." alt="" coords="286,29,374,56"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="226,101,285,66,290,65,295,63,287,70,228,106"/>
+<area shape="rect" id="Node000004" href="$task3_8c.html#aa03a3dc8c631a940f560eb87a419bae9" title="Test whether a node is an atom (a leaf)." alt="" coords="296,104,364,131"/>
+<area shape="poly" id="edge5_Node000002_Node000004" title=" " alt="" coords="238,115,284,117,279,118,239,120"/>
+<area shape="rect" id="Node000005" href="$task3_8c.html#a97680bc099c1100092e6088e7a2f2698" title="Test whether a node is a negation (exactly one child)." alt="" coords="286,179,374,205"/>
+<area shape="poly" id="edge7_Node000002_Node000005" title=" " alt="" coords="228,128,295,170,290,170,226,134"/>
+<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="307,28,304,21,306,11,315,5,330,3,346,5,355,14,350,14,344,10,330,8,317,10,311,14,309,20,312,30"/>
+<area shape="poly" id="edge6_Node000004_Node000004" title=" " alt="" coords="307,103,304,95,306,86,315,80,330,77,346,80,355,89,350,88,344,85,330,83,317,85,311,89,309,95,312,105"/>
+<area shape="poly" id="edge8_Node000005_Node000005" title=" " alt="" coords="308,177,304,170,306,161,315,154,330,152,346,155,355,164,350,163,344,160,330,157,317,159,311,164,309,170,312,180"/>
+</map>

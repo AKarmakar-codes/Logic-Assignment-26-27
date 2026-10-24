@@ -1,0 +1,6 @@
+<map id="Frame" name="Frame">
+<area shape="rect" id="Node000001" title="One entry of the traversal stack." alt="" coords="5,123,64,149"/>
+<area shape="rect" id="Node000002" href="$struct_node.html" title="A node of the propositional&#45;logic parse tree." alt="" coords="8,15,61,41"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="37,56,37,122,32,122,32,58"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="75,16,84,20,87,28,79,39,62,41,60,36,76,35,82,28,80,24,76,21"/>
+</map>
