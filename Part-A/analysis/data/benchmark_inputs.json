@@ -1,0 +1,532 @@
+{
+  "total_cnf_files": 1964,
+  "categories": {
+    "submitted": 829,
+    "generated": 1135
+  },
+  "suite_samples": [
+    {
+      "file": "f1000.shuffled.cnf",
+      "path": "submitted/simon/satex-challenges/f1000.shuffled.cnf",
+      "num_variables": 1000,
+      "num_clauses": 4250,
+      "clause_var_ratio": 4.25
+    },
+    {
+      "file": "c6288.shuffled.cnf",
+      "path": "submitted/simon/satex-challenges/c6288.shuffled.cnf",
+      "num_variables": 5008,
+      "num_clauses": 14813,
+      "clause_var_ratio": 2.96
+    },
+    {
+      "file": "c6288-s.shuffled.cnf",
+      "path": "submitted/simon/satex-challenges/c6288-s.shuffled.cnf",
+      "num_variables": 5025,
+      "num_clauses": 14882,
+      "clause_var_ratio": 2.96
+    },
+    {
+      "file": "par32-5.shuffled.cnf",
+      "path": "submitted/simon/satex-challenges/par32-5.shuffled.cnf",
+      "num_variables": 3176,
+      "num_clauses": 10325,
+      "clause_var_ratio": 3.25
+    },
+    {
+      "file": "par32-4-c.shuffled.cnf",
+      "path": "submitted/simon/satex-challenges/par32-4-c.shuffled.cnf",
+      "num_variables": 1333,
+      "num_clauses": 5326,
+      "clause_var_ratio": 4.0
+    },
+    {
+      "file": "c5315-s.shuffled.cnf",
+      "path": "submitted/simon/satex-challenges/c5315-s.shuffled.cnf",
+      "num_variables": 5408,
+      "num_clauses": 15110,
+      "clause_var_ratio": 2.79
+    },
+    {
+      "file": "par32-3-c.shuffled.cnf",
+      "path": "submitted/simon/satex-challenges/par32-3-c.shuffled.cnf",
+      "num_variables": 1325,
+      "num_clauses": 5294,
+      "clause_var_ratio": 4.0
+    },
+    {
+      "file": "cnf-r4-b3-k1.shuffled.cnf",
+      "path": "submitted/simon/satex-challenges/cnf-r4-b3-k1.shuffled.cnf",
+      "num_variables": 7160,
+      "num_clauses": 44436,
+      "clause_var_ratio": 6.21
+    },
+    {
+      "file": "3bitadd_31.shuffled.cnf",
+      "path": "submitted/simon/satex-challenges/3bitadd_31.shuffled.cnf",
+      "num_variables": 8432,
+      "num_clauses": 31310,
+      "clause_var_ratio": 3.71
+    },
+    {
+      "file": "par32-4.shuffled.cnf",
+      "path": "submitted/simon/satex-challenges/par32-4.shuffled.cnf",
+      "num_variables": 3176,
+      "num_clauses": 10313,
+      "clause_var_ratio": 3.25
+    },
+    {
+      "file": "g250.shuffled.cnf",
+      "path": "submitted/simon/satex-challenges/g250.shuffled.cnf",
+      "num_variables": 7250,
+      "num_clauses": 454622,
+      "clause_var_ratio": 62.71
+    },
+    {
+      "file": "cnf-r4-b1-k1.shuffled.cnf",
+      "path": "submitted/simon/satex-challenges/cnf-r4-b1-k1.shuffled.cnf",
+      "num_variables": 2424,
+      "num_clauses": 14812,
+      "clause_var_ratio": 6.11
+    },
+    {
+      "file": "cnf-r4-b2-k1.shuffled.cnf",
+      "path": "submitted/simon/satex-challenges/cnf-r4-b2-k1.shuffled.cnf",
+      "num_variables": 4792,
+      "num_clauses": 29624,
+      "clause_var_ratio": 6.18
+    },
+    {
+      "file": "par32-2.shuffled.cnf",
+      "path": "submitted/simon/satex-challenges/par32-2.shuffled.cnf",
+      "num_variables": 3176,
+      "num_clauses": 10253,
+      "clause_var_ratio": 3.23
+    },
+    {
+      "file": "par32-3.shuffled.cnf",
+      "path": "submitted/simon/satex-challenges/par32-3.shuffled.cnf",
+      "num_variables": 3176,
+      "num_clauses": 10297,
+      "clause_var_ratio": 3.24
+    },
+    {
+      "file": "f600.shuffled.cnf",
+      "path": "submitted/simon/satex-challenges/f600.shuffled.cnf",
+      "num_variables": 600,
+      "num_clauses": 2550,
+      "clause_var_ratio": 4.25
+    },
+    {
+      "file": "c7552-s.shuffled.cnf",
+      "path": "submitted/simon/satex-challenges/c7552-s.shuffled.cnf",
+      "num_variables": 7767,
+      "num_clauses": 20812,
+      "clause_var_ratio": 2.68
+    },
+    {
+      "file": "2dlx_ca_mc_ex_bp_f.shuffled.cnf",
+      "path": "submitted/simon/satex-challenges/2dlx_ca_mc_ex_bp_f.shuffled.cnf",
+      "num_variables": 3250,
+      "num_clauses": 24640,
+      "clause_var_ratio": 7.58
+    },
+    {
+      "file": "c5315.shuffled.cnf",
+      "path": "submitted/simon/satex-challenges/c5315.shuffled.cnf",
+      "num_variables": 5399,
+      "num_clauses": 15024,
+      "clause_var_ratio": 2.78
+    },
+    {
+      "file": "cnf-r4-b4-k1.shuffled.cnf",
+      "path": "submitted/simon/satex-challenges/cnf-r4-b4-k1.shuffled.cnf",
+      "num_variables": 9528,
+      "num_clauses": 59248,
+      "clause_var_ratio": 6.22
+    },
+    {
+      "file": "f2000.shuffled.cnf",
+      "path": "submitted/simon/satex-challenges/f2000.shuffled.cnf",
+      "num_variables": 2000,
+      "num_clauses": 8500,
+      "clause_var_ratio": 4.25
+    },
+    {
+      "file": "2dlx_cc_mc_ex_bp_f.shuffled.cnf",
+      "path": "submitted/simon/satex-challenges/2dlx_cc_mc_ex_bp_f.shuffled.cnf",
+      "num_variables": 4583,
+      "num_clauses": 41704,
+      "clause_var_ratio": 9.1
+    },
+    {
+      "file": "par32-1-c.shuffled.cnf",
+      "path": "submitted/simon/satex-challenges/par32-1-c.shuffled.cnf",
+      "num_variables": 1315,
+      "num_clauses": 5254,
+      "clause_var_ratio": 4.0
+    },
+    {
+      "file": "par32-5-c.shuffled.cnf",
+      "path": "submitted/simon/satex-challenges/par32-5-c.shuffled.cnf",
+      "num_variables": 1339,
+      "num_clauses": 5350,
+      "clause_var_ratio": 4.0
+    },
+    {
+      "file": "c7552.shuffled.cnf",
+      "path": "submitted/simon/satex-challenges/c7552.shuffled.cnf",
+      "num_variables": 7652,
+      "num_clauses": 20423,
+      "clause_var_ratio": 2.67
+    },
+    {
+      "file": "9vliw_bp_mc.shuffled.cnf",
+      "path": "submitted/simon/satex-challenges/9vliw_bp_mc.shuffled.cnf",
+      "num_variables": 20093,
+      "num_clauses": 179492,
+      "clause_var_ratio": 8.93
+    },
+    {
+      "file": "c3540-s.shuffled.cnf",
+      "path": "submitted/simon/satex-challenges/c3540-s.shuffled.cnf",
+      "num_variables": 3499,
+      "num_clauses": 9526,
+      "clause_var_ratio": 2.72
+    },
+    {
+      "file": "g125.shuffled.cnf",
+      "path": "submitted/simon/satex-challenges/g125.shuffled.cnf",
+      "num_variables": 2250,
+      "num_clauses": 70163,
+      "clause_var_ratio": 31.18
+    },
+    {
+      "file": "par32-2-c.shuffled.cnf",
+      "path": "submitted/simon/satex-challenges/par32-2-c.shuffled.cnf",
+      "num_variables": 1303,
+      "num_clauses": 5206,
+      "clause_var_ratio": 4.0
+    },
+    {
+      "file": "par32-1.shuffled.cnf",
+      "path": "submitted/simon/satex-challenges/par32-1.shuffled.cnf",
+      "num_variables": 3176,
+      "num_clauses": 10277,
+      "clause_var_ratio": 3.24
+    },
+    {
+      "file": "Urquhart-s4-b3.shuffled.cnf",
+      "path": "submitted/simon/Urquhart/Urquhart-s4-b3.shuffled.cnf",
+      "num_variables": 76,
+      "num_clauses": 598,
+      "clause_var_ratio": 7.87
+    },
+    {
+      "file": "Urquhart-s5-b6.shuffled.cnf",
+      "path": "submitted/simon/Urquhart/Urquhart-s5-b6.shuffled.cnf",
+      "num_variables": 115,
+      "num_clauses": 856,
+      "clause_var_ratio": 7.44
+    },
+    {
+      "file": "Urquhart-s3-b8.shuffled.cnf",
+      "path": "submitted/simon/Urquhart/Urquhart-s3-b8.shuffled.cnf",
+      "num_variables": 44,
+      "num_clauses": 416,
+      "clause_var_ratio": 9.45
+    },
+    {
+      "file": "Urquhart-s3-b1.shuffled.cnf",
+      "path": "submitted/simon/Urquhart/Urquhart-s3-b1.shuffled.cnf",
+      "num_variables": 43,
+      "num_clauses": 316,
+      "clause_var_ratio": 7.35
+    },
+    {
+      "file": "Urquhart-s4-b6.shuffled.cnf",
+      "path": "submitted/simon/Urquhart/Urquhart-s4-b6.shuffled.cnf",
+      "num_variables": 79,
+      "num_clauses": 688,
+      "clause_var_ratio": 8.71
+    },
+    {
+      "file": "Urquhart-s3-b7.shuffled.cnf",
+      "path": "submitted/simon/Urquhart/Urquhart-s3-b7.shuffled.cnf",
+      "num_variables": 42,
+      "num_clauses": 342,
+      "clause_var_ratio": 8.14
+    },
+    {
+      "file": "Urquhart-s5-b2.shuffled.cnf",
+      "path": "submitted/simon/Urquhart/Urquhart-s5-b2.shuffled.cnf",
+      "num_variables": 107,
+      "num_clauses": 742,
+      "clause_var_ratio": 6.93
+    },
+    {
+      "file": "Urquhart-s4-b2.shuffled.cnf",
+      "path": "submitted/simon/Urquhart/Urquhart-s4-b2.shuffled.cnf",
+      "num_variables": 70,
+      "num_clauses": 594,
+      "clause_var_ratio": 8.49
+    },
+    {
+      "file": "Urquhart-s4-b10.shuffled.cnf",
+      "path": "submitted/simon/Urquhart/Urquhart-s4-b10.shuffled.cnf",
+      "num_variables": 76,
+      "num_clauses": 598,
+      "clause_var_ratio": 7.87
+    },
+    {
+      "file": "Urquhart-s3-b3.shuffled.cnf",
+      "path": "submitted/simon/Urquhart/Urquhart-s3-b3.shuffled.cnf",
+      "num_variables": 45,
+      "num_clauses": 376,
+      "clause_var_ratio": 8.36
+    },
+    {
+      "file": "Urquhart-s5-b3.shuffled.cnf",
+      "path": "submitted/simon/Urquhart/Urquhart-s5-b3.shuffled.cnf",
+      "num_variables": 121,
+      "num_clauses": 1116,
+      "clause_var_ratio": 9.22
+    },
+    {
+      "file": "Urquhart-s3-b9.shuffled.cnf",
+      "path": "submitted/simon/Urquhart/Urquhart-s3-b9.shuffled.cnf",
+      "num_variables": 36,
+      "num_clauses": 230,
+      "clause_var_ratio": 6.39
+    },
+    {
+      "file": "Urquhart-s4-b7.shuffled.cnf",
+      "path": "submitted/simon/Urquhart/Urquhart-s4-b7.shuffled.cnf",
+      "num_variables": 76,
+      "num_clauses": 652,
+      "clause_var_ratio": 8.58
+    },
+    {
+      "file": "Urquhart-s5-b1.shuffled.cnf",
+      "path": "submitted/simon/Urquhart/Urquhart-s5-b1.shuffled.cnf",
+      "num_variables": 106,
+      "num_clauses": 714,
+      "clause_var_ratio": 6.74
+    },
+    {
+      "file": "Urquhart-s4-b4.shuffled.cnf",
+      "path": "submitted/simon/Urquhart/Urquhart-s4-b4.shuffled.cnf",
+      "num_variables": 86,
+      "num_clauses": 864,
+      "clause_var_ratio": 10.05
+    },
+    {
+      "file": "Urquhart-s3-b2.shuffled.cnf",
+      "path": "submitted/simon/Urquhart/Urquhart-s3-b2.shuffled.cnf",
+      "num_variables": 44,
+      "num_clauses": 398,
+      "clause_var_ratio": 9.05
+    },
+    {
+      "file": "Urquhart-s4-b5.shuffled.cnf",
+      "path": "submitted/simon/Urquhart/Urquhart-s4-b5.shuffled.cnf",
+      "num_variables": 83,
+      "num_clauses": 804,
+      "clause_var_ratio": 9.69
+    },
+    {
+      "file": "Urquhart-s3-b6.shuffled.cnf",
+      "path": "submitted/simon/Urquhart/Urquhart-s3-b6.shuffled.cnf",
+      "num_variables": 54,
+      "num_clauses": 688,
+      "clause_var_ratio": 12.74
+    },
+    {
+      "file": "Urquhart-s4-b8.shuffled.cnf",
+      "path": "submitted/simon/Urquhart/Urquhart-s4-b8.shuffled.cnf",
+      "num_variables": 75,
+      "num_clauses": 658,
+      "clause_var_ratio": 8.77
+    },
+    {
+      "file": "Urquhart-s3-b4.shuffled.cnf",
+      "path": "submitted/simon/Urquhart/Urquhart-s3-b4.shuffled.cnf",
+      "num_variables": 49,
+      "num_clauses": 572,
+      "clause_var_ratio": 11.67
+    },
+    {
+      "file": "Urquhart-s5-b10.shuffled.cnf",
+      "path": "submitted/simon/Urquhart/Urquhart-s5-b10.shuffled.cnf",
+      "num_variables": 119,
+      "num_clauses": 980,
+      "clause_var_ratio": 8.24
+    },
+    {
+      "file": "Urquhart-s4-b1.shuffled.cnf",
+      "path": "submitted/simon/Urquhart/Urquhart-s4-b1.shuffled.cnf",
+      "num_variables": 72,
+      "num_clauses": 532,
+      "clause_var_ratio": 7.39
+    },
+    {
+      "file": "Urquhart-s5-b7.shuffled.cnf",
+      "path": "submitted/simon/Urquhart/Urquhart-s5-b7.shuffled.cnf",
+      "num_variables": 135,
+      "num_clauses": 1480,
+      "clause_var_ratio": 10.96
+    },
+    {
+      "file": "Urquhart-s3-b5.shuffled.cnf",
+      "path": "submitted/simon/Urquhart/Urquhart-s3-b5.shuffled.cnf",
+      "num_variables": 45,
+      "num_clauses": 446,
+      "clause_var_ratio": 9.91
+    },
+    {
+      "file": "Urquhart-s5-b8.shuffled.cnf",
+      "path": "submitted/simon/Urquhart/Urquhart-s5-b8.shuffled.cnf",
+      "num_variables": 122,
+      "num_clauses": 1126,
+      "clause_var_ratio": 9.23
+    },
+    {
+      "file": "Urquhart-s3-b10.shuffled.cnf",
+      "path": "submitted/simon/Urquhart/Urquhart-s3-b10.shuffled.cnf",
+      "num_variables": 43,
+      "num_clauses": 340,
+      "clause_var_ratio": 7.91
+    },
+    {
+      "file": "Urquhart-s5-b4.shuffled.cnf",
+      "path": "submitted/simon/Urquhart/Urquhart-s5-b4.shuffled.cnf",
+      "num_variables": 114,
+      "num_clauses": 888,
+      "clause_var_ratio": 7.79
+    },
+    {
+      "file": "Urquhart-s5-b5.shuffled.cnf",
+      "path": "submitted/simon/Urquhart/Urquhart-s5-b5.shuffled.cnf",
+      "num_variables": 142,
+      "num_clauses": 1768,
+      "clause_var_ratio": 12.45
+    },
+    {
+      "file": "Urquhart-s5-b9.shuffled.cnf",
+      "path": "submitted/simon/Urquhart/Urquhart-s5-b9.shuffled.cnf",
+      "num_variables": 131,
+      "num_clauses": 1268,
+      "clause_var_ratio": 9.68
+    },
+    {
+      "file": "Urquhart-s4-b9.shuffled.cnf",
+      "path": "submitted/simon/Urquhart/Urquhart-s4-b9.shuffled.cnf",
+      "num_variables": 75,
+      "num_clauses": 618,
+      "clause_var_ratio": 8.24
+    }
+  ],
+  "twentyvar_sample": {
+    "source_file": "6cnf20_28000_28000_2.shuffled.cnf",
+    "num_variables": 20,
+    "extracted_clauses": 10,
+    "infix": "(((((((((~x3) + x17) + (~x14)) + (~x10)) + (~x19)) + x6) * ((((((~x13) + (~x4)) + (~x17)) + x15) + (~x16)) + x1)) * (((((((~x13) + (~x8)) + x17) + (~x12)) + (~x18)) + (~x1)) * ((((((x14 + (~x16)) + (~x19)) + (~x18)) + (~x3)) + x9) * ((((((~x1) + x15) + (~x7)) + x6) + x18) + (~x16))))) * (((((((x14 + x12) + x19) + (~x10)) + (~x8)) + x17) * (((((x2 + (~x12)) + (~x5)) + (~x9)) + (~x17)) + x20)) * ((((((x4 + x3) + x11) + x19) + (~x6)) + x20) * ((((((x12 + x16) + (~x2)) + x18) + x9) + (~x15)) * ((((((~x19) + x7) + (~x1)) + x5) + (~x6)) + (~x8))))))"
+  },
+  "truth_table_inputs": [
+    {
+      "k_atoms": 2,
+      "formula": "(p1 + p2)",
+      "num_rows": 4
+    },
+    {
+      "k_atoms": 3,
+      "formula": "(p1 > (p2 * (~p3)))",
+      "num_rows": 8
+    },
+    {
+      "k_atoms": 4,
+      "formula": "((p1 * (~p2)) + (p3 * (~p4)))",
+      "num_rows": 16
+    },
+    {
+      "k_atoms": 5,
+      "formula": "((p1 * (~p2)) > (p3 > (p4 * (~p5))))",
+      "num_rows": 32
+    },
+    {
+      "k_atoms": 6,
+      "formula": "((p1 > (p2 * (~p3))) + (p4 > (p5 * (~p6))))",
+      "num_rows": 64
+    },
+    {
+      "k_atoms": 7,
+      "formula": "((p1 > (p2 * (~p3))) > ((p4 * (~p5)) + (p6 * (~p7))))",
+      "num_rows": 128
+    },
+    {
+      "k_atoms": 8,
+      "formula": "(((p1 * (~p2)) + (p3 * (~p4))) + ((p5 * (~p6)) + (p7 * (~p8))))",
+      "num_rows": 256
+    },
+    {
+      "k_atoms": 9,
+      "formula": "(((p1 * (~p2)) + (p3 * (~p4))) > ((p5 * (~p6)) > (p7 > (p8 * (~p9)))))",
+      "num_rows": 512
+    },
+    {
+      "k_atoms": 10,
+      "formula": "(((p1 * (~p2)) > (p3 > (p4 * (~p5)))) + ((p6 * (~p7)) > (p8 > (p9 * (~p10)))))",
+      "num_rows": 1024
+    },
+    {
+      "k_atoms": 11,
+      "formula": "(((p1 * (~p2)) > (p3 > (p4 * (~p5)))) > ((p6 > (p7 * (~p8))) + (p9 > (p10 * (~p11)))))",
+      "num_rows": 2048
+    },
+    {
+      "k_atoms": 12,
+      "formula": "(((p1 > (p2 * (~p3))) + (p4 > (p5 * (~p6)))) + ((p7 > (p8 * (~p9))) + (p10 > (p11 * (~p12)))))",
+      "num_rows": 4096
+    },
+    {
+      "k_atoms": 13,
+      "formula": "(((p1 > (p2 * (~p3))) + (p4 > (p5 * (~p6)))) > ((p7 > (p8 * (~p9))) > ((p10 * (~p11)) + (p12 * (~p13)))))",
+      "num_rows": 8192
+    },
+    {
+      "k_atoms": 14,
+      "formula": "(((p1 > (p2 * (~p3))) > ((p4 * (~p5)) + (p6 * (~p7)))) + ((p8 > (p9 * (~p10))) > ((p11 * (~p12)) + (p13 * (~p14)))))",
+      "num_rows": 16384
+    },
+    {
+      "k_atoms": 15,
+      "formula": "(((p1 > (p2 * (~p3))) > ((p4 * (~p5)) + (p6 * (~p7)))) > (((p8 * (~p9)) + (p10 * (~p11))) + ((p12 * (~p13)) + (p14 * (~p15)))))",
+      "num_rows": 32768
+    },
+    {
+      "k_atoms": 16,
+      "formula": "((((p1 * (~p2)) + (p3 * (~p4))) + ((p5 * (~p6)) + (p7 * (~p8)))) + (((p9 * (~p10)) + (p11 * (~p12))) + ((p13 * (~p14)) + (p15 * (~p16)))))",
+      "num_rows": 65536
+    },
+    {
+      "k_atoms": 17,
+      "formula": "((((p1 * (~p2)) + (p3 * (~p4))) + ((p5 * (~p6)) + (p7 * (~p8)))) > (((p9 * (~p10)) + (p11 * (~p12))) > ((p13 * (~p14)) > (p15 > (p16 * (~p17))))))",
+      "num_rows": 131072
+    },
+    {
+      "k_atoms": 18,
+      "formula": "((((p1 * (~p2)) + (p3 * (~p4))) > ((p5 * (~p6)) > (p7 > (p8 * (~p9))))) + (((p10 * (~p11)) + (p12 * (~p13))) > ((p14 * (~p15)) > (p16 > (p17 * (~p18))))))",
+      "num_rows": 262144
+    },
+    {
+      "k_atoms": 19,
+      "formula": "((((p1 * (~p2)) + (p3 * (~p4))) > ((p5 * (~p6)) > (p7 > (p8 * (~p9))))) > (((p10 * (~p11)) > (p12 > (p13 * (~p14)))) + ((p15 * (~p16)) > (p17 > (p18 * (~p19))))))",
+      "num_rows": 524288
+    },
+    {
+      "k_atoms": 20,
+      "formula": "((((p1 * (~p2)) > (p3 > (p4 * (~p5)))) + ((p6 * (~p7)) > (p8 > (p9 * (~p10))))) + (((p11 * (~p12)) > (p13 > (p14 * (~p15)))) + ((p16 * (~p17)) > (p18 > (p19 * (~p20))))))",
+      "num_rows": 1048576
+    }
+  ]
+}

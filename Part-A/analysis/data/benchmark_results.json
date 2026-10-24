@@ -1,0 +1,53 @@
+{
+  "timestamp": 1792846105,
+  "traversal_benchmarks": [
+    {"nodes": 6, "height": 2, "in_rec": 0.0276, "in_iter": 0.0297, "pre_rec": 0.0261, "pre_iter": 0.0395, "post_rec": 0.0333, "post_iter": 0.0280},
+    {"nodes": 13, "height": 3, "in_rec": 0.0745, "in_iter": 0.0737, "pre_rec": 0.0660, "pre_iter": 0.0789, "post_rec": 0.0680, "post_iter": 0.0604},
+    {"nodes": 34, "height": 6, "in_rec": 0.1624, "in_iter": 0.1940, "pre_rec": 0.1649, "pre_iter": 0.1991, "post_rec": 0.1651, "post_iter": 0.2126},
+    {"nodes": 69, "height": 11, "in_rec": 0.3271, "in_iter": 0.3220, "pre_rec": 0.3299, "pre_iter": 0.3800, "post_rec": 0.3399, "post_iter": 0.5392},
+    {"nodes": 139, "height": 21, "in_rec": 0.6329, "in_iter": 0.6265, "pre_rec": 0.6140, "pre_iter": 0.6865, "post_rec": 0.6097, "post_iter": 0.8953},
+    {"nodes": 244, "height": 36, "in_rec": 1.1503, "in_iter": 1.1324, "pre_rec": 1.1547, "pre_iter": 1.2268, "post_rec": 1.1793, "post_iter": 1.8932},
+    {"nodes": 349, "height": 51, "in_rec": 1.7190, "in_iter": 1.6467, "pre_rec": 1.5825, "pre_iter": 1.7490, "post_rec": 1.6345, "post_iter": 2.5755},
+    {"nodes": 524, "height": 76, "in_rec": 2.4835, "in_iter": 2.3910, "pre_rec": 2.2559, "pre_iter": 2.4893, "post_rec": 2.2992, "post_iter": 3.1636},
+    {"nodes": 699, "height": 101, "in_rec": 3.9329, "in_iter": 3.6806, "pre_rec": 3.3860, "pre_iter": 3.7870, "post_rec": 3.7110, "post_iter": 4.8468},
+    {"nodes": 1049, "height": 151, "in_rec": 4.7927, "in_iter": 4.4808, "pre_rec": 4.1345, "pre_iter": 4.1120, "post_rec": 4.9116, "post_iter": 6.2472}
+  ],
+  "height_benchmarks": [
+    {"leaves": 2, "balanced_nodes": 5, "balanced_height": 2, "bal_rec_us": 0.0036, "bal_iter_us": 0.0103, "skewed_height": 1, "skew_rec_us": 0.0022, "skew_iter_us": 0.0070},
+    {"leaves": 4, "balanced_nodes": 9, "balanced_height": 3, "bal_rec_us": 0.0139, "bal_iter_us": 0.0177, "skewed_height": 3, "skew_rec_us": 0.0088, "skew_iter_us": 0.0132},
+    {"leaves": 8, "balanced_nodes": 17, "balanced_height": 4, "bal_rec_us": 0.0310, "bal_iter_us": 0.0304, "skewed_height": 7, "skew_rec_us": 0.0272, "skew_iter_us": 0.0279},
+    {"leaves": 16, "balanced_nodes": 33, "balanced_height": 5, "bal_rec_us": 0.0534, "bal_iter_us": 0.0625, "skewed_height": 15, "skew_rec_us": 0.0644, "skew_iter_us": 0.0703},
+    {"leaves": 32, "balanced_nodes": 65, "balanced_height": 6, "bal_rec_us": 0.0787, "bal_iter_us": 0.1151, "skewed_height": 31, "skew_rec_us": 0.1235, "skew_iter_us": 0.1631},
+    {"leaves": 64, "balanced_nodes": 129, "balanced_height": 7, "bal_rec_us": 0.3171, "bal_iter_us": 0.2680, "skewed_height": 63, "skew_rec_us": 0.2779, "skew_iter_us": 0.3590},
+    {"leaves": 128, "balanced_nodes": 257, "balanced_height": 8, "bal_rec_us": 0.6557, "bal_iter_us": 0.5085, "skewed_height": 127, "skew_rec_us": 0.9082, "skew_iter_us": 0.8491},
+    {"leaves": 256, "balanced_nodes": 513, "balanced_height": 9, "bal_rec_us": 0.8837, "bal_iter_us": 0.9263, "skewed_height": 255, "skew_rec_us": 1.9428, "skew_iter_us": 1.5896}
+  ],
+  "truth_table_benchmarks": [
+    {"k": 2, "rows": 4, "time_us": 0.148, "nodes": 3, "ns_per_row": 36.97},
+    {"k": 3, "rows": 8, "time_us": 0.504, "nodes": 5, "ns_per_row": 62.95},
+    {"k": 4, "rows": 16, "time_us": 1.561, "nodes": 7, "ns_per_row": 97.58},
+    {"k": 5, "rows": 32, "time_us": 4.473, "nodes": 9, "ns_per_row": 139.77},
+    {"k": 6, "rows": 64, "time_us": 11.837, "nodes": 11, "ns_per_row": 184.96},
+    {"k": 7, "rows": 128, "time_us": 30.810, "nodes": 13, "ns_per_row": 240.71},
+    {"k": 8, "rows": 256, "time_us": 75.458, "nodes": 15, "ns_per_row": 294.76},
+    {"k": 9, "rows": 512, "time_us": 187.093, "nodes": 17, "ns_per_row": 365.42},
+    {"k": 10, "rows": 1024, "time_us": 440.066, "nodes": 19, "ns_per_row": 429.75},
+    {"k": 11, "rows": 2048, "time_us": 1049.194, "nodes": 21, "ns_per_row": 512.30},
+    {"k": 12, "rows": 4096, "time_us": 2673.190, "nodes": 23, "ns_per_row": 652.63},
+    {"k": 13, "rows": 8192, "time_us": 6991.652, "nodes": 25, "ns_per_row": 853.47},
+    {"k": 14, "rows": 16384, "time_us": 15858.857, "nodes": 27, "ns_per_row": 967.95},
+    {"k": 15, "rows": 32768, "time_us": 35812.257, "nodes": 29, "ns_per_row": 1092.90},
+    {"k": 16, "rows": 65536, "time_us": 80439.154, "nodes": 31, "ns_per_row": 1227.40},
+    {"k": 17, "rows": 131072, "time_us": 181351.433, "nodes": 33, "ns_per_row": 1383.60},
+    {"k": 18, "rows": 262144, "time_us": 420155.819, "nodes": 35, "ns_per_row": 1602.77},
+    {"k": 19, "rows": 524288, "time_us": 960387.242, "nodes": 37, "ns_per_row": 1831.79},
+    {"k": 20, "rows": 1048576, "time_us": 1983161.141, "nodes": 39, "ns_per_row": 1891.29}
+  ],
+  "memory_stats": {
+    "sizeof_node_bytes": 48,
+    "sizeof_ptr_bytes": 8,
+    "sizeof_label_bytes": 32,
+    "sizeof_callframe_approx_bytes": 64,
+    "max_atoms_supported": 25
+  }
+}

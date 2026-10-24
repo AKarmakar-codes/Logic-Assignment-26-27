@@ -1,0 +1,17 @@
+nodes,type,measured_height,time_rec_us,time_iter_us
+5,balanced,2,0.0036,0.0103
+3,skewed,1,0.0022,0.0070
+9,balanced,3,0.0139,0.0177
+7,skewed,3,0.0088,0.0132
+17,balanced,4,0.0310,0.0304
+15,skewed,7,0.0272,0.0279
+33,balanced,5,0.0534,0.0625
+31,skewed,15,0.0644,0.0703
+65,balanced,6,0.0787,0.1151
+63,skewed,31,0.1235,0.1631
+129,balanced,7,0.3171,0.2680
+127,skewed,63,0.2779,0.3590
+257,balanced,8,0.6557,0.5085
+255,skewed,127,0.9082,0.8491
+513,balanced,9,0.8837,0.9263
+511,skewed,255,1.9428,1.5896
