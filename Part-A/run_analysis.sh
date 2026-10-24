@@ -42,8 +42,8 @@ echo "[3/5] Running High-Precision Microsecond Benchmark Engine..."
 gcc -O3 -Wall Part-A/analysis/benchmark_engine.c -o Part-A/analysis/benchmark_engine -lm
 ./Part-A/analysis/benchmark_engine
 
-# 4. Generate all 10 visualization figures
-echo "[4/5] Generating 10 publication-grade visualization plots..."
+# 4. Generate all 9 visualization figures
+echo "[4/5] Generating 9 publication-grade visualization plots..."
 "$PYTHON_EXEC" Part-A/analysis/generate_visualizations.py
 
 # 5. Generate interactive HTML reports

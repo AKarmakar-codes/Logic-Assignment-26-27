@@ -7,8 +7,17 @@ integrating all 10 visualizations, data tables, and theoretical analyses.
 
 import os
 import shutil
+import base64
 import pandas as pd
 import json
+
+def get_img_src(plots_dir, filename):
+    path = os.path.join(plots_dir, filename)
+    if os.path.exists(path):
+        with open(path, "rb") as f:
+            encoded = base64.b64encode(f.read()).decode("utf-8")
+            return f"data:image/png;base64,{encoded}"
+    return f"plots/{filename}"
 
 def main():
     script_dir = os.path.dirname(os.path.abspath(__file__))
@@ -43,6 +52,17 @@ def main():
     k20_time_s = k20_row['time_us'] / 1e6
     ratio_in_mean = (df_trav['inorder_iter_us'] / df_trav['inorder_rec_us']).mean()
     ratio_post_mean = (df_trav['postorder_iter_us'] / df_trav['postorder_rec_us']).mean()
+
+    # Base64 embedded plots for 100% self-contained visual fidelity
+    img_p1 = get_img_src(plots_dir, "plot1_truth_table_exponential.png")
+    img_p2 = get_img_src(plots_dir, "plot2_nanoseconds_per_row.png")
+    img_p3 = get_img_src(plots_dir, "plot3_all_six_traversals.png")
+    img_p4 = get_img_src(plots_dir, "plot4_traversal_speedup_ratios.png")
+    img_p5 = get_img_src(plots_dir, "plot5_tree_height_rec_vs_iter.png")
+    img_p6 = get_img_src(plots_dir, "plot6_height_vs_theoretical_bounds.png")
+    img_p7 = get_img_src(plots_dir, "plot7_infix_prefix_linear_scaling.png")
+    img_p8 = get_img_src(plots_dir, "plot8_memory_architecture_breakdown.png")
+    img_p9 = get_img_src(plots_dir, "plot9_sat_benchmark_landscape.png")
 
     # Format truth table sample rows
     tt_rows_html = ""
@@ -325,7 +345,7 @@ def main():
         </p>
 
         <div class="plot-container">
-            <img src="plots/plot1_truth_table_exponential.png" alt="Truth Table Exponential Scaling">
+            <img src="{img_p1}" alt="Truth Table Exponential Scaling">
             <div class="plot-caption">Figure 1: Truth Table execution time vs. number of atoms k (Left: Linear scale, Right: Logarithmic scale showing exact O(2^k) slope).</div>
         </div>
 
@@ -351,7 +371,7 @@ def main():
         </div>
 
         <div class="plot-container">
-            <img src="plots/plot2_nanoseconds_per_row.png" alt="Cost per evaluated row">
+            <img src="{img_p2}" alt="Cost per evaluated row">
             <div class="plot-caption">Figure 2: Amortized cost per evaluated row (nanoseconds) as atom count k increases.</div>
         </div>
 
@@ -372,12 +392,12 @@ def main():
         </p>
 
         <div class="plot-container">
-            <img src="plots/plot3_all_six_traversals.png" alt="All Six Traversals">
+            <img src="{img_p3}" alt="All Six Traversals">
             <div class="plot-caption">Figure 3: Runtime comparison of all six traversal algorithms across parse tree node counts N.</div>
         </div>
 
         <div class="plot-container">
-            <img src="plots/plot4_traversal_speedup_ratios.png" alt="Traversal Runtime Ratios">
+            <img src="{img_p4}" alt="Traversal Runtime Ratios">
             <div class="plot-caption">Figure 4: Iterative-to-Recursive runtime ratio across tree sizes.</div>
         </div>
 
@@ -421,12 +441,12 @@ def main():
         </p>
 
         <div class="plot-container">
-            <img src="plots/plot6_height_vs_theoretical_bounds.png" alt="Tree Height Bounds">
+            <img src="{img_p6}" alt="Tree Height Bounds">
             <div class="plot-caption">Figure 5: Measured tree height vs. theoretical bounds for balanced vs. degenerate (skewed) parse trees.</div>
         </div>
 
         <div class="plot-container">
-            <img src="plots/plot5_tree_height_rec_vs_iter.png" alt="Tree Height Runtime">
+            <img src="{img_p5}" alt="Tree Height Runtime">
             <div class="plot-caption">Figure 6: Height computation runtime: Recursive (post-order DFS) vs. Iterative (BFS Queue).</div>
         </div>
 
@@ -448,7 +468,7 @@ def main():
         </p>
 
         <div class="plot-container">
-            <img src="plots/plot7_infix_prefix_linear_scaling.png" alt="Linear Scaling Tasks 1 and 2">
+            <img src="{img_p7}" alt="Linear Scaling Tasks 1 and 2">
             <div class="plot-caption">Figure 7: Infix-to-Prefix and Prefix-to-Tree conversion execution time vs. formula character length (Linear regression R² > 0.99).</div>
         </div>
     </div>
@@ -466,7 +486,7 @@ def main():
         </ol>
 
         <div class="plot-container">
-            <img src="plots/plot8_memory_architecture_breakdown.png" alt="Memory Architecture Breakdown">
+            <img src="{img_p8}" alt="Memory Architecture Breakdown">
             <div class="plot-caption">Figure 8: Memory allocation profile across Heap Nodes, Worst-Case Call Stack, and Iterative Buffer.</div>
         </div>
     </div>
@@ -479,7 +499,7 @@ def main():
         </p>
 
         <div class="plot-container">
-            <img src="plots/plot9_sat_benchmark_landscape.png" alt="SAT Benchmark Landscape">
+            <img src="{img_p9}" alt="SAT Benchmark Landscape">
             <div class="plot-caption">Figure 9: Distribution of variable counts and clause-to-variable ratio (r = m/n) across benchmark suites.</div>
         </div>
 
@@ -496,11 +516,6 @@ def main():
         <p>
             A multi-dimensional evaluation of recursive vs. iterative paradigms across the five assignment tasks:
         </p>
-
-        <div class="plot-container">
-            <img src="plots/plot10_algorithm_radar_decision.png" alt="Algorithm Radar Chart">
-            <div class="plot-caption">Figure 10: Multi-metric radar comparison across Speed, Memory, Stack Safety, Code Simplicity, and Scalability.</div>
-        </div>
 
         <div class="table-responsive">
             <table>

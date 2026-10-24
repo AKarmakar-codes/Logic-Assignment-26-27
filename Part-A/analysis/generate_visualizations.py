@@ -307,46 +307,9 @@ def main():
     p9 = os.path.join(plots_dir, "plot9_sat_benchmark_landscape.png")
     plt.savefig(p9, bbox_inches='tight')
     plt.close()
-    print("  [9/10] Saved plot9_sat_benchmark_landscape.png")
+    print("  [9/9] Saved plot9_sat_benchmark_landscape.png")
 
-    # =========================================================================
-    # PLOT 10: Algorithm Radar / Multi-Metric Decision Chart
-    # =========================================================================
-    categories_radar = ['Execution Speed', 'Memory Efficiency', 'Stack Safety', 'Simplicity of Code', 'Scalability (Large N)']
-    num_vars = len(categories_radar)
-
-    # Scores out of 10
-    tasks_scores = {
-        'Recursive Traversals': [9, 8, 5, 10, 6],
-        'Iterative Traversals': [8, 7, 10, 6, 9],
-        'Truth Table Evaluator': [5, 9, 7, 8, 3]
-    }
-
-    angles = np.linspace(0, 2 * np.pi, num_vars, endpoint=False).tolist()
-    angles += angles[:1]
-
-    fig, ax = plt.subplots(figsize=(7.5, 7.5), subplot_kw=dict(polar=True), dpi=300)
-    colors_radar = [c_blue, c_green, c_red]
-
-    for (name, values), color in zip(tasks_scores.items(), colors_radar):
-        vals = values + values[:1]
-        ax.plot(angles, vals, color=color, linewidth=2, label=name)
-        ax.fill(angles, vals, color=color, alpha=0.15)
-
-    ax.set_theta_offset(np.pi / 2)
-    ax.set_theta_direction(-1)
-    ax.set_thetagrids(np.degrees(angles[:-1]), categories_radar, fontsize=10, fontweight='bold')
-    ax.set_ylim(0, 10)
-    ax.set_title('Multi-Metric Algorithm Trade-off Comparison', fontsize=13, fontweight='bold', pad=25)
-    ax.legend(loc='upper right', bbox_to_anchor=(1.25, 1.1), frameon=True)
-
-    plt.tight_layout()
-    p10 = os.path.join(plots_dir, "plot10_algorithm_radar_decision.png")
-    plt.savefig(p10, bbox_inches='tight')
-    plt.close()
-    print("  [10/10] Saved plot10_algorithm_radar_decision.png")
-
-    print("\nAll 10 visualization figures successfully created in Part-A/analysis/plots/!")
+    print("\nAll 9 empirical visualization figures successfully created in Part-A/analysis/plots/!")
 
 if __name__ == "__main__":
     main()
