@@ -1,0 +1,16 @@
+<map id="build_parse_tree" name="build_parse_tree">
+<area shape="rect" id="Node000001" title="Build the parse tree of an infix formula." alt="" coords="5,67,122,93"/>
+<area shape="rect" id="Node000002" href="$task1_8c.html#aafe00a7e3db94707236dd0f2dd7bf8a5" title="Build the parse tree of an infix formula." alt="" coords="170,41,286,68"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="122,68,157,65,152,67,123,74"/>
+<area shape="rect" id="Node000003" href="$task1_8c.html#aacef900b7c5e4a6b0717e3d0e47170a7" title="Recursively parse a fully parenthesized infix formula into an AST." alt="" coords="334,67,437,93"/>
+<area shape="poly" id="edge9_Node000001_Node000003" title=" " alt="" coords="122,77,319,77,318,83,122,83"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="200,40,196,33,199,23,210,17,228,15,247,17,258,26,253,26,245,22,228,20,212,22,203,27,201,32,205,42"/>
+<area shape="poly" id="edge3_Node000002_Node000003" title=" " alt="" coords="287,61,321,69,316,69,287,67"/>
+<area shape="poly" id="edge6_Node000003_Node000003" title=" " alt="" coords="360,65,356,58,359,48,369,42,386,40,404,43,414,52,409,51,402,48,386,45,371,47,363,52,361,58,365,67"/>
+<area shape="rect" id="Node000004" href="$task1_8c.html#a189aec0504a63eaa6b314ddaac5b621e" title="Allocate and initialise a new parse tree node." alt="" coords="492,29,573,56"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="437,64,475,57,480,56,438,69"/>
+<area shape="rect" id="Node000005" href="$task1_8c.html#add47a0b713814c04f19b0c61f48bbd99" title="Advance the global input pointer past any whitespace." alt="" coords="485,104,580,131"/>
+<area shape="poly" id="edge7_Node000003_Node000005" title=" " alt="" coords="438,91,473,102,468,101,438,96"/>
+<area shape="poly" id="edge5_Node000004_Node000004" title=" " alt="" coords="507,28,502,21,505,11,516,5,533,3,550,5,561,15,556,14,548,10,532,8,518,10,510,14,508,20,512,30"/>
+<area shape="poly" id="edge8_Node000005_Node000005" title=" " alt="" coords="507,102,502,95,505,86,516,80,533,77,550,80,561,89,556,88,548,85,532,83,518,85,510,89,508,95,511,105"/>
+</map>

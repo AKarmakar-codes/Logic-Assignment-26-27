@@ -1,0 +1,10 @@
+<map id="parse_prefix" name="parse_prefix">
+<area shape="rect" id="Node000001" title="Recursively parse one prefix formula starting at the global pointer." alt="" coords="5,67,98,93"/>
+<area shape="poly" id="edge5_Node000001_Node000001" title=" " alt="" coords="26,67,22,58,25,48,35,42,52,40,69,43,79,51,74,52,67,48,51,45,37,47,30,52,28,58,32,66"/>
+<area shape="rect" id="Node000002" href="$task2_8c.html#aa445de013ed57ed770027ac0bcc410ee" title="Test whether a character is a binary connective." alt="" coords="146,29,240,56"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="97,65,133,58,128,60,99,70"/>
+<area shape="rect" id="Node000003" href="$task1_8c.html#a189aec0504a63eaa6b314ddaac5b621e" title="Allocate and initialise a new parse tree node." alt="" coords="153,104,233,131"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="98,90,140,102,135,103,98,95"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="168,28,164,21,167,11,177,5,193,3,210,5,220,14,215,14,208,10,193,8,179,10,171,14,169,20,173,30"/>
+<area shape="poly" id="edge4_Node000003_Node000003" title=" " alt="" coords="168,102,164,95,167,86,177,80,193,77,210,80,220,89,215,88,208,85,193,83,179,85,171,89,169,95,173,105"/>
+</map>

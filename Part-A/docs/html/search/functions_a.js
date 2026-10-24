@@ -1,8 +1,7 @@
 var searchData=
 [
-  ['skip_5fspaces_0',['skip_spaces',['../task1_8c.html#add47a0b713814c04f19b0c61f48bbd99',1,'skip_spaces(void):&#160;task1.c'],['../task3_8c.html#add47a0b713814c04f19b0c61f48bbd99',1,'skip_spaces(void):&#160;task3.c'],['../task4_8c.html#add47a0b713814c04f19b0c61f48bbd99',1,'skip_spaces(void):&#160;task4.c'],['../task5_8c.html#add47a0b713814c04f19b0c61f48bbd99',1,'skip_spaces(void):&#160;task5.c']]],
-  ['stack_5fempty_1',['stack_empty',['../task3_8c.html#a9a1574646e07d9309a19489ee909bfcf',1,'task3.c']]],
-  ['stack_5ffree_2',['stack_free',['../task3_8c.html#af0537180bbc930dee22aaf1c0811ec32',1,'task3.c']]],
-  ['stack_5finit_3',['stack_init',['../task3_8c.html#aa2f56d57f555081b657926fceb7bf7ee',1,'task3.c']]],
-  ['stack_5fpush_4',['stack_push',['../task3_8c.html#aa0fac1890ef5830a658fef4b4779cc4b',1,'task3.c']]]
+  ['read_5finput_5fcnf_0',['read_input_cnf',['../task1_8c.html#a705cdca379dc35ea45fc832ad138bf2f',1,'read_input_cnf(const char *filename, char *buffer, size_t max_len):&#160;task1.c'],['../task3_8c.html#a705cdca379dc35ea45fc832ad138bf2f',1,'read_input_cnf(const char *filename, char *buffer, size_t max_len):&#160;task3.c'],['../task4_8c.html#a705cdca379dc35ea45fc832ad138bf2f',1,'read_input_cnf(const char *filename, char *buffer, size_t max_len):&#160;task4.c'],['../task5_8c.html#a705cdca379dc35ea45fc832ad138bf2f',1,'read_input_cnf(const char *filename, char *buffer, size_t max_len):&#160;task5.c']]],
+  ['read_5finput_5fcnf_5fas_5fprefix_1',['read_input_cnf_as_prefix',['../task2_8c.html#ae064ff0fe7b8491548d2c5dcd42414a6',1,'task2.c']]],
+  ['read_5finput_5finfix_2',['read_input_infix',['../task1_8c.html#ac48ae1c62f66aa965c996f39aba608c9',1,'read_input_infix(char *buffer, size_t max_len):&#160;task1.c'],['../task3_8c.html#ac48ae1c62f66aa965c996f39aba608c9',1,'read_input_infix(char *buffer, size_t max_len):&#160;task3.c'],['../task4_8c.html#ac48ae1c62f66aa965c996f39aba608c9',1,'read_input_infix(char *buffer, size_t max_len):&#160;task4.c'],['../task5_8c.html#ac48ae1c62f66aa965c996f39aba608c9',1,'read_input_infix(char *buffer, size_t max_len):&#160;task5.c']]],
+  ['read_5finput_5fprefix_3',['read_input_prefix',['../task2_8c.html#ac4e8174731e7014e09f2702ad9485f52',1,'task2.c']]]
 ];

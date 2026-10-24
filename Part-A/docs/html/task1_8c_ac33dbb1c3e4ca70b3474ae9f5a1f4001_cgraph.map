@@ -1,0 +1,17 @@
+<map id="infix_to_prefix" name="infix_to_prefix">
+<area shape="rect" id="Node000001" title="Task 1 Interface: Convert infix propositional logic to prefix." alt="" coords="5,80,108,107"/>
+<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="27,80,22,71,26,62,37,56,57,53,77,56,89,64,84,66,75,61,56,59,39,61,30,65,27,71,32,79"/>
+<area shape="rect" id="Node000002" href="$task1_8c.html#a377bff0aefb6365ddda7a8d689e28c7c" title="Convert an infix formula into prefix notation using an operator stack." alt="" coords="156,80,297,107"/>
+<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="107,91,142,92,137,94,109,96"/>
+<area shape="poly" id="edge5_Node000002_Node000002" title=" " alt="" coords="197,79,192,71,195,62,207,56,226,53,247,56,259,65,254,65,245,61,226,59,209,61,199,65,197,71,202,80"/>
+<area shape="rect" id="Node000003" href="$task1_8c.html#aa014db7b051e4fce353db9ad9f0ef846" title="Return operator precedence for connectives." alt="" coords="345,29,503,56"/>
+<area shape="poly" id="edge3_Node000002_Node000003" title=" " alt="" coords="281,77,357,60,352,61,282,82"/>
+<area shape="rect" id="Node000004" href="$task1_8c.html#a0295642b55077739b6da13fa67407506" title="Check whether a character is a supported logical connective." alt="" coords="551,117,653,144"/>
+<area shape="poly" id="edge6_Node000002_Node000004" title=" " alt="" coords="297,96,504,116,538,122,533,122,503,121,297,102"/>
+<area shape="rect" id="Node000005" href="$task1_8c.html#af06a82a72805e2d80932cd3db938fcfd" title="Tokenize a propositional logic formula into discrete tokens." alt="" coords="364,155,484,181"/>
+<area shape="poly" id="edge8_Node000002_Node000005" title=" " alt="" coords="264,105,376,149,370,149,263,110"/>
+<area shape="poly" id="edge4_Node000003_Node000003" title=" " alt="" coords="393,28,388,21,392,11,404,5,424,3,446,5,458,14,453,14,444,10,424,8,406,10,396,15,394,20,398,30"/>
+<area shape="poly" id="edge7_Node000004_Node000004" title=" " alt="" coords="571,116,566,109,570,99,582,93,602,91,623,93,636,103,631,102,622,98,602,96,584,98,574,103,571,108,576,118"/>
+<area shape="poly" id="edge9_Node000005_Node000004" title=" " alt="" coords="484,153,533,145,538,144,485,158"/>
+<area shape="poly" id="edge10_Node000005_Node000005" title=" " alt="" coords="394,153,388,146,392,136,404,130,424,128,446,131,458,140,453,139,444,136,424,133,406,135,396,140,394,145,398,155"/>
+</map>

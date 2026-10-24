@@ -1,0 +1,14 @@
+<map id="infix_to_prefix_stack" name="infix_to_prefix_stack">
+<area shape="rect" id="Node000001" title="Convert an infix formula into prefix notation using an operator stack." alt="" coords="5,80,147,107"/>
+<area shape="poly" id="edge3_Node000001_Node000001" title=" " alt="" coords="42,80,36,71,40,62,54,55,76,53,100,56,114,64,108,65,98,61,76,59,55,61,44,65,42,71,47,79"/>
+<area shape="rect" id="Node000002" href="$task1_8c.html#aa014db7b051e4fce353db9ad9f0ef846" title="Return operator precedence for connectives." alt="" coords="195,29,353,56"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="130,77,206,59,202,62,132,82"/>
+<area shape="rect" id="Node000003" href="$task1_8c.html#a0295642b55077739b6da13fa67407506" title="Check whether a character is a supported logical connective." alt="" coords="401,117,502,144"/>
+<area shape="poly" id="edge4_Node000001_Node000003" title=" " alt="" coords="147,96,353,116,388,122,383,122,353,121,147,102"/>
+<area shape="rect" id="Node000004" href="$task1_8c.html#af06a82a72805e2d80932cd3db938fcfd" title="Tokenize a propositional logic formula into discrete tokens." alt="" coords="214,155,334,181"/>
+<area shape="poly" id="edge6_Node000001_Node000004" title=" " alt="" coords="114,105,225,147,220,150,113,110"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="243,28,238,21,242,11,254,5,274,3,295,5,308,14,303,14,294,10,274,8,255,10,246,15,243,20,248,29"/>
+<area shape="poly" id="edge5_Node000003_Node000003" title=" " alt="" coords="421,116,416,109,419,99,432,93,452,91,473,93,486,103,480,102,471,98,452,96,433,98,423,103,421,108,426,118"/>
+<area shape="poly" id="edge7_Node000004_Node000003" title=" " alt="" coords="334,153,383,145,388,144,335,158"/>
+<area shape="poly" id="edge8_Node000004_Node000004" title=" " alt="" coords="243,153,238,146,242,136,254,130,274,128,295,131,308,140,303,139,294,136,274,133,255,135,246,140,243,145,248,155"/>
+</map>

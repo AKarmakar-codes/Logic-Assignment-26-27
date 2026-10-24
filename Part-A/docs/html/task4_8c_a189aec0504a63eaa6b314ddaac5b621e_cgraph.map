@@ -1,0 +1,6 @@
+<map id="new_node" name="new_node">
+<area shape="rect" id="Node000001" title="Allocate and initialise a new parse tree node." alt="" coords="5,29,86,56"/>
+<area shape="rect" id="Node000002" href="$task1_8c.html#a189aec0504a63eaa6b314ddaac5b621e" title="Allocate and initialise a new parse tree node." alt="" coords="134,29,214,56"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="86,40,121,42,115,43,86,45"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="151,28,147,21,150,11,159,5,174,3,190,5,199,15,194,14,188,10,174,8,161,10,154,14,152,20,156,30"/>
+</map>

@@ -1,0 +1,16 @@
+<map id="postorder_iter" name="postorder_iter">
+<area shape="rect" id="Node000001" title="Post&#45;order traversal, iterative (two&#45;stack method)." alt="" coords="5,141,106,168"/>
+<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="30,141,25,133,29,123,39,117,56,115,73,117,84,125,79,127,71,122,55,120,41,122,33,126,31,132,35,140"/>
+<area shape="rect" id="Node000002" href="$task3_8c.html#a9a1574646e07d9309a19489ee909bfcf" title="Test whether a stack is empty." alt="" coords="154,29,250,56"/>
+<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="68,140,104,104,152,66,161,62,157,66,155,70,108,108,72,143"/>
+<area shape="rect" id="Node000003" href="$task3_8c.html#af0537180bbc930dee22aaf1c0811ec32" title="Release the memory held by a stack." alt="" coords="161,104,243,131"/>
+<area shape="poly" id="edge4_Node000001_Node000003" title=" " alt="" coords="105,139,147,130,143,133,108,144"/>
+<area shape="rect" id="Node000004" href="$task3_8c.html#aa2f56d57f555081b657926fceb7bf7ee" title="Initialise an empty stack with an initial capacity of 64 frames." alt="" coords="163,179,240,205"/>
+<area shape="poly" id="edge6_Node000001_Node000004" title=" " alt="" coords="106,165,150,177,146,179,107,170"/>
+<area shape="rect" id="Node000005" href="$task3_8c.html#aa0fac1890ef5830a658fef4b4779cc4b" title="Push a frame onto the stack, doubling the capacity when it is full." alt="" coords="158,253,246,280"/>
+<area shape="poly" id="edge8_Node000001_Node000005" title=" " alt="" coords="75,166,173,242,169,245,73,171"/>
+<area shape="poly" id="edge3_Node000002_Node000002" title=" " alt="" coords="176,29,172,21,175,11,185,5,202,3,220,5,230,14,225,15,218,10,202,8,187,10,179,14,177,20,181,29"/>
+<area shape="poly" id="edge5_Node000003_Node000003" title=" " alt="" coords="176,103,172,95,175,86,185,80,202,77,220,80,230,89,225,89,218,85,202,83,187,85,179,89,177,95,181,104"/>
+<area shape="poly" id="edge7_Node000004_Node000004" title=" " alt="" coords="176,178,172,170,175,160,185,154,202,152,220,155,230,163,225,163,218,160,202,157,187,159,179,164,177,170,181,179"/>
+<area shape="poly" id="edge9_Node000005_Node000005" title=" " alt="" coords="176,252,172,245,175,235,185,229,202,227,220,229,230,239,225,238,218,234,202,232,187,234,179,238,177,244,181,254"/>
+</map>

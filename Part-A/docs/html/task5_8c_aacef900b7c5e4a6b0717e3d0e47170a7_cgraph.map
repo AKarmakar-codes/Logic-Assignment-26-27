@@ -1,0 +1,14 @@
+<map id="parse_formula" name="parse_formula">
+<area shape="rect" id="Node000001" title="Recursively parse a fully parenthesized infix formula." alt="" coords="5,91,109,117"/>
+<area shape="rect" id="Node000002" href="$task1_8c.html#a189aec0504a63eaa6b314ddaac5b621e" title="Allocate and initialise a new parse tree node." alt="" coords="315,29,395,56"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="78,88,114,68,156,52,230,40,302,39,297,41,231,45,157,57,116,73,81,92"/>
+<area shape="rect" id="Node000003" href="$task1_8c.html#aacef900b7c5e4a6b0717e3d0e47170a7" title="Recursively parse a fully parenthesized infix formula into an AST." alt="" coords="157,91,260,117"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="109,101,144,103,139,105,109,107"/>
+<area shape="rect" id="Node000004" href="$task1_8c.html#add47a0b713814c04f19b0c61f48bbd99" title="Advance the global input pointer past any whitespace." alt="" coords="308,116,402,143"/>
+<area shape="poly" id="edge8_Node000001_Node000004" title=" " alt="" coords="103,115,157,127,227,131,295,133,290,133,227,137,156,132,102,121"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="329,28,325,21,328,11,338,5,355,3,373,5,384,14,378,14,371,10,355,8,340,10,332,14,330,20,334,30"/>
+<area shape="poly" id="edge4_Node000003_Node000002" title=" " alt="" coords="241,88,305,63,310,62,243,93"/>
+<area shape="poly" id="edge5_Node000003_Node000003" title=" " alt="" coords="183,89,178,82,181,72,192,66,208,64,226,67,237,76,232,75,224,72,208,69,193,71,185,76,184,82,187,91"/>
+<area shape="poly" id="edge6_Node000003_Node000004" title=" " alt="" coords="261,110,296,119,290,119,260,116"/>
+<area shape="poly" id="edge7_Node000004_Node000004" title=" " alt="" coords="329,114,325,107,328,98,338,92,355,89,373,92,384,101,379,100,371,97,355,95,340,97,332,101,330,107,334,117"/>
+</map>
