@@ -68,9 +68,10 @@ def main():
     ax1.set_xlabel('Number of Distinct Atoms ($k$)', fontsize=11, fontweight='bold')
     ax1.set_ylabel('Execution Time (milliseconds)', fontsize=11, fontweight='bold')
     ax1.set_xticks(range(2, 21, 2))
-    ax1.annotate('Exponential Cliff\n$2^{20} = 1,048,576$ rows\n~2.0 seconds',
-                 xy=(20, df_tt[df_tt['k_atoms'] == 20]['time_us'].values[0] / 1000.0),
-                 xytext=(13, 1300),
+    k20_ms = df_tt[df_tt['k_atoms'] == 20]['time_us'].values[0] / 1000.0
+    ax1.annotate(f'Exponential Cliff\n$2^{{20}} = 1,048,576$ rows\n{k20_ms / 1000.0:.2f} seconds',
+                 xy=(20, k20_ms),
+                 xytext=(13, k20_ms * 0.75),
                  arrowprops=dict(arrowstyle="->", color='#333333', lw=1.5),
                  fontsize=10, bbox=dict(boxstyle="round,pad=0.4", fc="#fff2f2", ec=c_red))
 
@@ -105,9 +106,10 @@ def main():
     plt.ylabel('Time per Row (nanoseconds)', fontsize=11, fontweight='bold')
     plt.xticks(range(2, 21, 2))
     
+    k16_val = df_tt[df_tt['k_atoms'] == 16]['time_per_row_ns'].values[0]
     plt.annotate('Formula size $N = 2k-1$ leaves\nLinear lookup $O(k)$ per atom leaf\nTotal per row: $O(k \\cdot N)$',
-                 xy=(16, df_tt[df_tt['k_atoms'] == 16]['time_per_row_ns'].values[0]),
-                 xytext=(7, 1300),
+                 xy=(16, k16_val),
+                 xytext=(6, k16_val * 0.85),
                  arrowprops=dict(arrowstyle="->", color='#333333', lw=1.2),
                  fontsize=9.5, bbox=dict(boxstyle="round,pad=0.4", fc="#f6f0fa", ec=c_purple))
 

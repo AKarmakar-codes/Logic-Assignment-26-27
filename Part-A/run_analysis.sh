@@ -20,6 +20,11 @@ else
     exit 1
 fi
 
+# 0. Purge all previous plots, cached data, and generated artifacts
+echo "[0/5] Purging all old plots and cached benchmark datasets..."
+rm -f Part-A/analysis/plots/*.png Part-A/docs/html/plots/*.png
+rm -f Part-A/analysis/data/*.csv Part-A/analysis/data/*.json
+
 # 1. Compile C Programs for Tasks 1-5
 echo "[1/5] Compiling Tasks 1 through 5 in Part-A..."
 gcc -Wall -O2 Part-A/task1.c -o Part-A/task1

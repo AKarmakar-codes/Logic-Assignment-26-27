@@ -34,6 +34,16 @@ def main():
     with open(os.path.join(data_dir, "benchmark_inputs.json"), 'r') as f:
         meta_inputs = json.load(f)
 
+    # Dynamic metrics from actual empirical runs
+    min_row_cost = df_tt['time_per_row_ns'].min()
+    max_row_cost = df_tt['time_per_row_ns'].max()
+    k_min = int(df_tt.loc[df_tt['time_per_row_ns'].idxmin(), 'k_atoms'])
+    k_max = int(df_tt.loc[df_tt['time_per_row_ns'].idxmax(), 'k_atoms'])
+    k20_row = df_tt[df_tt['k_atoms'] == 20].iloc[0]
+    k20_time_s = k20_row['time_us'] / 1e6
+    ratio_in_mean = (df_trav['inorder_iter_us'] / df_trav['inorder_rec_us']).mean()
+    ratio_post_mean = (df_trav['postorder_iter_us'] / df_trav['postorder_rec_us']).mean()
+
     # Format truth table sample rows
     tt_rows_html = ""
     for _, row in df_tt.iloc[::2].iterrows():
@@ -346,10 +356,10 @@ def main():
         </div>
 
         <div class="callout">
-            <strong>Key Architectural Finding:</strong>
-            Notice that the unit evaluation cost per row increases from <code>36.97 ns/row</code> at <code>k=2</code> to <code>1,891.29 ns/row</code> at <code>k=20</code>. 
+            <strong>Key Empirical Finding:</strong>
+            Across actual runs, the unit evaluation cost per row scaled from <code>{min_row_cost:.2f} ns/row</code> at <code>k={k_min}</code> to <code>{max_row_cost:.2f} ns/row</code> at <code>k={k_max}</code> (with total execution time for 1,048,576 rows reaching <code>{k20_time_s:.2f} seconds</code>). 
             This occurs because each leaf evaluation performs a linear lookup in <code>AtomTable</code> (costing <code>O(k)</code> per atom). 
-            Consequently, row evaluation time scales as <code>O(k &middot; N)</code>, perfectly matching our theoretical predictions.
+            Consequently, row evaluation time scales as <code>O(k &middot; N)</code>, perfectly matching empirical measurements.
         </div>
     </div>
 
@@ -392,10 +402,10 @@ def main():
         </div>
 
         <div class="callout">
-            <strong>Theoretical vs. Empirical Takeaway:</strong>
+            <strong>Empirical Traversal Findings:</strong>
             <ul>
-                <li><strong>In-Order &amp; Pre-Order:</strong> Recursive and Iterative implementations exhibit near-parity (ratio <code>~1.0 &plusmn; 0.05</code>). Modern C compilers (GCC -O3) optimize recursive tail and non-tail frames into efficient register jumps.</li>
-                <li><strong>Post-Order:</strong> The iterative two-stack algorithm incurs higher overhead (ratio <code>~1.25x - 1.35x</code>) because every node must be pushed onto Stack 1 and then popped and pushed onto Stack 2. In contrast, recursive post-order traverses the call-stack natively with zero secondary allocation.</li>
+                <li><strong>In-Order &amp; Pre-Order:</strong> Recursive and Iterative implementations exhibit near-parity (measured mean ratio <code>{ratio_in_mean:.2f}x</code>). Modern C compilers (GCC -O3) optimize recursive tail and non-tail frames into efficient register jumps.</li>
+                <li><strong>Post-Order:</strong> The iterative two-stack algorithm incurs higher overhead (measured mean ratio <code>{ratio_post_mean:.2f}x</code>) because every node must be pushed onto Stack 1 and then popped and pushed onto Stack 2. In contrast, recursive post-order traverses the call-stack natively with zero secondary allocation.</li>
             </ul>
         </div>
     </div>

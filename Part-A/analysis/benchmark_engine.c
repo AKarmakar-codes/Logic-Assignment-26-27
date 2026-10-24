@@ -12,6 +12,8 @@
  */
 
 #define _POSIX_C_SOURCE 199309L
+#pragma GCC diagnostic ignored "-Wformat-truncation"
+#pragma GCC diagnostic ignored "-Wstringop-truncation"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -89,21 +91,108 @@ static Node *build_parse_tree(const char *infix) {
     return parse_formula();
 }
 
-/* ---------- Task 1: Infix to Prefix ---------- */
+/* ---------- Task 1: Infix to Prefix using Operator Stack (ScanfTree) ---------- */
 
-static void tree_to_prefix_buf(const Node *n, char *out) {
-    if (!n) return;
-    strcat(out, n->label);
-    strcat(out, " ");
-    tree_to_prefix_buf(n->left, out);
-    tree_to_prefix_buf(n->right, out);
+typedef struct {
+    char text[32];
+} Token;
+
+static int is_connective(char c) {
+    return c == '~' || c == '*' || c == '+' || c == '>';
+}
+
+static int connective_precedence(char c) {
+    switch (c) {
+        case '~': return 4;
+        case '*': return 3;
+        case '+': return 2;
+        case '>': return 1;
+        default:  return 0;
+    }
+}
+
+static int tokenize_formula(const char *str, Token *tokens, int max_tokens) {
+    int count = 0;
+    const char *s = str;
+    while (*s && count < max_tokens) {
+        while (*s && isspace((unsigned char)*s)) s++;
+        if (!*s) break;
+        if (*s == '(' || *s == ')' || is_connective(*s)) {
+            tokens[count].text[0] = *s++;
+            tokens[count].text[1] = '\0';
+            count++;
+        } else if (isalnum((unsigned char)*s)) {
+            int j = 0;
+            while (isalnum((unsigned char)*s) && j < 31) {
+                tokens[count].text[j++] = *s++;
+            }
+            tokens[count].text[j] = '\0';
+            count++;
+        } else {
+            s++;
+        }
+    }
+    return count;
 }
 
 static void infix_to_prefix_bench(const char *infix, char *prefix_out) {
-    Node *root = build_parse_tree(infix);
+    static Token tokens[16384];
+    static Token out[16384];
+    static char op_stack[16384];
+
+    int n = tokenize_formula(infix, tokens, 16384);
+    int top = 0;
+    int out_count = 0;
+
+    for (int i = n - 1; i >= 0; i--) {
+        char *t = tokens[i].text;
+        if (strcmp(t, ")") == 0) {
+            op_stack[top++] = ')';
+        } else if (strcmp(t, "(") == 0) {
+            while (top > 0 && op_stack[top - 1] != ')') {
+                out[out_count].text[0] = op_stack[--top];
+                out[out_count].text[1] = '\0';
+                out_count++;
+            }
+            if (top > 0 && op_stack[top - 1] == ')') {
+                top--;
+            }
+        } else if (is_connective(t[0]) && t[1] == '\0') {
+            char op = t[0];
+            while (top > 0 && op_stack[top - 1] != ')' &&
+                   connective_precedence(op_stack[top - 1]) > connective_precedence(op)) {
+                out[out_count].text[0] = op_stack[--top];
+                out[out_count].text[1] = '\0';
+                out_count++;
+            }
+            op_stack[top++] = op;
+        } else {
+            strncpy(out[out_count].text, t, sizeof(out[out_count].text) - 1);
+            out[out_count].text[sizeof(out[out_count].text) - 1] = '\0';
+            out_count++;
+        }
+    }
+
+    while (top > 0) {
+        if (op_stack[top - 1] != ')') {
+            out[out_count].text[0] = op_stack[top - 1];
+            out[out_count].text[1] = '\0';
+            out_count++;
+        }
+        top--;
+    }
+
     prefix_out[0] = '\0';
-    tree_to_prefix_buf(root, prefix_out);
-    free_tree(root);
+    size_t cur_len = 0;
+    for (int i = out_count - 1; i >= 0; i--) {
+        size_t tlen = strlen(out[i].text);
+        if (cur_len > 0) {
+            prefix_out[cur_len++] = ' ';
+            prefix_out[cur_len] = '\0';
+        }
+        strcat(prefix_out, out[i].text);
+        cur_len += tlen;
+    }
 }
 
 /* ---------- Task 2: Prefix to Tree ---------- */
@@ -271,8 +360,7 @@ static int collect_atoms(const Node *n, AtomTable *t) {
     if (is_atom(n)) {
         if (atom_index(t, n->label) < 0) {
             if (t->count >= MAX_ATOMS) return -1;
-            strncpy(t->names[t->count], n->label, 31);
-            t->names[t->count][31] = '\0';
+            snprintf(t->names[t->count], sizeof(t->names[t->count]), "%s", n->label);
             t->count++;
         }
         return 0;
