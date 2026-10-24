@@ -22,7 +22,7 @@
 #include <string.h>
 
 /** @brief Maximum length of the input formula buffer. */
-#define MAX_LEN 1024
+#define MAX_LEN 65536
 
 /* ---------- Parse tree node (same as task1.c / task2.c) ---------- */
 
@@ -379,21 +379,163 @@ void postorder_iter(const Node *root) {
     stack_free(&s2);
 }
 
+/* ======================================================================
+ *  INPUT METHODS (Instructor Specification)
+ *  Method 1: Read infix notation from stdin (hand/manual testing)
+ *  Method 2: Read DIMACS CNF file (.cnf) and convert to infix notation
+ * ====================================================================== */
+
+/**
+ * @brief Input Method 1: Read a propositional logic formula in infix notation from stdin.
+ *
+ * @param buffer Output buffer.
+ * @param max_len Maximum length of buffer.
+ * @return 0 on success, -1 on EOF or error.
+ */
+int read_input_infix(char *buffer, size_t max_len) {
+    if (!fgets(buffer, (int)max_len, stdin)) return -1;
+    buffer[strcspn(buffer, "\r\n")] = '\0';
+    return 0;
+}
+
+/**
+ * @brief Input Method 2: Read DIMACS CNF file and convert to fully parenthesized infix notation.
+ *
+ * @param filename File path to .cnf file.
+ * @param buffer Output buffer receiving the infix formula.
+ * @param max_len Capacity of output buffer.
+ * @return 0 on success, -1 on failure.
+ */
+int read_input_cnf(const char *filename, char *buffer, size_t max_len) {
+    FILE *fp = fopen(filename, "r");
+    if (!fp) {
+        perror("Error opening CNF file");
+        return -1;
+    }
+
+    char line[4096];
+    int num_vars = 0, num_clauses = 0;
+    buffer[0] = '\0';
+
+    char current_clause[8192] = "";
+    int lits_in_clause = 0;
+
+    while (fgets(line, sizeof(line), fp)) {
+        char *ptr = line;
+        while (*ptr && isspace((unsigned char)*ptr)) ptr++;
+        if (*ptr == '\0' || *ptr == 'c') continue;
+        if (*ptr == 'p') {
+            sscanf(ptr, "p cnf %d %d", &num_vars, &num_clauses);
+            continue;
+        }
+
+        char *token = strtok(ptr, " \t\r\n");
+        while (token) {
+            int lit = atoi(token);
+            if (lit == 0) {
+                if (lits_in_clause > 0) {
+                    if (buffer[0] == '\0') {
+                        strncpy(buffer, current_clause, max_len - 1);
+                        buffer[max_len - 1] = '\0';
+                    } else {
+                        size_t needed = strlen(buffer) + strlen(current_clause) + 6;
+                        if (needed < max_len) {
+                            char *temp = (char *)malloc(max_len);
+                            if (temp) {
+                                snprintf(temp, max_len, "(%s*%s)", buffer, current_clause);
+                                strncpy(buffer, temp, max_len - 1);
+                                buffer[max_len - 1] = '\0';
+                                free(temp);
+                            }
+                        } else {
+                            fclose(fp);
+                            return 0;
+                        }
+                    }
+                    current_clause[0] = '\0';
+                    lits_in_clause = 0;
+                }
+            } else {
+                char lit_str[64];
+                if (lit < 0) {
+                    snprintf(lit_str, sizeof(lit_str), "(~x%d)", -lit);
+                } else {
+                    snprintf(lit_str, sizeof(lit_str), "x%d", lit);
+                }
+
+                if (lits_in_clause == 0) {
+                    strncpy(current_clause, lit_str, sizeof(current_clause) - 1);
+                    current_clause[sizeof(current_clause) - 1] = '\0';
+                } else {
+                    char temp[8192];
+                    snprintf(temp, sizeof(temp), "(%s+%s)", current_clause, lit_str);
+                    strncpy(current_clause, temp, sizeof(current_clause) - 1);
+                    current_clause[sizeof(current_clause) - 1] = '\0';
+                }
+                lits_in_clause++;
+            }
+            token = strtok(NULL, " \t\r\n");
+        }
+    }
+
+    fclose(fp);
+    return 0;
+}
+
 /* ---------- Main ---------- */
 
 /**
- * @brief Program entry point: read an infix formula, build its parse tree and
+ * @brief Program entry point: read an infix formula (or CNF file), build its parse tree and
  *        print all six traversals (recursive and iterative).
  *
+ * @param argc Argument count.
+ * @param argv Argument vector (argv[1] can optionally specify a .cnf file).
  * @return 0 on success, 1 if no input could be read.
  */
-int main(void) {
-    char infix[MAX_LEN];
+int main(int argc, char *argv[]) {
+    static char infix[MAX_LEN];
 
-    printf("Enter a fully parenthesized formula (~ negation, + OR, * AND, > implication):\n");
-    if (!fgets(infix, sizeof(infix), stdin)) return 1;
-    infix[strcspn(infix, "\n")] = '\0';
+    if (argc > 1) {
+        printf("Reading DIMACS CNF benchmark file: %s\n", argv[1]);
+        if (read_input_cnf(argv[1], infix, sizeof(infix)) != 0) {
+            fprintf(stderr, "Failed to load CNF file: %s\n", argv[1]);
+            return 1;
+        }
+    } else {
+        printf("Select input method:\n");
+        printf("  1. Enter infix formula manually\n");
+        printf("  2. Read from DIMACS CNF file\n");
+        printf("Enter choice (1 or 2, default 1) or formula directly:\n");
 
+        char choice_buf[MAX_LEN];
+        if (!fgets(choice_buf, sizeof(choice_buf), stdin)) return 1;
+        choice_buf[strcspn(choice_buf, "\r\n")] = '\0';
+
+        if (strcmp(choice_buf, "2") == 0) {
+            char filepath[512];
+            printf("Enter path to DIMACS .cnf file: ");
+            if (!fgets(filepath, sizeof(filepath), stdin)) return 1;
+            filepath[strcspn(filepath, "\r\n")] = '\0';
+            if (read_input_cnf(filepath, infix, sizeof(infix)) != 0) {
+                fprintf(stderr, "Failed to load CNF file.\n");
+                return 1;
+            }
+        } else if (strcmp(choice_buf, "1") == 0) {
+            printf("Enter a fully parenthesized formula (~ negation, + OR, * AND, > implication):\n");
+            if (read_input_infix(infix, sizeof(infix)) != 0) return 1;
+        } else {
+            /* Piped input or direct formula entry */
+            strncpy(infix, choice_buf, sizeof(infix) - 1);
+            infix[sizeof(infix) - 1] = '\0';
+        }
+    }
+
+    if (strlen(infix) == 0) {
+        fprintf(stderr, "Error: empty input formula.\n");
+        return 1;
+    }
+
+    printf("\nInfix formula:\n%s\n", infix);
     Node *root = build_parse_tree(infix);
 
     printf("\nIn-order   (recursive): "); inorder_rec(root);    printf("\n");
